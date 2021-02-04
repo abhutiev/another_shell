@@ -1,0 +1,86 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   first_circle_of_parsing.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/04 13:26:04 by gdoge             #+#    #+#             */
+/*   Updated: 2021/02/04 13:26:05 by gdoge            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "minishell.h"
+
+void	get_argument_from_single_quote(t_all *all)
+{
+	all->buffer.line_2[all->buffer.iter_2++] = all->buffer.line_1[all->buffer.iter_1++];
+	while (all->buffer.line_1[all->buffer.iter_1] && all->buffer.line_1[all->buffer.iter_1] != '\'' && is_shielded(all))
+	{
+		all->buffer.line_2[all->buffer.iter_2++] = all->buffer.line_1[all->buffer.iter_1++];
+	}
+	all->buffer.line_2[all->buffer.iter_2++] = all->buffer.line_1[all->buffer.iter_1++];
+}
+
+void	dollar_substitution(t_all *all)
+{
+	size_t	i;
+	size_t	j;
+	char	name_of_env[100];
+
+	all->buffer.iter_1++;
+	i = 0;
+	while (!is_special_symbol(all->buffer.line_1[all->buffer.iter_1]))
+	{
+		name_of_env[i] = all->buffer.line_1[all->buffer.iter_1];
+		i++;
+		all->buffer.iter_1++;
+	}
+	name_of_env[i] = '\0';
+	j = 0;
+	while (all->env[j].name)
+	{
+		if (ft_strcmp(all->env[j].name, name_of_env) == 0)
+			break ;
+		j++;
+	}
+	if (all->env[j].name)
+	{
+		ft_strcpy(all->buffer.line_2 + all->buffer.iter_2, all->env[j].value);
+		all->buffer.iter_2 += ft_strlen(all->env[j].value);
+	}
+}
+
+void	get_argument_from_double_quote(t_all *all)
+{
+	all->buffer.line_2[all->buffer.iter_2++] = all->buffer.line_1[all->buffer.iter_1++];
+	while (all->buffer.line_1[all->buffer.iter_1]  && (all->buffer.line_1[all->buffer.iter_1] != '\"' && is_shielded(all)))
+	{
+		if (all->buffer.line_1[all->buffer.iter_1] == '$'  && !is_shielded(all))
+			dollar_substitution(all);
+		all->buffer.line_2[all->buffer.iter_2++] = all->buffer.line_1[all->buffer.iter_1++];
+	}
+	all->buffer.line_2[all->buffer.iter_2++] = all->buffer.line_1[all->buffer.iter_1++];
+}
+void	screening_parsing(t_all *all)
+{
+
+}
+
+void	first_circle_of_parsing(t_all *all)
+{
+	all->buffer.iter_1 = 0;
+	all->buffer.iter_2 = 0;
+	all->buffer.line_2 = (char *)ft_calloc(1000, sizeof(char));
+	while (all->buffer.line_1[all->buffer.iter_1])
+	{
+		if (all->buffer.line_1[all->buffer.iter_1] == '\'' && !is_shielded(all))
+			get_argument_from_single_quote(all);
+		else if (all->buffer.line_1[all->buffer.iter_1] == '\"' && !is_shielded(all))
+			get_argument_from_double_quote(all);
+		else if (all->buffer.line_1[all->buffer.iter_1] == '$' && !is_shielded(all))
+			dollar_substitution(all);
+		else
+			all->buffer.line_2[all->buffer.iter_2++] = all->buffer.line_1[all->buffer.iter_1++];
+	}
+}

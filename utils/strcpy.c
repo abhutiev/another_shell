@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcmp.c                                           :+:      :+:    :+:   */
+/*   strcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/01 21:12:10 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/01 21:24:31 by gdoge            ###   ########.fr       */
+/*   Created: 2021/02/04 11:31:39 by gdoge             #+#    #+#             */
+/*   Updated: 2021/02/04 11:31:41 by gdoge            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int		ft_strcmp(char *line1, char *line2)
+void	ft_strcpy(char *dst, char *src)
 {
 	size_t	i;
 
 	i = 0;
-	if (line1 == NULL || line2 == NULL)
-		return (1);
-	while (line1[i])
+	while (src[i])
 	{
-		if (line1[i] != line2[i])
-		{
-			return (line2[i] - line1[i]);
-		}
+		dst[i] = src[i];
 		i++;
 	}
-	return (line1[i] - line2[i]);
+	dst[i] = src[i];
 }
