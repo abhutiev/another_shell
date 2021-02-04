@@ -47,7 +47,7 @@ void	add_environment(t_all *all, char *name, char *value)
 		number_of_envs++;
 	while (all->env[i].name && (ft_strcmp(all->env[i].name, name) > 0))
 		i++;
-	while (number_of_envs + 1> i)
+	while (number_of_envs + 1 > i)
 	{
 		all->env[number_of_envs + 1].name = all->env[number_of_envs].name;
 		all->env[number_of_envs + 1].value = all->env[number_of_envs].value;
@@ -59,8 +59,8 @@ void	add_environment(t_all *all, char *name, char *value)
 
 void	sort_environments(t_all *all)
 {
-	int 	i;
-	int 	j;
+	int		i;
+	int		j;
 	size_t	number_of_envs;
 	char	*tmp;
 

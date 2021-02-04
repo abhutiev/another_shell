@@ -14,7 +14,7 @@
 
 int			is_shielded(t_all *all)
 {
-	int 	counter;
+	int		counter;
 	size_t	i;
 
 	i = all->buffer.iter_1 - 1;
