@@ -5,8 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/gdoge/another_shell/first_circle_of_parsing.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o"
-  "/Users/gdoge/another_shell/interpreter.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/interpreter.c.o"
   "/Users/gdoge/another_shell/main.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/main.c.o"
+  "/Users/gdoge/another_shell/pregame_ritual.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/pregame_ritual.c.o"
+  "/Users/gdoge/another_shell/request_separation.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/request_separation.c.o"
   "/Users/gdoge/another_shell/utils/bzero.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/utils/bzero.c.o"
   "/Users/gdoge/another_shell/utils/calloc.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/utils/calloc.c.o"
   "/Users/gdoge/another_shell/utils/flags_shutting_up.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.o"

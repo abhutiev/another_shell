@@ -4,11 +4,15 @@
 CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o
  /Users/gdoge/another_shell/first_circle_of_parsing.c
  /Users/gdoge/another_shell/minishell.h
-CMakeFiles/another_shell.dir/interpreter.c.o
- /Users/gdoge/another_shell/interpreter.c
 CMakeFiles/another_shell.dir/main.c.o
  /Users/gdoge/another_shell/main.c
  /Users/gdoge/another_shell/minishell.h
+CMakeFiles/another_shell.dir/pregame_ritual.c.o
+ /Users/gdoge/another_shell/minishell.h
+ /Users/gdoge/another_shell/pregame_ritual.c
+CMakeFiles/another_shell.dir/request_separation.c.o
+ /Users/gdoge/another_shell/minishell.h
+ /Users/gdoge/another_shell/request_separation.c
 CMakeFiles/another_shell.dir/utils/bzero.c.o
  /Users/gdoge/another_shell/minishell.h
  /Users/gdoge/another_shell/utils/bzero.c

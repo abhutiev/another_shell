@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   semicolon_shielded.c                               :+:      :+:    :+:   */
+/*   pregame_ritual_up.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/27 07:04:50 by gdoge             #+#    #+#             */
-/*   Updated: 2021/01/27 07:04:52 by gdoge            ###   ########.fr       */
+/*   Created: 2021/02/04 03:41:25 by gdoge             #+#    #+#             */
+/*   Updated: 2021/02/04 03:41:27 by gdoge            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
-int			is_shielded(t_all *all)
+static void	flags_shutting_up(int argc, char **argv)
 {
-	int		counter;
-	size_t	i;
+	(void)argc;
+	(void)argv;
+}
 
-	if (!all->buffer.iter_1)
-		return (0);
-	i = all->buffer.iter_1 - 1;
-	counter = 0;
-	while (all->buffer.line_1[i] == '\\' && i >= 0)
-	{
-		counter++;
-		i--;
-	}
-	return (counter % 2);
+void		pregame_ritual(t_all *all, int ac, char **av, char **env)
+{
+	flags_shutting_up(ac, av);
+	load_environments(all, env);
+	sort_environments(all);
 }

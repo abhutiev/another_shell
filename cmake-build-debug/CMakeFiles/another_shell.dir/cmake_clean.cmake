@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o"
-  "CMakeFiles/another_shell.dir/interpreter.c.o"
   "CMakeFiles/another_shell.dir/main.c.o"
+  "CMakeFiles/another_shell.dir/pregame_ritual.c.o"
+  "CMakeFiles/another_shell.dir/request_separation.c.o"
   "CMakeFiles/another_shell.dir/utils/bzero.c.o"
   "CMakeFiles/another_shell.dir/utils/calloc.c.o"
   "CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.o"

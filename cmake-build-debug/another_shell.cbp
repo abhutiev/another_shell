@@ -83,13 +83,16 @@
 		<Unit filename="/Users/gdoge/another_shell/first_circle_of_parsing.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/interpreter.c">
-			<Option target="another_shell"/>
-		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/main.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/minishell.h">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/pregame_ritual.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/request_separation.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/utils/bzero.c">

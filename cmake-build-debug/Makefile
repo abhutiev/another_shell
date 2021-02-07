@@ -170,33 +170,6 @@ first_circle_of_parsing.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/first_circle_of_parsing.c.s
 .PHONY : first_circle_of_parsing.c.s
 
-interpreter.o: interpreter.c.o
-
-.PHONY : interpreter.o
-
-# target to build an object file
-interpreter.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/interpreter.c.o
-.PHONY : interpreter.c.o
-
-interpreter.i: interpreter.c.i
-
-.PHONY : interpreter.i
-
-# target to preprocess a source file
-interpreter.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/interpreter.c.i
-.PHONY : interpreter.c.i
-
-interpreter.s: interpreter.c.s
-
-.PHONY : interpreter.s
-
-# target to generate assembly for a file
-interpreter.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/interpreter.c.s
-.PHONY : interpreter.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -223,6 +196,60 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/main.c.s
 .PHONY : main.c.s
+
+pregame_ritual.o: pregame_ritual.c.o
+
+.PHONY : pregame_ritual.o
+
+# target to build an object file
+pregame_ritual.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pregame_ritual.c.o
+.PHONY : pregame_ritual.c.o
+
+pregame_ritual.i: pregame_ritual.c.i
+
+.PHONY : pregame_ritual.i
+
+# target to preprocess a source file
+pregame_ritual.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pregame_ritual.c.i
+.PHONY : pregame_ritual.c.i
+
+pregame_ritual.s: pregame_ritual.c.s
+
+.PHONY : pregame_ritual.s
+
+# target to generate assembly for a file
+pregame_ritual.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pregame_ritual.c.s
+.PHONY : pregame_ritual.c.s
+
+request_separation.o: request_separation.c.o
+
+.PHONY : request_separation.o
+
+# target to build an object file
+request_separation.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/request_separation.c.o
+.PHONY : request_separation.c.o
+
+request_separation.i: request_separation.c.i
+
+.PHONY : request_separation.i
+
+# target to preprocess a source file
+request_separation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/request_separation.c.i
+.PHONY : request_separation.c.i
+
+request_separation.s: request_separation.c.s
+
+.PHONY : request_separation.s
+
+# target to generate assembly for a file
+request_separation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/request_separation.c.s
+.PHONY : request_separation.c.s
 
 utils/bzero.o: utils/bzero.c.o
 
@@ -614,12 +641,15 @@ help:
 	@echo "... first_circle_of_parsing.o"
 	@echo "... first_circle_of_parsing.i"
 	@echo "... first_circle_of_parsing.s"
-	@echo "... interpreter.o"
-	@echo "... interpreter.i"
-	@echo "... interpreter.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... pregame_ritual.o"
+	@echo "... pregame_ritual.i"
+	@echo "... pregame_ritual.s"
+	@echo "... request_separation.o"
+	@echo "... request_separation.i"
+	@echo "... request_separation.s"
 	@echo "... utils/bzero.o"
 	@echo "... utils/bzero.i"
 	@echo "... utils/bzero.s"

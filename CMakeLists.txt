@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(another_shell
         main.c
-        interpreter.c
         minishell.h
         utils/strlen.c
         utils/split.c
@@ -20,4 +19,4 @@ add_executable(another_shell
         utils/gnl.c utils/strcpy.c
         utils/is_shielded.c
         first_circle_of_parsing.c
-        utils/is_special_symbol.c)
+        utils/is_special_symbol.c pregame_ritual.c request_separation.c)

@@ -73,10 +73,11 @@ static void	get_argument_from_double_quote(t_all *all)
 	all->buffer.iter_1++;
 }
 
-void		first_circle_of_parsing(t_all *all)
+void		first_circle_of_parsing(t_all *all, size_t i)
 {
 	all->buffer.iter_1 = 0;
 	all->buffer.iter_2 = 0;
+	all->buffer.line_1 = all->requests.separated[i];
 	all->buffer.line_2 = (char *)ft_calloc(1000, sizeof(char));
 	while (all->buffer.line_1[all->buffer.iter_1])
 	{
@@ -93,5 +94,7 @@ void		first_circle_of_parsing(t_all *all)
 			all->buffer.line_2[all->buffer.iter_2++] =
 					all->buffer.line_1[all->buffer.iter_1++];
 	}
+	all->buffer.line_2[all->buffer.iter_2] = '\0';
+	all->requests.line_with_substitutions[i] = all->buffer.line_2;
 	free(all->buffer.line_1);
 }

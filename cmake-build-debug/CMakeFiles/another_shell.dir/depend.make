@@ -4,10 +4,14 @@
 CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o: ../first_circle_of_parsing.c
 CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o: ../minishell.h
 
-CMakeFiles/another_shell.dir/interpreter.c.o: ../interpreter.c
-
 CMakeFiles/another_shell.dir/main.c.o: ../main.c
 CMakeFiles/another_shell.dir/main.c.o: ../minishell.h
+
+CMakeFiles/another_shell.dir/pregame_ritual.c.o: ../minishell.h
+CMakeFiles/another_shell.dir/pregame_ritual.c.o: ../pregame_ritual.c
+
+CMakeFiles/another_shell.dir/request_separation.c.o: ../minishell.h
+CMakeFiles/another_shell.dir/request_separation.c.o: ../request_separation.c
 
 CMakeFiles/another_shell.dir/utils/bzero.c.o: ../minishell.h
 CMakeFiles/another_shell.dir/utils/bzero.c.o: ../utils/bzero.c

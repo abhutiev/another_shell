@@ -36,10 +36,19 @@ typedef struct		s_buffer
 	size_t			iter_2;
 }					t_buffer;
 
+typedef struct		s_request
+{
+	char			**separated;
+	char			**line_with_substitutions;
+
+	size_t			number;
+}					t_request;
+
 typedef struct		s_all
 {
 	t_env			*env;
 	t_buffer 		buffer;
+	t_request		requests;
 }					t_all;
 
 size_t				ft_strlen(char *string);
@@ -62,11 +71,14 @@ void				sort_environments(t_all *all);
 void				delete_environment(t_all *all, char *name);
 void				display_env(t_all *all);
 
-void				first_circle_of_parsing(t_all *all);
+void		first_circle_of_parsing(t_all *all, size_t i);
+void				pregame_ritual(t_all *all, int ac, char **av, char **env);
+
+void	separate_requests(t_all *all);
+void	count_requests(t_all *all);
 
 
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void				*ft_bzero(void *b, size_t len);
-void				flags_shutting_up(int argc, char **argv);
 
 #endif
