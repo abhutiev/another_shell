@@ -6,11 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/gdoge/another_shell/first_circle_of_parsing.c
-minishell.h
-/Users/gdoge/another_shell/minishell.h
-
-/Users/gdoge/another_shell/minishell.h
+/Users/gdoge/another_shell/main.c
 unistd.h
 -
 stdio.h
@@ -22,5 +18,7 @@ string.h
 stdlib.h
 -
 signal.h
+-
+sys/types.h
 -
 

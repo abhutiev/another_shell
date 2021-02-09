@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /Users/gdoge/another_shell/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -143,32 +143,32 @@ another_shell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/build
 .PHONY : another_shell/fast
 
-first_circle_of_parsing.o: first_circle_of_parsing.c.o
+env.o: env.c.o
 
-.PHONY : first_circle_of_parsing.o
+.PHONY : env.o
 
 # target to build an object file
-first_circle_of_parsing.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o
-.PHONY : first_circle_of_parsing.c.o
+env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/env.c.o
+.PHONY : env.c.o
 
-first_circle_of_parsing.i: first_circle_of_parsing.c.i
+env.i: env.c.i
 
-.PHONY : first_circle_of_parsing.i
+.PHONY : env.i
 
 # target to preprocess a source file
-first_circle_of_parsing.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/first_circle_of_parsing.c.i
-.PHONY : first_circle_of_parsing.c.i
+env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/env.c.i
+.PHONY : env.c.i
 
-first_circle_of_parsing.s: first_circle_of_parsing.c.s
+env.s: env.c.s
 
-.PHONY : first_circle_of_parsing.s
+.PHONY : env.s
 
 # target to generate assembly for a file
-first_circle_of_parsing.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/first_circle_of_parsing.c.s
-.PHONY : first_circle_of_parsing.c.s
+env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/env.c.s
+.PHONY : env.c.s
 
 main.o: main.c.o
 
@@ -197,437 +197,599 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/main.c.s
 .PHONY : main.c.s
 
-pregame_ritual.o: pregame_ritual.c.o
+pwd.o: pwd.c.o
 
-.PHONY : pregame_ritual.o
-
-# target to build an object file
-pregame_ritual.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pregame_ritual.c.o
-.PHONY : pregame_ritual.c.o
-
-pregame_ritual.i: pregame_ritual.c.i
-
-.PHONY : pregame_ritual.i
-
-# target to preprocess a source file
-pregame_ritual.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pregame_ritual.c.i
-.PHONY : pregame_ritual.c.i
-
-pregame_ritual.s: pregame_ritual.c.s
-
-.PHONY : pregame_ritual.s
-
-# target to generate assembly for a file
-pregame_ritual.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pregame_ritual.c.s
-.PHONY : pregame_ritual.c.s
-
-request_separation.o: request_separation.c.o
-
-.PHONY : request_separation.o
+.PHONY : pwd.o
 
 # target to build an object file
-request_separation.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/request_separation.c.o
-.PHONY : request_separation.c.o
+pwd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pwd.c.o
+.PHONY : pwd.c.o
 
-request_separation.i: request_separation.c.i
+pwd.i: pwd.c.i
 
-.PHONY : request_separation.i
+.PHONY : pwd.i
 
 # target to preprocess a source file
-request_separation.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/request_separation.c.i
-.PHONY : request_separation.c.i
+pwd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pwd.c.i
+.PHONY : pwd.c.i
 
-request_separation.s: request_separation.c.s
+pwd.s: pwd.c.s
 
-.PHONY : request_separation.s
+.PHONY : pwd.s
 
 # target to generate assembly for a file
-request_separation.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/request_separation.c.s
-.PHONY : request_separation.c.s
+pwd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pwd.c.s
+.PHONY : pwd.c.s
 
-utils/bzero.o: utils/bzero.c.o
+srcs/first_circle_of_parsing.o: srcs/first_circle_of_parsing.c.o
 
-.PHONY : utils/bzero.o
+.PHONY : srcs/first_circle_of_parsing.o
 
 # target to build an object file
-utils/bzero.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/bzero.c.o
-.PHONY : utils/bzero.c.o
+srcs/first_circle_of_parsing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.o
+.PHONY : srcs/first_circle_of_parsing.c.o
 
-utils/bzero.i: utils/bzero.c.i
+srcs/first_circle_of_parsing.i: srcs/first_circle_of_parsing.c.i
 
-.PHONY : utils/bzero.i
+.PHONY : srcs/first_circle_of_parsing.i
 
 # target to preprocess a source file
-utils/bzero.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/bzero.c.i
-.PHONY : utils/bzero.c.i
+srcs/first_circle_of_parsing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.i
+.PHONY : srcs/first_circle_of_parsing.c.i
 
-utils/bzero.s: utils/bzero.c.s
+srcs/first_circle_of_parsing.s: srcs/first_circle_of_parsing.c.s
 
-.PHONY : utils/bzero.s
+.PHONY : srcs/first_circle_of_parsing.s
 
 # target to generate assembly for a file
-utils/bzero.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/bzero.c.s
-.PHONY : utils/bzero.c.s
+srcs/first_circle_of_parsing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.s
+.PHONY : srcs/first_circle_of_parsing.c.s
 
-utils/calloc.o: utils/calloc.c.o
+srcs/pregame_ritual.o: srcs/pregame_ritual.c.o
 
-.PHONY : utils/calloc.o
+.PHONY : srcs/pregame_ritual.o
 
 # target to build an object file
-utils/calloc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/calloc.c.o
-.PHONY : utils/calloc.c.o
+srcs/pregame_ritual.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o
+.PHONY : srcs/pregame_ritual.c.o
 
-utils/calloc.i: utils/calloc.c.i
+srcs/pregame_ritual.i: srcs/pregame_ritual.c.i
 
-.PHONY : utils/calloc.i
+.PHONY : srcs/pregame_ritual.i
 
 # target to preprocess a source file
-utils/calloc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/calloc.c.i
-.PHONY : utils/calloc.c.i
+srcs/pregame_ritual.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.i
+.PHONY : srcs/pregame_ritual.c.i
 
-utils/calloc.s: utils/calloc.c.s
+srcs/pregame_ritual.s: srcs/pregame_ritual.c.s
 
-.PHONY : utils/calloc.s
+.PHONY : srcs/pregame_ritual.s
 
 # target to generate assembly for a file
-utils/calloc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/calloc.c.s
-.PHONY : utils/calloc.c.s
+srcs/pregame_ritual.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.s
+.PHONY : srcs/pregame_ritual.c.s
 
-utils/flags_shutting_up.o: utils/flags_shutting_up.c.o
+srcs/request_separation.o: srcs/request_separation.c.o
 
-.PHONY : utils/flags_shutting_up.o
+.PHONY : srcs/request_separation.o
 
 # target to build an object file
-utils/flags_shutting_up.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.o
-.PHONY : utils/flags_shutting_up.c.o
+srcs/request_separation.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/request_separation.c.o
+.PHONY : srcs/request_separation.c.o
 
-utils/flags_shutting_up.i: utils/flags_shutting_up.c.i
+srcs/request_separation.i: srcs/request_separation.c.i
 
-.PHONY : utils/flags_shutting_up.i
+.PHONY : srcs/request_separation.i
 
 # target to preprocess a source file
-utils/flags_shutting_up.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.i
-.PHONY : utils/flags_shutting_up.c.i
+srcs/request_separation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/request_separation.c.i
+.PHONY : srcs/request_separation.c.i
 
-utils/flags_shutting_up.s: utils/flags_shutting_up.c.s
+srcs/request_separation.s: srcs/request_separation.c.s
 
-.PHONY : utils/flags_shutting_up.s
+.PHONY : srcs/request_separation.s
 
 # target to generate assembly for a file
-utils/flags_shutting_up.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.s
-.PHONY : utils/flags_shutting_up.c.s
+srcs/request_separation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/request_separation.c.s
+.PHONY : srcs/request_separation.c.s
 
-utils/gnl.o: utils/gnl.c.o
+srcs/signal_handling.o: srcs/signal_handling.c.o
 
-.PHONY : utils/gnl.o
+.PHONY : srcs/signal_handling.o
 
 # target to build an object file
-utils/gnl.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/gnl.c.o
-.PHONY : utils/gnl.c.o
+srcs/signal_handling.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/signal_handling.c.o
+.PHONY : srcs/signal_handling.c.o
 
-utils/gnl.i: utils/gnl.c.i
+srcs/signal_handling.i: srcs/signal_handling.c.i
 
-.PHONY : utils/gnl.i
+.PHONY : srcs/signal_handling.i
 
 # target to preprocess a source file
-utils/gnl.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/gnl.c.i
-.PHONY : utils/gnl.c.i
+srcs/signal_handling.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/signal_handling.c.i
+.PHONY : srcs/signal_handling.c.i
 
-utils/gnl.s: utils/gnl.c.s
+srcs/signal_handling.s: srcs/signal_handling.c.s
 
-.PHONY : utils/gnl.s
+.PHONY : srcs/signal_handling.s
 
 # target to generate assembly for a file
-utils/gnl.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/gnl.c.s
-.PHONY : utils/gnl.c.s
+srcs/signal_handling.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/signal_handling.c.s
+.PHONY : srcs/signal_handling.c.s
 
-utils/is_shielded.o: utils/is_shielded.c.o
+srcs/utils/bzero.o: srcs/utils/bzero.c.o
 
-.PHONY : utils/is_shielded.o
+.PHONY : srcs/utils/bzero.o
 
 # target to build an object file
-utils/is_shielded.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/is_shielded.c.o
-.PHONY : utils/is_shielded.c.o
+srcs/utils/bzero.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/bzero.c.o
+.PHONY : srcs/utils/bzero.c.o
 
-utils/is_shielded.i: utils/is_shielded.c.i
+srcs/utils/bzero.i: srcs/utils/bzero.c.i
 
-.PHONY : utils/is_shielded.i
+.PHONY : srcs/utils/bzero.i
 
 # target to preprocess a source file
-utils/is_shielded.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/is_shielded.c.i
-.PHONY : utils/is_shielded.c.i
+srcs/utils/bzero.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/bzero.c.i
+.PHONY : srcs/utils/bzero.c.i
 
-utils/is_shielded.s: utils/is_shielded.c.s
+srcs/utils/bzero.s: srcs/utils/bzero.c.s
 
-.PHONY : utils/is_shielded.s
+.PHONY : srcs/utils/bzero.s
 
 # target to generate assembly for a file
-utils/is_shielded.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/is_shielded.c.s
-.PHONY : utils/is_shielded.c.s
+srcs/utils/bzero.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/bzero.c.s
+.PHONY : srcs/utils/bzero.c.s
 
-utils/is_special_symbol.o: utils/is_special_symbol.c.o
+srcs/utils/calloc.o: srcs/utils/calloc.c.o
 
-.PHONY : utils/is_special_symbol.o
+.PHONY : srcs/utils/calloc.o
 
 # target to build an object file
-utils/is_special_symbol.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/is_special_symbol.c.o
-.PHONY : utils/is_special_symbol.c.o
+srcs/utils/calloc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/calloc.c.o
+.PHONY : srcs/utils/calloc.c.o
 
-utils/is_special_symbol.i: utils/is_special_symbol.c.i
+srcs/utils/calloc.i: srcs/utils/calloc.c.i
 
-.PHONY : utils/is_special_symbol.i
+.PHONY : srcs/utils/calloc.i
 
 # target to preprocess a source file
-utils/is_special_symbol.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/is_special_symbol.c.i
-.PHONY : utils/is_special_symbol.c.i
+srcs/utils/calloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/calloc.c.i
+.PHONY : srcs/utils/calloc.c.i
 
-utils/is_special_symbol.s: utils/is_special_symbol.c.s
+srcs/utils/calloc.s: srcs/utils/calloc.c.s
 
-.PHONY : utils/is_special_symbol.s
+.PHONY : srcs/utils/calloc.s
 
 # target to generate assembly for a file
-utils/is_special_symbol.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/is_special_symbol.c.s
-.PHONY : utils/is_special_symbol.c.s
+srcs/utils/calloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/calloc.c.s
+.PHONY : srcs/utils/calloc.c.s
 
-utils/split.o: utils/split.c.o
+srcs/utils/flags_shutting_up.o: srcs/utils/flags_shutting_up.c.o
 
-.PHONY : utils/split.o
+.PHONY : srcs/utils/flags_shutting_up.o
 
 # target to build an object file
-utils/split.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/split.c.o
-.PHONY : utils/split.c.o
+srcs/utils/flags_shutting_up.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.o
+.PHONY : srcs/utils/flags_shutting_up.c.o
 
-utils/split.i: utils/split.c.i
+srcs/utils/flags_shutting_up.i: srcs/utils/flags_shutting_up.c.i
 
-.PHONY : utils/split.i
+.PHONY : srcs/utils/flags_shutting_up.i
 
 # target to preprocess a source file
-utils/split.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/split.c.i
-.PHONY : utils/split.c.i
+srcs/utils/flags_shutting_up.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.i
+.PHONY : srcs/utils/flags_shutting_up.c.i
 
-utils/split.s: utils/split.c.s
+srcs/utils/flags_shutting_up.s: srcs/utils/flags_shutting_up.c.s
 
-.PHONY : utils/split.s
+.PHONY : srcs/utils/flags_shutting_up.s
 
 # target to generate assembly for a file
-utils/split.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/split.c.s
-.PHONY : utils/split.c.s
+srcs/utils/flags_shutting_up.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.s
+.PHONY : srcs/utils/flags_shutting_up.c.s
 
-utils/strcmp.o: utils/strcmp.c.o
+srcs/utils/gnl.o: srcs/utils/gnl.c.o
 
-.PHONY : utils/strcmp.o
+.PHONY : srcs/utils/gnl.o
 
 # target to build an object file
-utils/strcmp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strcmp.c.o
-.PHONY : utils/strcmp.c.o
+srcs/utils/gnl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/gnl.c.o
+.PHONY : srcs/utils/gnl.c.o
 
-utils/strcmp.i: utils/strcmp.c.i
+srcs/utils/gnl.i: srcs/utils/gnl.c.i
 
-.PHONY : utils/strcmp.i
+.PHONY : srcs/utils/gnl.i
 
 # target to preprocess a source file
-utils/strcmp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strcmp.c.i
-.PHONY : utils/strcmp.c.i
+srcs/utils/gnl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/gnl.c.i
+.PHONY : srcs/utils/gnl.c.i
 
-utils/strcmp.s: utils/strcmp.c.s
+srcs/utils/gnl.s: srcs/utils/gnl.c.s
 
-.PHONY : utils/strcmp.s
+.PHONY : srcs/utils/gnl.s
 
 # target to generate assembly for a file
-utils/strcmp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strcmp.c.s
-.PHONY : utils/strcmp.c.s
+srcs/utils/gnl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/gnl.c.s
+.PHONY : srcs/utils/gnl.c.s
 
-utils/strcpy.o: utils/strcpy.c.o
+srcs/utils/is_shielded.o: srcs/utils/is_shielded.c.o
 
-.PHONY : utils/strcpy.o
+.PHONY : srcs/utils/is_shielded.o
 
 # target to build an object file
-utils/strcpy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strcpy.c.o
-.PHONY : utils/strcpy.c.o
+srcs/utils/is_shielded.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.o
+.PHONY : srcs/utils/is_shielded.c.o
 
-utils/strcpy.i: utils/strcpy.c.i
+srcs/utils/is_shielded.i: srcs/utils/is_shielded.c.i
 
-.PHONY : utils/strcpy.i
+.PHONY : srcs/utils/is_shielded.i
 
 # target to preprocess a source file
-utils/strcpy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strcpy.c.i
-.PHONY : utils/strcpy.c.i
+srcs/utils/is_shielded.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.i
+.PHONY : srcs/utils/is_shielded.c.i
 
-utils/strcpy.s: utils/strcpy.c.s
+srcs/utils/is_shielded.s: srcs/utils/is_shielded.c.s
 
-.PHONY : utils/strcpy.s
+.PHONY : srcs/utils/is_shielded.s
 
 # target to generate assembly for a file
-utils/strcpy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strcpy.c.s
-.PHONY : utils/strcpy.c.s
+srcs/utils/is_shielded.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.s
+.PHONY : srcs/utils/is_shielded.c.s
 
-utils/strdup.o: utils/strdup.c.o
+srcs/utils/is_special_symbol.o: srcs/utils/is_special_symbol.c.o
 
-.PHONY : utils/strdup.o
+.PHONY : srcs/utils/is_special_symbol.o
 
 # target to build an object file
-utils/strdup.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strdup.c.o
-.PHONY : utils/strdup.c.o
+srcs/utils/is_special_symbol.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o
+.PHONY : srcs/utils/is_special_symbol.c.o
 
-utils/strdup.i: utils/strdup.c.i
+srcs/utils/is_special_symbol.i: srcs/utils/is_special_symbol.c.i
 
-.PHONY : utils/strdup.i
+.PHONY : srcs/utils/is_special_symbol.i
 
 # target to preprocess a source file
-utils/strdup.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strdup.c.i
-.PHONY : utils/strdup.c.i
+srcs/utils/is_special_symbol.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.i
+.PHONY : srcs/utils/is_special_symbol.c.i
 
-utils/strdup.s: utils/strdup.c.s
+srcs/utils/is_special_symbol.s: srcs/utils/is_special_symbol.c.s
 
-.PHONY : utils/strdup.s
+.PHONY : srcs/utils/is_special_symbol.s
 
 # target to generate assembly for a file
-utils/strdup.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strdup.c.s
-.PHONY : utils/strdup.c.s
+srcs/utils/is_special_symbol.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.s
+.PHONY : srcs/utils/is_special_symbol.c.s
 
-utils/strlcpy.o: utils/strlcpy.c.o
+srcs/utils/putchar.o: srcs/utils/putchar.c.o
 
-.PHONY : utils/strlcpy.o
+.PHONY : srcs/utils/putchar.o
 
 # target to build an object file
-utils/strlcpy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strlcpy.c.o
-.PHONY : utils/strlcpy.c.o
+srcs/utils/putchar.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/putchar.c.o
+.PHONY : srcs/utils/putchar.c.o
 
-utils/strlcpy.i: utils/strlcpy.c.i
+srcs/utils/putchar.i: srcs/utils/putchar.c.i
 
-.PHONY : utils/strlcpy.i
+.PHONY : srcs/utils/putchar.i
 
 # target to preprocess a source file
-utils/strlcpy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strlcpy.c.i
-.PHONY : utils/strlcpy.c.i
+srcs/utils/putchar.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/putchar.c.i
+.PHONY : srcs/utils/putchar.c.i
 
-utils/strlcpy.s: utils/strlcpy.c.s
+srcs/utils/putchar.s: srcs/utils/putchar.c.s
 
-.PHONY : utils/strlcpy.s
+.PHONY : srcs/utils/putchar.s
 
 # target to generate assembly for a file
-utils/strlcpy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strlcpy.c.s
-.PHONY : utils/strlcpy.c.s
+srcs/utils/putchar.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/putchar.c.s
+.PHONY : srcs/utils/putchar.c.s
 
-utils/strlen.o: utils/strlen.c.o
+srcs/utils/putendl.o: srcs/utils/putendl.c.o
 
-.PHONY : utils/strlen.o
+.PHONY : srcs/utils/putendl.o
 
 # target to build an object file
-utils/strlen.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strlen.c.o
-.PHONY : utils/strlen.c.o
+srcs/utils/putendl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/putendl.c.o
+.PHONY : srcs/utils/putendl.c.o
 
-utils/strlen.i: utils/strlen.c.i
+srcs/utils/putendl.i: srcs/utils/putendl.c.i
 
-.PHONY : utils/strlen.i
+.PHONY : srcs/utils/putendl.i
 
 # target to preprocess a source file
-utils/strlen.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strlen.c.i
-.PHONY : utils/strlen.c.i
+srcs/utils/putendl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/putendl.c.i
+.PHONY : srcs/utils/putendl.c.i
 
-utils/strlen.s: utils/strlen.c.s
+srcs/utils/putendl.s: srcs/utils/putendl.c.s
 
-.PHONY : utils/strlen.s
+.PHONY : srcs/utils/putendl.s
 
 # target to generate assembly for a file
-utils/strlen.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/strlen.c.s
-.PHONY : utils/strlen.c.s
+srcs/utils/putendl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/putendl.c.s
+.PHONY : srcs/utils/putendl.c.s
 
-utils/substr.o: utils/substr.c.o
+srcs/utils/putstr.o: srcs/utils/putstr.c.o
 
-.PHONY : utils/substr.o
+.PHONY : srcs/utils/putstr.o
 
 # target to build an object file
-utils/substr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/substr.c.o
-.PHONY : utils/substr.c.o
+srcs/utils/putstr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o
+.PHONY : srcs/utils/putstr.c.o
 
-utils/substr.i: utils/substr.c.i
+srcs/utils/putstr.i: srcs/utils/putstr.c.i
 
-.PHONY : utils/substr.i
+.PHONY : srcs/utils/putstr.i
 
 # target to preprocess a source file
-utils/substr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/substr.c.i
-.PHONY : utils/substr.c.i
+srcs/utils/putstr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/putstr.c.i
+.PHONY : srcs/utils/putstr.c.i
 
-utils/substr.s: utils/substr.c.s
+srcs/utils/putstr.s: srcs/utils/putstr.c.s
 
-.PHONY : utils/substr.s
+.PHONY : srcs/utils/putstr.s
 
 # target to generate assembly for a file
-utils/substr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/utils/substr.c.s
-.PHONY : utils/substr.c.s
+srcs/utils/putstr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/putstr.c.s
+.PHONY : srcs/utils/putstr.c.s
 
-work_with_environments.o: work_with_environments.c.o
+srcs/utils/split.o: srcs/utils/split.c.o
 
-.PHONY : work_with_environments.o
+.PHONY : srcs/utils/split.o
 
 # target to build an object file
-work_with_environments.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/work_with_environments.c.o
-.PHONY : work_with_environments.c.o
+srcs/utils/split.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/split.c.o
+.PHONY : srcs/utils/split.c.o
 
-work_with_environments.i: work_with_environments.c.i
+srcs/utils/split.i: srcs/utils/split.c.i
 
-.PHONY : work_with_environments.i
+.PHONY : srcs/utils/split.i
 
 # target to preprocess a source file
-work_with_environments.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/work_with_environments.c.i
-.PHONY : work_with_environments.c.i
+srcs/utils/split.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/split.c.i
+.PHONY : srcs/utils/split.c.i
 
-work_with_environments.s: work_with_environments.c.s
+srcs/utils/split.s: srcs/utils/split.c.s
 
-.PHONY : work_with_environments.s
+.PHONY : srcs/utils/split.s
 
 # target to generate assembly for a file
-work_with_environments.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/work_with_environments.c.s
-.PHONY : work_with_environments.c.s
+srcs/utils/split.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/split.c.s
+.PHONY : srcs/utils/split.c.s
+
+srcs/utils/strcmp.o: srcs/utils/strcmp.c.o
+
+.PHONY : srcs/utils/strcmp.o
+
+# target to build an object file
+srcs/utils/strcmp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o
+.PHONY : srcs/utils/strcmp.c.o
+
+srcs/utils/strcmp.i: srcs/utils/strcmp.c.i
+
+.PHONY : srcs/utils/strcmp.i
+
+# target to preprocess a source file
+srcs/utils/strcmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.i
+.PHONY : srcs/utils/strcmp.c.i
+
+srcs/utils/strcmp.s: srcs/utils/strcmp.c.s
+
+.PHONY : srcs/utils/strcmp.s
+
+# target to generate assembly for a file
+srcs/utils/strcmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.s
+.PHONY : srcs/utils/strcmp.c.s
+
+srcs/utils/strcpy.o: srcs/utils/strcpy.c.o
+
+.PHONY : srcs/utils/strcpy.o
+
+# target to build an object file
+srcs/utils/strcpy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o
+.PHONY : srcs/utils/strcpy.c.o
+
+srcs/utils/strcpy.i: srcs/utils/strcpy.c.i
+
+.PHONY : srcs/utils/strcpy.i
+
+# target to preprocess a source file
+srcs/utils/strcpy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.i
+.PHONY : srcs/utils/strcpy.c.i
+
+srcs/utils/strcpy.s: srcs/utils/strcpy.c.s
+
+.PHONY : srcs/utils/strcpy.s
+
+# target to generate assembly for a file
+srcs/utils/strcpy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.s
+.PHONY : srcs/utils/strcpy.c.s
+
+srcs/utils/strdup.o: srcs/utils/strdup.c.o
+
+.PHONY : srcs/utils/strdup.o
+
+# target to build an object file
+srcs/utils/strdup.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strdup.c.o
+.PHONY : srcs/utils/strdup.c.o
+
+srcs/utils/strdup.i: srcs/utils/strdup.c.i
+
+.PHONY : srcs/utils/strdup.i
+
+# target to preprocess a source file
+srcs/utils/strdup.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strdup.c.i
+.PHONY : srcs/utils/strdup.c.i
+
+srcs/utils/strdup.s: srcs/utils/strdup.c.s
+
+.PHONY : srcs/utils/strdup.s
+
+# target to generate assembly for a file
+srcs/utils/strdup.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strdup.c.s
+.PHONY : srcs/utils/strdup.c.s
+
+srcs/utils/strlcpy.o: srcs/utils/strlcpy.c.o
+
+.PHONY : srcs/utils/strlcpy.o
+
+# target to build an object file
+srcs/utils/strlcpy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o
+.PHONY : srcs/utils/strlcpy.c.o
+
+srcs/utils/strlcpy.i: srcs/utils/strlcpy.c.i
+
+.PHONY : srcs/utils/strlcpy.i
+
+# target to preprocess a source file
+srcs/utils/strlcpy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.i
+.PHONY : srcs/utils/strlcpy.c.i
+
+srcs/utils/strlcpy.s: srcs/utils/strlcpy.c.s
+
+.PHONY : srcs/utils/strlcpy.s
+
+# target to generate assembly for a file
+srcs/utils/strlcpy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.s
+.PHONY : srcs/utils/strlcpy.c.s
+
+srcs/utils/strlen.o: srcs/utils/strlen.c.o
+
+.PHONY : srcs/utils/strlen.o
+
+# target to build an object file
+srcs/utils/strlen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o
+.PHONY : srcs/utils/strlen.c.o
+
+srcs/utils/strlen.i: srcs/utils/strlen.c.i
+
+.PHONY : srcs/utils/strlen.i
+
+# target to preprocess a source file
+srcs/utils/strlen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlen.c.i
+.PHONY : srcs/utils/strlen.c.i
+
+srcs/utils/strlen.s: srcs/utils/strlen.c.s
+
+.PHONY : srcs/utils/strlen.s
+
+# target to generate assembly for a file
+srcs/utils/strlen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlen.c.s
+.PHONY : srcs/utils/strlen.c.s
+
+srcs/utils/substr.o: srcs/utils/substr.c.o
+
+.PHONY : srcs/utils/substr.o
+
+# target to build an object file
+srcs/utils/substr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/substr.c.o
+.PHONY : srcs/utils/substr.c.o
+
+srcs/utils/substr.i: srcs/utils/substr.c.i
+
+.PHONY : srcs/utils/substr.i
+
+# target to preprocess a source file
+srcs/utils/substr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/substr.c.i
+.PHONY : srcs/utils/substr.c.i
+
+srcs/utils/substr.s: srcs/utils/substr.c.s
+
+.PHONY : srcs/utils/substr.s
+
+# target to generate assembly for a file
+srcs/utils/substr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/substr.c.s
+.PHONY : srcs/utils/substr.c.s
+
+srcs/work_with_environments.o: srcs/work_with_environments.c.o
+
+.PHONY : srcs/work_with_environments.o
+
+# target to build an object file
+srcs/work_with_environments.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/work_with_environments.c.o
+.PHONY : srcs/work_with_environments.c.o
+
+srcs/work_with_environments.i: srcs/work_with_environments.c.i
+
+.PHONY : srcs/work_with_environments.i
+
+# target to preprocess a source file
+srcs/work_with_environments.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/work_with_environments.c.i
+.PHONY : srcs/work_with_environments.c.i
+
+srcs/work_with_environments.s: srcs/work_with_environments.c.s
+
+.PHONY : srcs/work_with_environments.s
+
+# target to generate assembly for a file
+srcs/work_with_environments.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/work_with_environments.c.s
+.PHONY : srcs/work_with_environments.c.s
 
 # Help Target
 help:
@@ -638,60 +800,78 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... another_shell"
-	@echo "... first_circle_of_parsing.o"
-	@echo "... first_circle_of_parsing.i"
-	@echo "... first_circle_of_parsing.s"
+	@echo "... env.o"
+	@echo "... env.i"
+	@echo "... env.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... pregame_ritual.o"
-	@echo "... pregame_ritual.i"
-	@echo "... pregame_ritual.s"
-	@echo "... request_separation.o"
-	@echo "... request_separation.i"
-	@echo "... request_separation.s"
-	@echo "... utils/bzero.o"
-	@echo "... utils/bzero.i"
-	@echo "... utils/bzero.s"
-	@echo "... utils/calloc.o"
-	@echo "... utils/calloc.i"
-	@echo "... utils/calloc.s"
-	@echo "... utils/flags_shutting_up.o"
-	@echo "... utils/flags_shutting_up.i"
-	@echo "... utils/flags_shutting_up.s"
-	@echo "... utils/gnl.o"
-	@echo "... utils/gnl.i"
-	@echo "... utils/gnl.s"
-	@echo "... utils/is_shielded.o"
-	@echo "... utils/is_shielded.i"
-	@echo "... utils/is_shielded.s"
-	@echo "... utils/is_special_symbol.o"
-	@echo "... utils/is_special_symbol.i"
-	@echo "... utils/is_special_symbol.s"
-	@echo "... utils/split.o"
-	@echo "... utils/split.i"
-	@echo "... utils/split.s"
-	@echo "... utils/strcmp.o"
-	@echo "... utils/strcmp.i"
-	@echo "... utils/strcmp.s"
-	@echo "... utils/strcpy.o"
-	@echo "... utils/strcpy.i"
-	@echo "... utils/strcpy.s"
-	@echo "... utils/strdup.o"
-	@echo "... utils/strdup.i"
-	@echo "... utils/strdup.s"
-	@echo "... utils/strlcpy.o"
-	@echo "... utils/strlcpy.i"
-	@echo "... utils/strlcpy.s"
-	@echo "... utils/strlen.o"
-	@echo "... utils/strlen.i"
-	@echo "... utils/strlen.s"
-	@echo "... utils/substr.o"
-	@echo "... utils/substr.i"
-	@echo "... utils/substr.s"
-	@echo "... work_with_environments.o"
-	@echo "... work_with_environments.i"
-	@echo "... work_with_environments.s"
+	@echo "... pwd.o"
+	@echo "... pwd.i"
+	@echo "... pwd.s"
+	@echo "... srcs/first_circle_of_parsing.o"
+	@echo "... srcs/first_circle_of_parsing.i"
+	@echo "... srcs/first_circle_of_parsing.s"
+	@echo "... srcs/pregame_ritual.o"
+	@echo "... srcs/pregame_ritual.i"
+	@echo "... srcs/pregame_ritual.s"
+	@echo "... srcs/request_separation.o"
+	@echo "... srcs/request_separation.i"
+	@echo "... srcs/request_separation.s"
+	@echo "... srcs/signal_handling.o"
+	@echo "... srcs/signal_handling.i"
+	@echo "... srcs/signal_handling.s"
+	@echo "... srcs/utils/bzero.o"
+	@echo "... srcs/utils/bzero.i"
+	@echo "... srcs/utils/bzero.s"
+	@echo "... srcs/utils/calloc.o"
+	@echo "... srcs/utils/calloc.i"
+	@echo "... srcs/utils/calloc.s"
+	@echo "... srcs/utils/flags_shutting_up.o"
+	@echo "... srcs/utils/flags_shutting_up.i"
+	@echo "... srcs/utils/flags_shutting_up.s"
+	@echo "... srcs/utils/gnl.o"
+	@echo "... srcs/utils/gnl.i"
+	@echo "... srcs/utils/gnl.s"
+	@echo "... srcs/utils/is_shielded.o"
+	@echo "... srcs/utils/is_shielded.i"
+	@echo "... srcs/utils/is_shielded.s"
+	@echo "... srcs/utils/is_special_symbol.o"
+	@echo "... srcs/utils/is_special_symbol.i"
+	@echo "... srcs/utils/is_special_symbol.s"
+	@echo "... srcs/utils/putchar.o"
+	@echo "... srcs/utils/putchar.i"
+	@echo "... srcs/utils/putchar.s"
+	@echo "... srcs/utils/putendl.o"
+	@echo "... srcs/utils/putendl.i"
+	@echo "... srcs/utils/putendl.s"
+	@echo "... srcs/utils/putstr.o"
+	@echo "... srcs/utils/putstr.i"
+	@echo "... srcs/utils/putstr.s"
+	@echo "... srcs/utils/split.o"
+	@echo "... srcs/utils/split.i"
+	@echo "... srcs/utils/split.s"
+	@echo "... srcs/utils/strcmp.o"
+	@echo "... srcs/utils/strcmp.i"
+	@echo "... srcs/utils/strcmp.s"
+	@echo "... srcs/utils/strcpy.o"
+	@echo "... srcs/utils/strcpy.i"
+	@echo "... srcs/utils/strcpy.s"
+	@echo "... srcs/utils/strdup.o"
+	@echo "... srcs/utils/strdup.i"
+	@echo "... srcs/utils/strdup.s"
+	@echo "... srcs/utils/strlcpy.o"
+	@echo "... srcs/utils/strlcpy.i"
+	@echo "... srcs/utils/strlcpy.s"
+	@echo "... srcs/utils/strlen.o"
+	@echo "... srcs/utils/strlen.i"
+	@echo "... srcs/utils/strlen.s"
+	@echo "... srcs/utils/substr.o"
+	@echo "... srcs/utils/substr.i"
+	@echo "... srcs/utils/substr.s"
+	@echo "... srcs/work_with_environments.o"
+	@echo "... srcs/work_with_environments.i"
+	@echo "... srcs/work_with_environments.s"
 .PHONY : help
 
 

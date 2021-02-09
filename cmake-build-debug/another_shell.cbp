@@ -80,61 +80,79 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/gdoge/another_shell/first_circle_of_parsing.c">
+		<Unit filename="/Users/gdoge/another_shell/env.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/includes/minishell.h">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/main.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/minishell.h">
+		<Unit filename="/Users/gdoge/another_shell/pwd.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/pregame_ritual.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/first_circle_of_parsing.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/request_separation.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/pregame_ritual.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/bzero.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/request_separation.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/calloc.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/signal_handling.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/flags_shutting_up.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/bzero.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/gnl.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/calloc.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/is_shielded.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/flags_shutting_up.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/is_special_symbol.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/gnl.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/split.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/is_shielded.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/strcmp.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/is_special_symbol.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/strcpy.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/putchar.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/strdup.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/putendl.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/strlcpy.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/putstr.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/strlen.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/split.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/utils/substr.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strcmp.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/work_with_environments.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strcpy.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strdup.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strlcpy.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strlen.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/substr.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/work_with_environments.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/CMakeLists.txt">

@@ -54,10 +54,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -90,272 +90,362 @@ CMakeFiles/another_shell.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/main.c -o CMakeFiles/another_shell.dir/main.c.s
 
-CMakeFiles/another_shell.dir/utils/strlen.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/strlen.c.o: ../utils/strlen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/another_shell.dir/utils/strlen.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/strlen.c.o   -c /Users/gdoge/another_shell/utils/strlen.c
+CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o: ../srcs/utils/strlen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o   -c /Users/gdoge/another_shell/srcs/utils/strlen.c
 
-CMakeFiles/another_shell.dir/utils/strlen.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/strlen.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/strlen.c > CMakeFiles/another_shell.dir/utils/strlen.c.i
+CMakeFiles/another_shell.dir/srcs/utils/strlen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/strlen.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/strlen.c > CMakeFiles/another_shell.dir/srcs/utils/strlen.c.i
 
-CMakeFiles/another_shell.dir/utils/strlen.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/strlen.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/strlen.c -o CMakeFiles/another_shell.dir/utils/strlen.c.s
+CMakeFiles/another_shell.dir/srcs/utils/strlen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/strlen.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/strlen.c -o CMakeFiles/another_shell.dir/srcs/utils/strlen.c.s
 
-CMakeFiles/another_shell.dir/utils/split.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/split.c.o: ../utils/split.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/another_shell.dir/utils/split.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/split.c.o   -c /Users/gdoge/another_shell/utils/split.c
+CMakeFiles/another_shell.dir/srcs/utils/split.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/split.c.o: ../srcs/utils/split.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/another_shell.dir/srcs/utils/split.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/split.c.o   -c /Users/gdoge/another_shell/srcs/utils/split.c
 
-CMakeFiles/another_shell.dir/utils/split.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/split.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/split.c > CMakeFiles/another_shell.dir/utils/split.c.i
+CMakeFiles/another_shell.dir/srcs/utils/split.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/split.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/split.c > CMakeFiles/another_shell.dir/srcs/utils/split.c.i
 
-CMakeFiles/another_shell.dir/utils/split.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/split.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/split.c -o CMakeFiles/another_shell.dir/utils/split.c.s
+CMakeFiles/another_shell.dir/srcs/utils/split.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/split.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/split.c -o CMakeFiles/another_shell.dir/srcs/utils/split.c.s
 
-CMakeFiles/another_shell.dir/utils/calloc.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/calloc.c.o: ../utils/calloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/another_shell.dir/utils/calloc.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/calloc.c.o   -c /Users/gdoge/another_shell/utils/calloc.c
+CMakeFiles/another_shell.dir/srcs/utils/calloc.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/calloc.c.o: ../srcs/utils/calloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/another_shell.dir/srcs/utils/calloc.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/calloc.c.o   -c /Users/gdoge/another_shell/srcs/utils/calloc.c
 
-CMakeFiles/another_shell.dir/utils/calloc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/calloc.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/calloc.c > CMakeFiles/another_shell.dir/utils/calloc.c.i
+CMakeFiles/another_shell.dir/srcs/utils/calloc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/calloc.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/calloc.c > CMakeFiles/another_shell.dir/srcs/utils/calloc.c.i
 
-CMakeFiles/another_shell.dir/utils/calloc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/calloc.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/calloc.c -o CMakeFiles/another_shell.dir/utils/calloc.c.s
+CMakeFiles/another_shell.dir/srcs/utils/calloc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/calloc.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/calloc.c -o CMakeFiles/another_shell.dir/srcs/utils/calloc.c.s
 
-CMakeFiles/another_shell.dir/utils/bzero.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/bzero.c.o: ../utils/bzero.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/another_shell.dir/utils/bzero.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/bzero.c.o   -c /Users/gdoge/another_shell/utils/bzero.c
+CMakeFiles/another_shell.dir/srcs/utils/bzero.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/bzero.c.o: ../srcs/utils/bzero.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/another_shell.dir/srcs/utils/bzero.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/bzero.c.o   -c /Users/gdoge/another_shell/srcs/utils/bzero.c
 
-CMakeFiles/another_shell.dir/utils/bzero.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/bzero.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/bzero.c > CMakeFiles/another_shell.dir/utils/bzero.c.i
+CMakeFiles/another_shell.dir/srcs/utils/bzero.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/bzero.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/bzero.c > CMakeFiles/another_shell.dir/srcs/utils/bzero.c.i
 
-CMakeFiles/another_shell.dir/utils/bzero.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/bzero.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/bzero.c -o CMakeFiles/another_shell.dir/utils/bzero.c.s
+CMakeFiles/another_shell.dir/srcs/utils/bzero.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/bzero.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/bzero.c -o CMakeFiles/another_shell.dir/srcs/utils/bzero.c.s
 
-CMakeFiles/another_shell.dir/utils/substr.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/substr.c.o: ../utils/substr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/another_shell.dir/utils/substr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/substr.c.o   -c /Users/gdoge/another_shell/utils/substr.c
+CMakeFiles/another_shell.dir/srcs/utils/substr.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/substr.c.o: ../srcs/utils/substr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/another_shell.dir/srcs/utils/substr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/substr.c.o   -c /Users/gdoge/another_shell/srcs/utils/substr.c
 
-CMakeFiles/another_shell.dir/utils/substr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/substr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/substr.c > CMakeFiles/another_shell.dir/utils/substr.c.i
+CMakeFiles/another_shell.dir/srcs/utils/substr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/substr.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/substr.c > CMakeFiles/another_shell.dir/srcs/utils/substr.c.i
 
-CMakeFiles/another_shell.dir/utils/substr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/substr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/substr.c -o CMakeFiles/another_shell.dir/utils/substr.c.s
+CMakeFiles/another_shell.dir/srcs/utils/substr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/substr.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/substr.c -o CMakeFiles/another_shell.dir/srcs/utils/substr.c.s
 
-CMakeFiles/another_shell.dir/utils/strdup.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/strdup.c.o: ../utils/strdup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/another_shell.dir/utils/strdup.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/strdup.c.o   -c /Users/gdoge/another_shell/utils/strdup.c
+CMakeFiles/another_shell.dir/srcs/utils/strdup.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/strdup.c.o: ../srcs/utils/strdup.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/another_shell.dir/srcs/utils/strdup.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/strdup.c.o   -c /Users/gdoge/another_shell/srcs/utils/strdup.c
 
-CMakeFiles/another_shell.dir/utils/strdup.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/strdup.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/strdup.c > CMakeFiles/another_shell.dir/utils/strdup.c.i
+CMakeFiles/another_shell.dir/srcs/utils/strdup.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/strdup.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/strdup.c > CMakeFiles/another_shell.dir/srcs/utils/strdup.c.i
 
-CMakeFiles/another_shell.dir/utils/strdup.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/strdup.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/strdup.c -o CMakeFiles/another_shell.dir/utils/strdup.c.s
+CMakeFiles/another_shell.dir/srcs/utils/strdup.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/strdup.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/strdup.c -o CMakeFiles/another_shell.dir/srcs/utils/strdup.c.s
 
-CMakeFiles/another_shell.dir/utils/strlcpy.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/strlcpy.c.o: ../utils/strlcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/another_shell.dir/utils/strlcpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/strlcpy.c.o   -c /Users/gdoge/another_shell/utils/strlcpy.c
+CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o: ../srcs/utils/strlcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o   -c /Users/gdoge/another_shell/srcs/utils/strlcpy.c
 
-CMakeFiles/another_shell.dir/utils/strlcpy.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/strlcpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/strlcpy.c > CMakeFiles/another_shell.dir/utils/strlcpy.c.i
+CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/strlcpy.c > CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.i
 
-CMakeFiles/another_shell.dir/utils/strlcpy.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/strlcpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/strlcpy.c -o CMakeFiles/another_shell.dir/utils/strlcpy.c.s
+CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/strlcpy.c -o CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.s
 
-CMakeFiles/another_shell.dir/utils/strcmp.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/strcmp.c.o: ../utils/strcmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/another_shell.dir/utils/strcmp.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/strcmp.c.o   -c /Users/gdoge/another_shell/utils/strcmp.c
+CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o: ../srcs/utils/strcmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o   -c /Users/gdoge/another_shell/srcs/utils/strcmp.c
 
-CMakeFiles/another_shell.dir/utils/strcmp.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/strcmp.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/strcmp.c > CMakeFiles/another_shell.dir/utils/strcmp.c.i
+CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/strcmp.c > CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.i
 
-CMakeFiles/another_shell.dir/utils/strcmp.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/strcmp.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/strcmp.c -o CMakeFiles/another_shell.dir/utils/strcmp.c.s
+CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/strcmp.c -o CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.s
 
-CMakeFiles/another_shell.dir/work_with_environments.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/work_with_environments.c.o: ../work_with_environments.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/another_shell.dir/work_with_environments.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/work_with_environments.c.o   -c /Users/gdoge/another_shell/work_with_environments.c
+CMakeFiles/another_shell.dir/srcs/work_with_environments.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/work_with_environments.c.o: ../srcs/work_with_environments.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/another_shell.dir/srcs/work_with_environments.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/work_with_environments.c.o   -c /Users/gdoge/another_shell/srcs/work_with_environments.c
 
-CMakeFiles/another_shell.dir/work_with_environments.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/work_with_environments.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/work_with_environments.c > CMakeFiles/another_shell.dir/work_with_environments.c.i
+CMakeFiles/another_shell.dir/srcs/work_with_environments.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/work_with_environments.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/work_with_environments.c > CMakeFiles/another_shell.dir/srcs/work_with_environments.c.i
 
-CMakeFiles/another_shell.dir/work_with_environments.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/work_with_environments.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/work_with_environments.c -o CMakeFiles/another_shell.dir/work_with_environments.c.s
+CMakeFiles/another_shell.dir/srcs/work_with_environments.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/work_with_environments.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/work_with_environments.c -o CMakeFiles/another_shell.dir/srcs/work_with_environments.c.s
 
-CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.o: ../utils/flags_shutting_up.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.o   -c /Users/gdoge/another_shell/utils/flags_shutting_up.c
+CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.o: ../srcs/utils/flags_shutting_up.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.o   -c /Users/gdoge/another_shell/srcs/utils/flags_shutting_up.c
 
-CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/flags_shutting_up.c > CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.i
+CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/flags_shutting_up.c > CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.i
 
-CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/flags_shutting_up.c -o CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.s
+CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/flags_shutting_up.c -o CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.s
 
-CMakeFiles/another_shell.dir/utils/gnl.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/gnl.c.o: ../utils/gnl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/another_shell.dir/utils/gnl.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/gnl.c.o   -c /Users/gdoge/another_shell/utils/gnl.c
+CMakeFiles/another_shell.dir/srcs/utils/gnl.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/gnl.c.o: ../srcs/utils/gnl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/another_shell.dir/srcs/utils/gnl.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/gnl.c.o   -c /Users/gdoge/another_shell/srcs/utils/gnl.c
 
-CMakeFiles/another_shell.dir/utils/gnl.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/gnl.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/gnl.c > CMakeFiles/another_shell.dir/utils/gnl.c.i
+CMakeFiles/another_shell.dir/srcs/utils/gnl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/gnl.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/gnl.c > CMakeFiles/another_shell.dir/srcs/utils/gnl.c.i
 
-CMakeFiles/another_shell.dir/utils/gnl.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/gnl.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/gnl.c -o CMakeFiles/another_shell.dir/utils/gnl.c.s
+CMakeFiles/another_shell.dir/srcs/utils/gnl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/gnl.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/gnl.c -o CMakeFiles/another_shell.dir/srcs/utils/gnl.c.s
 
-CMakeFiles/another_shell.dir/utils/strcpy.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/strcpy.c.o: ../utils/strcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/another_shell.dir/utils/strcpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/strcpy.c.o   -c /Users/gdoge/another_shell/utils/strcpy.c
+CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o: ../srcs/utils/strcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o   -c /Users/gdoge/another_shell/srcs/utils/strcpy.c
 
-CMakeFiles/another_shell.dir/utils/strcpy.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/strcpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/strcpy.c > CMakeFiles/another_shell.dir/utils/strcpy.c.i
+CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/strcpy.c > CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.i
 
-CMakeFiles/another_shell.dir/utils/strcpy.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/strcpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/strcpy.c -o CMakeFiles/another_shell.dir/utils/strcpy.c.s
+CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/strcpy.c -o CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.s
 
-CMakeFiles/another_shell.dir/utils/is_shielded.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/is_shielded.c.o: ../utils/is_shielded.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/another_shell.dir/utils/is_shielded.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/is_shielded.c.o   -c /Users/gdoge/another_shell/utils/is_shielded.c
+CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.o: ../srcs/utils/is_shielded.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.o   -c /Users/gdoge/another_shell/srcs/utils/is_shielded.c
 
-CMakeFiles/another_shell.dir/utils/is_shielded.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/is_shielded.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/is_shielded.c > CMakeFiles/another_shell.dir/utils/is_shielded.c.i
+CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/is_shielded.c > CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.i
 
-CMakeFiles/another_shell.dir/utils/is_shielded.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/is_shielded.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/is_shielded.c -o CMakeFiles/another_shell.dir/utils/is_shielded.c.s
+CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/is_shielded.c -o CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.s
 
-CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o: ../first_circle_of_parsing.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o   -c /Users/gdoge/another_shell/first_circle_of_parsing.c
+CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.o: ../srcs/first_circle_of_parsing.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.o   -c /Users/gdoge/another_shell/srcs/first_circle_of_parsing.c
 
-CMakeFiles/another_shell.dir/first_circle_of_parsing.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/first_circle_of_parsing.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/first_circle_of_parsing.c > CMakeFiles/another_shell.dir/first_circle_of_parsing.c.i
+CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/first_circle_of_parsing.c > CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.i
 
-CMakeFiles/another_shell.dir/first_circle_of_parsing.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/first_circle_of_parsing.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/first_circle_of_parsing.c -o CMakeFiles/another_shell.dir/first_circle_of_parsing.c.s
+CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/first_circle_of_parsing.c -o CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.s
 
-CMakeFiles/another_shell.dir/utils/is_special_symbol.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/utils/is_special_symbol.c.o: ../utils/is_special_symbol.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/another_shell.dir/utils/is_special_symbol.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/utils/is_special_symbol.c.o   -c /Users/gdoge/another_shell/utils/is_special_symbol.c
+CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o: ../srcs/utils/is_special_symbol.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o   -c /Users/gdoge/another_shell/srcs/utils/is_special_symbol.c
 
-CMakeFiles/another_shell.dir/utils/is_special_symbol.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/utils/is_special_symbol.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/utils/is_special_symbol.c > CMakeFiles/another_shell.dir/utils/is_special_symbol.c.i
+CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/is_special_symbol.c > CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.i
 
-CMakeFiles/another_shell.dir/utils/is_special_symbol.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/utils/is_special_symbol.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/utils/is_special_symbol.c -o CMakeFiles/another_shell.dir/utils/is_special_symbol.c.s
+CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/is_special_symbol.c -o CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.s
 
-CMakeFiles/another_shell.dir/pregame_ritual.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/pregame_ritual.c.o: ../pregame_ritual.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/another_shell.dir/pregame_ritual.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/pregame_ritual.c.o   -c /Users/gdoge/another_shell/pregame_ritual.c
+CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o: ../srcs/pregame_ritual.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o   -c /Users/gdoge/another_shell/srcs/pregame_ritual.c
 
-CMakeFiles/another_shell.dir/pregame_ritual.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/pregame_ritual.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/pregame_ritual.c > CMakeFiles/another_shell.dir/pregame_ritual.c.i
+CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/pregame_ritual.c > CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.i
 
-CMakeFiles/another_shell.dir/pregame_ritual.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/pregame_ritual.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/pregame_ritual.c -o CMakeFiles/another_shell.dir/pregame_ritual.c.s
+CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/pregame_ritual.c -o CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.s
 
-CMakeFiles/another_shell.dir/request_separation.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/request_separation.c.o: ../request_separation.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/another_shell.dir/request_separation.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/request_separation.c.o   -c /Users/gdoge/another_shell/request_separation.c
+CMakeFiles/another_shell.dir/srcs/request_separation.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/request_separation.c.o: ../srcs/request_separation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/another_shell.dir/srcs/request_separation.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/request_separation.c.o   -c /Users/gdoge/another_shell/srcs/request_separation.c
 
-CMakeFiles/another_shell.dir/request_separation.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/request_separation.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/request_separation.c > CMakeFiles/another_shell.dir/request_separation.c.i
+CMakeFiles/another_shell.dir/srcs/request_separation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/request_separation.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/request_separation.c > CMakeFiles/another_shell.dir/srcs/request_separation.c.i
 
-CMakeFiles/another_shell.dir/request_separation.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/request_separation.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/request_separation.c -o CMakeFiles/another_shell.dir/request_separation.c.s
+CMakeFiles/another_shell.dir/srcs/request_separation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/request_separation.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/request_separation.c -o CMakeFiles/another_shell.dir/srcs/request_separation.c.s
+
+CMakeFiles/another_shell.dir/env.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/env.c.o: ../env.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/another_shell.dir/env.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/env.c.o   -c /Users/gdoge/another_shell/env.c
+
+CMakeFiles/another_shell.dir/env.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/env.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/env.c > CMakeFiles/another_shell.dir/env.c.i
+
+CMakeFiles/another_shell.dir/env.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/env.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/env.c -o CMakeFiles/another_shell.dir/env.c.s
+
+CMakeFiles/another_shell.dir/pwd.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/pwd.c.o: ../pwd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/another_shell.dir/pwd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/pwd.c.o   -c /Users/gdoge/another_shell/pwd.c
+
+CMakeFiles/another_shell.dir/pwd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/pwd.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/pwd.c > CMakeFiles/another_shell.dir/pwd.c.i
+
+CMakeFiles/another_shell.dir/pwd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/pwd.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/pwd.c -o CMakeFiles/another_shell.dir/pwd.c.s
+
+CMakeFiles/another_shell.dir/srcs/utils/putchar.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/putchar.c.o: ../srcs/utils/putchar.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/another_shell.dir/srcs/utils/putchar.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/putchar.c.o   -c /Users/gdoge/another_shell/srcs/utils/putchar.c
+
+CMakeFiles/another_shell.dir/srcs/utils/putchar.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/putchar.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/putchar.c > CMakeFiles/another_shell.dir/srcs/utils/putchar.c.i
+
+CMakeFiles/another_shell.dir/srcs/utils/putchar.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/putchar.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/putchar.c -o CMakeFiles/another_shell.dir/srcs/utils/putchar.c.s
+
+CMakeFiles/another_shell.dir/srcs/utils/putendl.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/putendl.c.o: ../srcs/utils/putendl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/another_shell.dir/srcs/utils/putendl.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/putendl.c.o   -c /Users/gdoge/another_shell/srcs/utils/putendl.c
+
+CMakeFiles/another_shell.dir/srcs/utils/putendl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/putendl.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/putendl.c > CMakeFiles/another_shell.dir/srcs/utils/putendl.c.i
+
+CMakeFiles/another_shell.dir/srcs/utils/putendl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/putendl.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/putendl.c -o CMakeFiles/another_shell.dir/srcs/utils/putendl.c.s
+
+CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o: ../srcs/utils/putstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o   -c /Users/gdoge/another_shell/srcs/utils/putstr.c
+
+CMakeFiles/another_shell.dir/srcs/utils/putstr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/utils/putstr.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/utils/putstr.c > CMakeFiles/another_shell.dir/srcs/utils/putstr.c.i
+
+CMakeFiles/another_shell.dir/srcs/utils/putstr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/putstr.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/putstr.c -o CMakeFiles/another_shell.dir/srcs/utils/putstr.c.s
+
+CMakeFiles/another_shell.dir/srcs/signal_handling.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/signal_handling.c.o: ../srcs/signal_handling.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/another_shell.dir/srcs/signal_handling.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/signal_handling.c.o   -c /Users/gdoge/another_shell/srcs/signal_handling.c
+
+CMakeFiles/another_shell.dir/srcs/signal_handling.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/signal_handling.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/signal_handling.c > CMakeFiles/another_shell.dir/srcs/signal_handling.c.i
+
+CMakeFiles/another_shell.dir/srcs/signal_handling.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/signal_handling.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/signal_handling.c -o CMakeFiles/another_shell.dir/srcs/signal_handling.c.s
 
 # Object files for target another_shell
 another_shell_OBJECTS = \
 "CMakeFiles/another_shell.dir/main.c.o" \
-"CMakeFiles/another_shell.dir/utils/strlen.c.o" \
-"CMakeFiles/another_shell.dir/utils/split.c.o" \
-"CMakeFiles/another_shell.dir/utils/calloc.c.o" \
-"CMakeFiles/another_shell.dir/utils/bzero.c.o" \
-"CMakeFiles/another_shell.dir/utils/substr.c.o" \
-"CMakeFiles/another_shell.dir/utils/strdup.c.o" \
-"CMakeFiles/another_shell.dir/utils/strlcpy.c.o" \
-"CMakeFiles/another_shell.dir/utils/strcmp.c.o" \
-"CMakeFiles/another_shell.dir/work_with_environments.c.o" \
-"CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.o" \
-"CMakeFiles/another_shell.dir/utils/gnl.c.o" \
-"CMakeFiles/another_shell.dir/utils/strcpy.c.o" \
-"CMakeFiles/another_shell.dir/utils/is_shielded.c.o" \
-"CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o" \
-"CMakeFiles/another_shell.dir/utils/is_special_symbol.c.o" \
-"CMakeFiles/another_shell.dir/pregame_ritual.c.o" \
-"CMakeFiles/another_shell.dir/request_separation.c.o"
+"CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/split.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/calloc.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/bzero.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/substr.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/strdup.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o" \
+"CMakeFiles/another_shell.dir/srcs/work_with_environments.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/gnl.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.o" \
+"CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o" \
+"CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o" \
+"CMakeFiles/another_shell.dir/srcs/request_separation.c.o" \
+"CMakeFiles/another_shell.dir/env.c.o" \
+"CMakeFiles/another_shell.dir/pwd.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/putchar.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/putendl.c.o" \
+"CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o" \
+"CMakeFiles/another_shell.dir/srcs/signal_handling.c.o"
 
 # External object files for target another_shell
 another_shell_EXTERNAL_OBJECTS =
 
 another_shell: CMakeFiles/another_shell.dir/main.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/strlen.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/split.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/calloc.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/bzero.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/substr.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/strdup.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/strlcpy.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/strcmp.c.o
-another_shell: CMakeFiles/another_shell.dir/work_with_environments.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/flags_shutting_up.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/gnl.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/strcpy.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/is_shielded.c.o
-another_shell: CMakeFiles/another_shell.dir/first_circle_of_parsing.c.o
-another_shell: CMakeFiles/another_shell.dir/utils/is_special_symbol.c.o
-another_shell: CMakeFiles/another_shell.dir/pregame_ritual.c.o
-another_shell: CMakeFiles/another_shell.dir/request_separation.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/split.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/calloc.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/bzero.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/substr.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/strdup.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/work_with_environments.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/gnl.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/request_separation.c.o
+another_shell: CMakeFiles/another_shell.dir/env.c.o
+another_shell: CMakeFiles/another_shell.dir/pwd.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/putchar.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/putendl.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/signal_handling.c.o
 another_shell: CMakeFiles/another_shell.dir/build.make
 another_shell: CMakeFiles/another_shell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking C executable another_shell"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking C executable another_shell"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/another_shell.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
