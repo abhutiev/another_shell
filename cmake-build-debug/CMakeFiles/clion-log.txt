@@ -1,4 +1,4 @@
-/goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/gdoge/another_shell
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/gdoge/another_shell
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/gdoge/another_shell/cmake-build-debug

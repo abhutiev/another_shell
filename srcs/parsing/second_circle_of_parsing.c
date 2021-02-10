@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
 static void	get_arg_from_single_quotes(t_all *all, size_t n)
 {
@@ -49,7 +49,7 @@ static void	get_arg_after_backslash(t_all *all, size_t n)
 	all->buffer.line_2[0] = all->buffer.line_1[all->buffer.iter_1++];
 	all->buffer.iter_2 = 1;
 	all->buffer.line_2 = (char *)malloc(1000);
-	while (all->buffer.line_1[all->buffer.iter_1] && all->buffer.line_1[all->buffer.iter_1] != ' ')
+	while (all->buffer.line_1[all->buffer.iter_1] && all->buffer.line_1[all->buffer.iter_1] != ' ' && all->buffer.line_1[all->buffer.iter_1] != ';')
 	{
 		if (all->buffer.line_1[all->buffer.iter_1] == '\\')
 		{
@@ -68,7 +68,7 @@ static void	get_arg_ordinary(t_all *all, size_t n)
 {
 	all->buffer.iter_2 = 0;
 	all->buffer.line_2 = (char *)malloc(1000);
-	while (all->buffer.line_1[all->buffer.iter_1] && all->buffer.line_1[all->buffer.iter_1] != ' ')
+	while (all->buffer.line_1[all->buffer.iter_1] && all->buffer.line_1[all->buffer.iter_1] != ' ' && all->buffer.line_1[all->buffer.iter_1] != ';')
 	{
 		if (all->buffer.line_1[all->buffer.iter_1] == '\\')
 		{
@@ -91,7 +91,7 @@ void		second_circle_of_parsing(t_all *all, size_t i)
 	all->buffer.line_1 = all->requests.line_with_substitutions[i];
 	all->separated_request = (char **)malloc(1024);
 	n = 0;
-	while (all->buffer.line_1[all->buffer.iter_1])
+	while (all->buffer.line_1[all->buffer.iter_1] && all->buffer.line_1[all->buffer.iter_1] != ';')
 	{
 		if (all->buffer.line_1[all->buffer.iter_1] == ' ')
 		{

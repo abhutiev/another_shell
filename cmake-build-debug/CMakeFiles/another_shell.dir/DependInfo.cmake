@@ -4,12 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/gdoge/another_shell/env.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/env.c.o"
   "/Users/gdoge/another_shell/main.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/main.c.o"
-  "/Users/gdoge/another_shell/pwd.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/pwd.c.o"
-  "/Users/gdoge/another_shell/srcs/first_circle_of_parsing.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.o"
+  "/Users/gdoge/another_shell/srcs/builtins/cd.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/builtins/cd.c.o"
+  "/Users/gdoge/another_shell/srcs/builtins/echo.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/builtins/echo.c.o"
+  "/Users/gdoge/another_shell/srcs/builtins/env.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/builtins/env.c.o"
+  "/Users/gdoge/another_shell/srcs/builtins/exit.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/builtins/exit.c.o"
+  "/Users/gdoge/another_shell/srcs/builtins/export.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/builtins/export.c.o"
+  "/Users/gdoge/another_shell/srcs/builtins/pwd.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/builtins/pwd.c.o"
+  "/Users/gdoge/another_shell/srcs/builtins/unset.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/builtins/unset.c.o"
+  "/Users/gdoge/another_shell/srcs/builtins/work_with_environments.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/builtins/work_with_environments.c.o"
+  "/Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o"
+  "/Users/gdoge/another_shell/srcs/parsing/request_separation.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/parsing/request_separation.c.o"
+  "/Users/gdoge/another_shell/srcs/parsing/second_circle_of_parsing.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/parsing/second_circle_of_parsing.c.o"
   "/Users/gdoge/another_shell/srcs/pregame_ritual.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o"
-  "/Users/gdoge/another_shell/srcs/request_separation.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/request_separation.c.o"
   "/Users/gdoge/another_shell/srcs/signal_handling.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/signal_handling.c.o"
   "/Users/gdoge/another_shell/srcs/utils/bzero.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/bzero.c.o"
   "/Users/gdoge/another_shell/srcs/utils/calloc.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/calloc.c.o"
@@ -27,7 +34,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/gdoge/another_shell/srcs/utils/strlcpy.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o"
   "/Users/gdoge/another_shell/srcs/utils/strlen.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o"
   "/Users/gdoge/another_shell/srcs/utils/substr.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/substr.c.o"
-  "/Users/gdoge/another_shell/srcs/work_with_environments.c" "/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/work_with_environments.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

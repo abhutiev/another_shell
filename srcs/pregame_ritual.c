@@ -20,8 +20,8 @@ static void	flags_shutting_up(int argc, char **argv)
 
 static void	save_fd(t_all *all)
 {
-	all->descriptors.standard_input = dup(0);
-	all->descriptors.standard_output = dup(1);
+	all->fd.standard_input = dup(0);
+	all->fd.standard_output = dup(1);
 }
 
 void		pregame_ritual(t_all *all, int ac, char **av, char **env)
@@ -30,8 +30,8 @@ void		pregame_ritual(t_all *all, int ac, char **av, char **env)
 	load_environments(all, env);
 	sort_environments(all);
 	save_fd(all);
-	dup2(0, all->descriptors.standard_input);
-	dup2(1, all->descriptors.standard_output);
+	dup2(0, all->fd.standard_input);
+	dup2(1, all->fd.standard_output);
 	//signal(SIGINT, );
 	//signal(SIGQUIT, );
 }

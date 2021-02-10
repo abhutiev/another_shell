@@ -80,25 +80,46 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/gdoge/another_shell/env.c">
-			<Option target="another_shell"/>
-		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/includes/minishell.h">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/main.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/pwd.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/cd.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/first_circle_of_parsing.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/echo.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/env.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/exit.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/export.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/pwd.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/unset.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/work_with_environments.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/request_separation.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/second_circle_of_parsing.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/pregame_ritual.c">
-			<Option target="another_shell"/>
-		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/request_separation.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/signal_handling.c">
@@ -150,9 +171,6 @@
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/utils/substr.c">
-			<Option target="another_shell"/>
-		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/work_with_environments.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/CMakeLists.txt">

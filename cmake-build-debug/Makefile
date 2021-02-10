@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /Users/gdoge/another_shell/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -143,33 +143,6 @@ another_shell/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/build
 .PHONY : another_shell/fast
 
-env.o: env.c.o
-
-.PHONY : env.o
-
-# target to build an object file
-env.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/env.c.o
-.PHONY : env.c.o
-
-env.i: env.c.i
-
-.PHONY : env.i
-
-# target to preprocess a source file
-env.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/env.c.i
-.PHONY : env.c.i
-
-env.s: env.c.s
-
-.PHONY : env.s
-
-# target to generate assembly for a file
-env.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/env.c.s
-.PHONY : env.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -197,59 +170,302 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/main.c.s
 .PHONY : main.c.s
 
-pwd.o: pwd.c.o
+srcs/builtins/cd.o: srcs/builtins/cd.c.o
 
-.PHONY : pwd.o
-
-# target to build an object file
-pwd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pwd.c.o
-.PHONY : pwd.c.o
-
-pwd.i: pwd.c.i
-
-.PHONY : pwd.i
-
-# target to preprocess a source file
-pwd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pwd.c.i
-.PHONY : pwd.c.i
-
-pwd.s: pwd.c.s
-
-.PHONY : pwd.s
-
-# target to generate assembly for a file
-pwd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/pwd.c.s
-.PHONY : pwd.c.s
-
-srcs/first_circle_of_parsing.o: srcs/first_circle_of_parsing.c.o
-
-.PHONY : srcs/first_circle_of_parsing.o
+.PHONY : srcs/builtins/cd.o
 
 # target to build an object file
-srcs/first_circle_of_parsing.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.o
-.PHONY : srcs/first_circle_of_parsing.c.o
+srcs/builtins/cd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/cd.c.o
+.PHONY : srcs/builtins/cd.c.o
 
-srcs/first_circle_of_parsing.i: srcs/first_circle_of_parsing.c.i
+srcs/builtins/cd.i: srcs/builtins/cd.c.i
 
-.PHONY : srcs/first_circle_of_parsing.i
+.PHONY : srcs/builtins/cd.i
 
 # target to preprocess a source file
-srcs/first_circle_of_parsing.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.i
-.PHONY : srcs/first_circle_of_parsing.c.i
+srcs/builtins/cd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/cd.c.i
+.PHONY : srcs/builtins/cd.c.i
 
-srcs/first_circle_of_parsing.s: srcs/first_circle_of_parsing.c.s
+srcs/builtins/cd.s: srcs/builtins/cd.c.s
 
-.PHONY : srcs/first_circle_of_parsing.s
+.PHONY : srcs/builtins/cd.s
 
 # target to generate assembly for a file
-srcs/first_circle_of_parsing.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/first_circle_of_parsing.c.s
-.PHONY : srcs/first_circle_of_parsing.c.s
+srcs/builtins/cd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/cd.c.s
+.PHONY : srcs/builtins/cd.c.s
+
+srcs/builtins/echo.o: srcs/builtins/echo.c.o
+
+.PHONY : srcs/builtins/echo.o
+
+# target to build an object file
+srcs/builtins/echo.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/echo.c.o
+.PHONY : srcs/builtins/echo.c.o
+
+srcs/builtins/echo.i: srcs/builtins/echo.c.i
+
+.PHONY : srcs/builtins/echo.i
+
+# target to preprocess a source file
+srcs/builtins/echo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/echo.c.i
+.PHONY : srcs/builtins/echo.c.i
+
+srcs/builtins/echo.s: srcs/builtins/echo.c.s
+
+.PHONY : srcs/builtins/echo.s
+
+# target to generate assembly for a file
+srcs/builtins/echo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/echo.c.s
+.PHONY : srcs/builtins/echo.c.s
+
+srcs/builtins/env.o: srcs/builtins/env.c.o
+
+.PHONY : srcs/builtins/env.o
+
+# target to build an object file
+srcs/builtins/env.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/env.c.o
+.PHONY : srcs/builtins/env.c.o
+
+srcs/builtins/env.i: srcs/builtins/env.c.i
+
+.PHONY : srcs/builtins/env.i
+
+# target to preprocess a source file
+srcs/builtins/env.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/env.c.i
+.PHONY : srcs/builtins/env.c.i
+
+srcs/builtins/env.s: srcs/builtins/env.c.s
+
+.PHONY : srcs/builtins/env.s
+
+# target to generate assembly for a file
+srcs/builtins/env.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/env.c.s
+.PHONY : srcs/builtins/env.c.s
+
+srcs/builtins/exit.o: srcs/builtins/exit.c.o
+
+.PHONY : srcs/builtins/exit.o
+
+# target to build an object file
+srcs/builtins/exit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/exit.c.o
+.PHONY : srcs/builtins/exit.c.o
+
+srcs/builtins/exit.i: srcs/builtins/exit.c.i
+
+.PHONY : srcs/builtins/exit.i
+
+# target to preprocess a source file
+srcs/builtins/exit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/exit.c.i
+.PHONY : srcs/builtins/exit.c.i
+
+srcs/builtins/exit.s: srcs/builtins/exit.c.s
+
+.PHONY : srcs/builtins/exit.s
+
+# target to generate assembly for a file
+srcs/builtins/exit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/exit.c.s
+.PHONY : srcs/builtins/exit.c.s
+
+srcs/builtins/export.o: srcs/builtins/export.c.o
+
+.PHONY : srcs/builtins/export.o
+
+# target to build an object file
+srcs/builtins/export.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/export.c.o
+.PHONY : srcs/builtins/export.c.o
+
+srcs/builtins/export.i: srcs/builtins/export.c.i
+
+.PHONY : srcs/builtins/export.i
+
+# target to preprocess a source file
+srcs/builtins/export.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/export.c.i
+.PHONY : srcs/builtins/export.c.i
+
+srcs/builtins/export.s: srcs/builtins/export.c.s
+
+.PHONY : srcs/builtins/export.s
+
+# target to generate assembly for a file
+srcs/builtins/export.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/export.c.s
+.PHONY : srcs/builtins/export.c.s
+
+srcs/builtins/pwd.o: srcs/builtins/pwd.c.o
+
+.PHONY : srcs/builtins/pwd.o
+
+# target to build an object file
+srcs/builtins/pwd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/pwd.c.o
+.PHONY : srcs/builtins/pwd.c.o
+
+srcs/builtins/pwd.i: srcs/builtins/pwd.c.i
+
+.PHONY : srcs/builtins/pwd.i
+
+# target to preprocess a source file
+srcs/builtins/pwd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/pwd.c.i
+.PHONY : srcs/builtins/pwd.c.i
+
+srcs/builtins/pwd.s: srcs/builtins/pwd.c.s
+
+.PHONY : srcs/builtins/pwd.s
+
+# target to generate assembly for a file
+srcs/builtins/pwd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/pwd.c.s
+.PHONY : srcs/builtins/pwd.c.s
+
+srcs/builtins/unset.o: srcs/builtins/unset.c.o
+
+.PHONY : srcs/builtins/unset.o
+
+# target to build an object file
+srcs/builtins/unset.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/unset.c.o
+.PHONY : srcs/builtins/unset.c.o
+
+srcs/builtins/unset.i: srcs/builtins/unset.c.i
+
+.PHONY : srcs/builtins/unset.i
+
+# target to preprocess a source file
+srcs/builtins/unset.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/unset.c.i
+.PHONY : srcs/builtins/unset.c.i
+
+srcs/builtins/unset.s: srcs/builtins/unset.c.s
+
+.PHONY : srcs/builtins/unset.s
+
+# target to generate assembly for a file
+srcs/builtins/unset.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/unset.c.s
+.PHONY : srcs/builtins/unset.c.s
+
+srcs/builtins/work_with_environments.o: srcs/builtins/work_with_environments.c.o
+
+.PHONY : srcs/builtins/work_with_environments.o
+
+# target to build an object file
+srcs/builtins/work_with_environments.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/work_with_environments.c.o
+.PHONY : srcs/builtins/work_with_environments.c.o
+
+srcs/builtins/work_with_environments.i: srcs/builtins/work_with_environments.c.i
+
+.PHONY : srcs/builtins/work_with_environments.i
+
+# target to preprocess a source file
+srcs/builtins/work_with_environments.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/work_with_environments.c.i
+.PHONY : srcs/builtins/work_with_environments.c.i
+
+srcs/builtins/work_with_environments.s: srcs/builtins/work_with_environments.c.s
+
+.PHONY : srcs/builtins/work_with_environments.s
+
+# target to generate assembly for a file
+srcs/builtins/work_with_environments.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/work_with_environments.c.s
+.PHONY : srcs/builtins/work_with_environments.c.s
+
+srcs/parsing/first_circle_of_parsing.o: srcs/parsing/first_circle_of_parsing.c.o
+
+.PHONY : srcs/parsing/first_circle_of_parsing.o
+
+# target to build an object file
+srcs/parsing/first_circle_of_parsing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o
+.PHONY : srcs/parsing/first_circle_of_parsing.c.o
+
+srcs/parsing/first_circle_of_parsing.i: srcs/parsing/first_circle_of_parsing.c.i
+
+.PHONY : srcs/parsing/first_circle_of_parsing.i
+
+# target to preprocess a source file
+srcs/parsing/first_circle_of_parsing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.i
+.PHONY : srcs/parsing/first_circle_of_parsing.c.i
+
+srcs/parsing/first_circle_of_parsing.s: srcs/parsing/first_circle_of_parsing.c.s
+
+.PHONY : srcs/parsing/first_circle_of_parsing.s
+
+# target to generate assembly for a file
+srcs/parsing/first_circle_of_parsing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.s
+.PHONY : srcs/parsing/first_circle_of_parsing.c.s
+
+srcs/parsing/request_separation.o: srcs/parsing/request_separation.c.o
+
+.PHONY : srcs/parsing/request_separation.o
+
+# target to build an object file
+srcs/parsing/request_separation.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/request_separation.c.o
+.PHONY : srcs/parsing/request_separation.c.o
+
+srcs/parsing/request_separation.i: srcs/parsing/request_separation.c.i
+
+.PHONY : srcs/parsing/request_separation.i
+
+# target to preprocess a source file
+srcs/parsing/request_separation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/request_separation.c.i
+.PHONY : srcs/parsing/request_separation.c.i
+
+srcs/parsing/request_separation.s: srcs/parsing/request_separation.c.s
+
+.PHONY : srcs/parsing/request_separation.s
+
+# target to generate assembly for a file
+srcs/parsing/request_separation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/request_separation.c.s
+.PHONY : srcs/parsing/request_separation.c.s
+
+srcs/parsing/second_circle_of_parsing.o: srcs/parsing/second_circle_of_parsing.c.o
+
+.PHONY : srcs/parsing/second_circle_of_parsing.o
+
+# target to build an object file
+srcs/parsing/second_circle_of_parsing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/second_circle_of_parsing.c.o
+.PHONY : srcs/parsing/second_circle_of_parsing.c.o
+
+srcs/parsing/second_circle_of_parsing.i: srcs/parsing/second_circle_of_parsing.c.i
+
+.PHONY : srcs/parsing/second_circle_of_parsing.i
+
+# target to preprocess a source file
+srcs/parsing/second_circle_of_parsing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/second_circle_of_parsing.c.i
+.PHONY : srcs/parsing/second_circle_of_parsing.c.i
+
+srcs/parsing/second_circle_of_parsing.s: srcs/parsing/second_circle_of_parsing.c.s
+
+.PHONY : srcs/parsing/second_circle_of_parsing.s
+
+# target to generate assembly for a file
+srcs/parsing/second_circle_of_parsing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/second_circle_of_parsing.c.s
+.PHONY : srcs/parsing/second_circle_of_parsing.c.s
 
 srcs/pregame_ritual.o: srcs/pregame_ritual.c.o
 
@@ -277,33 +493,6 @@ srcs/pregame_ritual.s: srcs/pregame_ritual.c.s
 srcs/pregame_ritual.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.s
 .PHONY : srcs/pregame_ritual.c.s
-
-srcs/request_separation.o: srcs/request_separation.c.o
-
-.PHONY : srcs/request_separation.o
-
-# target to build an object file
-srcs/request_separation.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/request_separation.c.o
-.PHONY : srcs/request_separation.c.o
-
-srcs/request_separation.i: srcs/request_separation.c.i
-
-.PHONY : srcs/request_separation.i
-
-# target to preprocess a source file
-srcs/request_separation.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/request_separation.c.i
-.PHONY : srcs/request_separation.c.i
-
-srcs/request_separation.s: srcs/request_separation.c.s
-
-.PHONY : srcs/request_separation.s
-
-# target to generate assembly for a file
-srcs/request_separation.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/request_separation.c.s
-.PHONY : srcs/request_separation.c.s
 
 srcs/signal_handling.o: srcs/signal_handling.c.o
 
@@ -764,33 +953,6 @@ srcs/utils/substr.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/substr.c.s
 .PHONY : srcs/utils/substr.c.s
 
-srcs/work_with_environments.o: srcs/work_with_environments.c.o
-
-.PHONY : srcs/work_with_environments.o
-
-# target to build an object file
-srcs/work_with_environments.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/work_with_environments.c.o
-.PHONY : srcs/work_with_environments.c.o
-
-srcs/work_with_environments.i: srcs/work_with_environments.c.i
-
-.PHONY : srcs/work_with_environments.i
-
-# target to preprocess a source file
-srcs/work_with_environments.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/work_with_environments.c.i
-.PHONY : srcs/work_with_environments.c.i
-
-srcs/work_with_environments.s: srcs/work_with_environments.c.s
-
-.PHONY : srcs/work_with_environments.s
-
-# target to generate assembly for a file
-srcs/work_with_environments.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/work_with_environments.c.s
-.PHONY : srcs/work_with_environments.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -800,24 +962,45 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... another_shell"
-	@echo "... env.o"
-	@echo "... env.i"
-	@echo "... env.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... pwd.o"
-	@echo "... pwd.i"
-	@echo "... pwd.s"
-	@echo "... srcs/first_circle_of_parsing.o"
-	@echo "... srcs/first_circle_of_parsing.i"
-	@echo "... srcs/first_circle_of_parsing.s"
+	@echo "... srcs/builtins/cd.o"
+	@echo "... srcs/builtins/cd.i"
+	@echo "... srcs/builtins/cd.s"
+	@echo "... srcs/builtins/echo.o"
+	@echo "... srcs/builtins/echo.i"
+	@echo "... srcs/builtins/echo.s"
+	@echo "... srcs/builtins/env.o"
+	@echo "... srcs/builtins/env.i"
+	@echo "... srcs/builtins/env.s"
+	@echo "... srcs/builtins/exit.o"
+	@echo "... srcs/builtins/exit.i"
+	@echo "... srcs/builtins/exit.s"
+	@echo "... srcs/builtins/export.o"
+	@echo "... srcs/builtins/export.i"
+	@echo "... srcs/builtins/export.s"
+	@echo "... srcs/builtins/pwd.o"
+	@echo "... srcs/builtins/pwd.i"
+	@echo "... srcs/builtins/pwd.s"
+	@echo "... srcs/builtins/unset.o"
+	@echo "... srcs/builtins/unset.i"
+	@echo "... srcs/builtins/unset.s"
+	@echo "... srcs/builtins/work_with_environments.o"
+	@echo "... srcs/builtins/work_with_environments.i"
+	@echo "... srcs/builtins/work_with_environments.s"
+	@echo "... srcs/parsing/first_circle_of_parsing.o"
+	@echo "... srcs/parsing/first_circle_of_parsing.i"
+	@echo "... srcs/parsing/first_circle_of_parsing.s"
+	@echo "... srcs/parsing/request_separation.o"
+	@echo "... srcs/parsing/request_separation.i"
+	@echo "... srcs/parsing/request_separation.s"
+	@echo "... srcs/parsing/second_circle_of_parsing.o"
+	@echo "... srcs/parsing/second_circle_of_parsing.i"
+	@echo "... srcs/parsing/second_circle_of_parsing.s"
 	@echo "... srcs/pregame_ritual.o"
 	@echo "... srcs/pregame_ritual.i"
 	@echo "... srcs/pregame_ritual.s"
-	@echo "... srcs/request_separation.o"
-	@echo "... srcs/request_separation.i"
-	@echo "... srcs/request_separation.s"
 	@echo "... srcs/signal_handling.o"
 	@echo "... srcs/signal_handling.i"
 	@echo "... srcs/signal_handling.s"
@@ -869,9 +1052,6 @@ help:
 	@echo "... srcs/utils/substr.o"
 	@echo "... srcs/utils/substr.i"
 	@echo "... srcs/utils/substr.s"
-	@echo "... srcs/work_with_environments.o"
-	@echo "... srcs/work_with_environments.i"
-	@echo "... srcs/work_with_environments.s"
 .PHONY : help
 
 
