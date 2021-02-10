@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env.c                                              :+:      :+:    :+:   */
+/*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 18:17:17 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/07 18:17:19 by gdoge            ###   ########.fr       */
+/*   Created: 2021/02/08 22:06:29 by gdoge             #+#    #+#             */
+/*   Updated: 2021/02/08 22:06:52 by gdoge            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/minishell.h"
+#include "../../includes/minishell.h"
 
-void	env(t_all *all, size_t i)
+void	pwd(t_all *all)
 {
-	display_env(all);
+	char	*res;
+
+	res = getcwd(NULL, 0);
+	ft_putendl_fd(res, 1);
+	free(res);
 }

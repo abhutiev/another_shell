@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signal_handling.c                                  :+:      :+:    :+:   */
+/*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 01:49:20 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/09 01:49:22 by gdoge            ###   ########.fr       */
+/*   Created: 2021/02/07 18:17:17 by gdoge             #+#    #+#             */
+/*   Updated: 2021/02/07 18:17:19 by gdoge            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
 
-void	signal_d_exit(int signal)
+void	env(t_all *all)
 {
-
+	display_env(all);
 }
