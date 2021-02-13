@@ -53,7 +53,7 @@ typedef struct		s_command
 {
 	char			*name;
 	char			**args;
-	size_t			number_of_args;
+	size_t			*number_of_args;
 	size_t			number_of_commands;
 }					t_command;
 

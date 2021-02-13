@@ -17,7 +17,21 @@ int8_t	is_pipe_or_request()
 
 }
 
-void	count_requests_and_allocate_memory_for_commands(t_all *all)
+void	free_separated_request(t_all *all)
+{
+	size_t	i;
+
+	i = 0;
+	while (all->separated_request[i])
+	{
+		printf("%s\n", all->separated_request[i]);
+		free(all->separated_request[i++]);
+	}
+	free(all->separated_request[i]);
+	free(all->separated_request);
+}
+
+void	allocate_memory_for_commands(t_all *all)
 {
 	size_t	i;
 	size_t	counter;
@@ -36,18 +50,9 @@ void	count_requests_and_allocate_memory_for_commands(t_all *all)
 	all->command = (t_command *)ft_calloc(sizeof(t_command) * (counter + 2));
 }
 
-void	free_separated_request(t_all *all)
+void	filling_command_structure(t_all *all)
 {
-	size_t	i;
 
-	i = 0;
-	while (all->separated_request[i])
-	{
-		printf("%s\n", all->separated_request[i]);
-		free(all->separated_request[i++]);
-	}
-	free(all->separated_request[i]);
-	free(all->separated_request);
 }
 
 void	parsing_and_execution(t_all *all)
@@ -61,7 +66,8 @@ void	parsing_and_execution(t_all *all)
 		first_circle_of_parsing(all, i);
 		second_circle_of_parsing(all, i);
 		//count
-		memory_allocation_for_commands(all);
+		allocate_memory_for_commands(all);
+		filling_command_structure(all);
 		free_separated_request(all);
 		i++;
 	}
