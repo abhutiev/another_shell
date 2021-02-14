@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /Users/gdoge/another_shell/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/goinfre/gdoge/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -386,32 +386,59 @@ srcs/builtins/work_with_environments.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/builtins/work_with_environments.c.s
 .PHONY : srcs/builtins/work_with_environments.c.s
 
-srcs/parsing/first_circle_of_parsing.o: srcs/parsing/first_circle_of_parsing.c.o
+srcs/parsing/filling_command_structure.o: srcs/parsing/filling_command_structure.c.o
 
-.PHONY : srcs/parsing/first_circle_of_parsing.o
+.PHONY : srcs/parsing/filling_command_structure.o
 
 # target to build an object file
-srcs/parsing/first_circle_of_parsing.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o
-.PHONY : srcs/parsing/first_circle_of_parsing.c.o
+srcs/parsing/filling_command_structure.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.o
+.PHONY : srcs/parsing/filling_command_structure.c.o
 
-srcs/parsing/first_circle_of_parsing.i: srcs/parsing/first_circle_of_parsing.c.i
+srcs/parsing/filling_command_structure.i: srcs/parsing/filling_command_structure.c.i
 
-.PHONY : srcs/parsing/first_circle_of_parsing.i
+.PHONY : srcs/parsing/filling_command_structure.i
 
 # target to preprocess a source file
-srcs/parsing/first_circle_of_parsing.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.i
-.PHONY : srcs/parsing/first_circle_of_parsing.c.i
+srcs/parsing/filling_command_structure.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.i
+.PHONY : srcs/parsing/filling_command_structure.c.i
 
-srcs/parsing/first_circle_of_parsing.s: srcs/parsing/first_circle_of_parsing.c.s
+srcs/parsing/filling_command_structure.s: srcs/parsing/filling_command_structure.c.s
 
-.PHONY : srcs/parsing/first_circle_of_parsing.s
+.PHONY : srcs/parsing/filling_command_structure.s
 
 # target to generate assembly for a file
-srcs/parsing/first_circle_of_parsing.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.s
-.PHONY : srcs/parsing/first_circle_of_parsing.c.s
+srcs/parsing/filling_command_structure.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.s
+.PHONY : srcs/parsing/filling_command_structure.c.s
+
+srcs/parsing/first_circle_of_parsing_and_memory_cleaning.o: srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o
+
+.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.o
+
+# target to build an object file
+srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o
+.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o
+
+srcs/parsing/first_circle_of_parsing_and_memory_cleaning.i: srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i
+
+.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.i
+
+# target to preprocess a source file
+srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i
+.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i
+
+srcs/parsing/first_circle_of_parsing_and_memory_cleaning.s: srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s
+
+.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.s
+
+# target to generate assembly for a file
+srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s
+.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s
 
 srcs/parsing/request_separation.o: srcs/parsing/request_separation.c.o
 
@@ -575,33 +602,6 @@ srcs/utils/calloc.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/calloc.c.s
 .PHONY : srcs/utils/calloc.c.s
 
-srcs/utils/flags_shutting_up.o: srcs/utils/flags_shutting_up.c.o
-
-.PHONY : srcs/utils/flags_shutting_up.o
-
-# target to build an object file
-srcs/utils/flags_shutting_up.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.o
-.PHONY : srcs/utils/flags_shutting_up.c.o
-
-srcs/utils/flags_shutting_up.i: srcs/utils/flags_shutting_up.c.i
-
-.PHONY : srcs/utils/flags_shutting_up.i
-
-# target to preprocess a source file
-srcs/utils/flags_shutting_up.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.i
-.PHONY : srcs/utils/flags_shutting_up.c.i
-
-srcs/utils/flags_shutting_up.s: srcs/utils/flags_shutting_up.c.s
-
-.PHONY : srcs/utils/flags_shutting_up.s
-
-# target to generate assembly for a file
-srcs/utils/flags_shutting_up.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/flags_shutting_up.c.s
-.PHONY : srcs/utils/flags_shutting_up.c.s
-
 srcs/utils/gnl.o: srcs/utils/gnl.c.o
 
 .PHONY : srcs/utils/gnl.o
@@ -682,6 +682,33 @@ srcs/utils/is_special_symbol.s: srcs/utils/is_special_symbol.c.s
 srcs/utils/is_special_symbol.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.s
 .PHONY : srcs/utils/is_special_symbol.c.s
+
+srcs/utils/make_way_to_binary.o: srcs/utils/make_way_to_binary.c.o
+
+.PHONY : srcs/utils/make_way_to_binary.o
+
+# target to build an object file
+srcs/utils/make_way_to_binary.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/make_way_to_binary.c.o
+.PHONY : srcs/utils/make_way_to_binary.c.o
+
+srcs/utils/make_way_to_binary.i: srcs/utils/make_way_to_binary.c.i
+
+.PHONY : srcs/utils/make_way_to_binary.i
+
+# target to preprocess a source file
+srcs/utils/make_way_to_binary.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/make_way_to_binary.c.i
+.PHONY : srcs/utils/make_way_to_binary.c.i
+
+srcs/utils/make_way_to_binary.s: srcs/utils/make_way_to_binary.c.s
+
+.PHONY : srcs/utils/make_way_to_binary.s
+
+# target to generate assembly for a file
+srcs/utils/make_way_to_binary.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/make_way_to_binary.c.s
+.PHONY : srcs/utils/make_way_to_binary.c.s
 
 srcs/utils/putchar.o: srcs/utils/putchar.c.o
 
@@ -872,6 +899,33 @@ srcs/utils/strdup.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strdup.c.s
 .PHONY : srcs/utils/strdup.c.s
 
+srcs/utils/strlcat.o: srcs/utils/strlcat.c.o
+
+.PHONY : srcs/utils/strlcat.o
+
+# target to build an object file
+srcs/utils/strlcat.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlcat.c.o
+.PHONY : srcs/utils/strlcat.c.o
+
+srcs/utils/strlcat.i: srcs/utils/strlcat.c.i
+
+.PHONY : srcs/utils/strlcat.i
+
+# target to preprocess a source file
+srcs/utils/strlcat.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlcat.c.i
+.PHONY : srcs/utils/strlcat.c.i
+
+srcs/utils/strlcat.s: srcs/utils/strlcat.c.s
+
+.PHONY : srcs/utils/strlcat.s
+
+# target to generate assembly for a file
+srcs/utils/strlcat.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlcat.c.s
+.PHONY : srcs/utils/strlcat.c.s
+
 srcs/utils/strlcpy.o: srcs/utils/strlcpy.c.o
 
 .PHONY : srcs/utils/strlcpy.o
@@ -989,9 +1043,12 @@ help:
 	@echo "... srcs/builtins/work_with_environments.o"
 	@echo "... srcs/builtins/work_with_environments.i"
 	@echo "... srcs/builtins/work_with_environments.s"
-	@echo "... srcs/parsing/first_circle_of_parsing.o"
-	@echo "... srcs/parsing/first_circle_of_parsing.i"
-	@echo "... srcs/parsing/first_circle_of_parsing.s"
+	@echo "... srcs/parsing/filling_command_structure.o"
+	@echo "... srcs/parsing/filling_command_structure.i"
+	@echo "... srcs/parsing/filling_command_structure.s"
+	@echo "... srcs/parsing/first_circle_of_parsing_and_memory_cleaning.o"
+	@echo "... srcs/parsing/first_circle_of_parsing_and_memory_cleaning.i"
+	@echo "... srcs/parsing/first_circle_of_parsing_and_memory_cleaning.s"
 	@echo "... srcs/parsing/request_separation.o"
 	@echo "... srcs/parsing/request_separation.i"
 	@echo "... srcs/parsing/request_separation.s"
@@ -1010,9 +1067,6 @@ help:
 	@echo "... srcs/utils/calloc.o"
 	@echo "... srcs/utils/calloc.i"
 	@echo "... srcs/utils/calloc.s"
-	@echo "... srcs/utils/flags_shutting_up.o"
-	@echo "... srcs/utils/flags_shutting_up.i"
-	@echo "... srcs/utils/flags_shutting_up.s"
 	@echo "... srcs/utils/gnl.o"
 	@echo "... srcs/utils/gnl.i"
 	@echo "... srcs/utils/gnl.s"
@@ -1022,6 +1076,9 @@ help:
 	@echo "... srcs/utils/is_special_symbol.o"
 	@echo "... srcs/utils/is_special_symbol.i"
 	@echo "... srcs/utils/is_special_symbol.s"
+	@echo "... srcs/utils/make_way_to_binary.o"
+	@echo "... srcs/utils/make_way_to_binary.i"
+	@echo "... srcs/utils/make_way_to_binary.s"
 	@echo "... srcs/utils/putchar.o"
 	@echo "... srcs/utils/putchar.i"
 	@echo "... srcs/utils/putchar.s"
@@ -1043,6 +1100,9 @@ help:
 	@echo "... srcs/utils/strdup.o"
 	@echo "... srcs/utils/strdup.i"
 	@echo "... srcs/utils/strdup.s"
+	@echo "... srcs/utils/strlcat.o"
+	@echo "... srcs/utils/strlcat.i"
+	@echo "... srcs/utils/strlcat.s"
 	@echo "... srcs/utils/strlcpy.o"
 	@echo "... srcs/utils/strlcpy.i"
 	@echo "... srcs/utils/strlcpy.s"

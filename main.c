@@ -12,63 +12,36 @@
 
 #include "includes/minishell.h"
 
-int8_t	is_pipe_or_request()
-{
 
-}
 
-void	free_separated_request(t_all *all)
-{
-	size_t	i;
 
-	i = 0;
-	while (all->separated_request[i])
-	{
-		printf("%s\n", all->separated_request[i]);
-		free(all->separated_request[i++]);
-	}
-	free(all->separated_request[i]);
-	free(all->separated_request);
-}
-
-void	allocate_memory_for_commands(t_all *all)
-{
-	size_t	i;
-	size_t	counter;
-
-	i = 0;
-	counter = 0;
-	while (all->separated_request[i])
-	{
-		if (!ft_strcmp(all->separated_request[i], ">") ||
-				!ft_strcmp(all->separated_request[i], ">>") ||
-					!ft_strcmp(all->separated_request[i], "<") ||
-						!ft_strcmp(all->separated_request[i], "|"))
-			counter++;
-		i++;
-	}
-	all->command = (t_command *)ft_calloc(sizeof(t_command) * (counter + 2));
-}
-
-void	filling_command_structure(t_all *all)
-{
-
-}
 
 void	parsing_and_execution(t_all *all)
 {
 	size_t	i;
 	size_t	j;
+	pid_t pid;
 
 	i = 0;
 	while (all->requests.separated[i])
 	{
 		first_circle_of_parsing(all, i);
 		second_circle_of_parsing(all, i);
-		//count
 		allocate_memory_for_commands(all);
 		filling_command_structure(all);
-		free_separated_request(all);
+		j = 0;
+		while (all->command[j].name)
+		{
+			pid = fork();
+			if (pid == 0)
+			{
+				execve(to_usr_bin(all->command[j].name), all->command[j].args, all->envi);
+				exit(0);
+			}
+			wait(0);
+			j++;
+		}
+		free_command_names(all);
 		i++;
 	}
 	free(all->requests.separated[i]);
@@ -81,8 +54,8 @@ int		main(int argc, char **argv, char **en)
 {
 	t_all	all;
 
+	all.envi = en;
 	pregame_ritual(&all, argc, argv, en);
-	free(NULL);
 	while (1)
 	{
 		write(1, SHELL_NAME, ft_strlen(SHELL_NAME));

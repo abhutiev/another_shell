@@ -71,11 +71,16 @@ typedef struct		s_all
 	t_command		*command;
 	t_fd			fd;
 	char			**separated_request;
+	char			**envi;
 }					t_all;
 
 
 void				first_circle_of_parsing(t_all *all, size_t i);
 void				second_circle_of_parsing(t_all *all, size_t i);
+
+void	allocate_memory_for_commands(t_all *all);
+void	filling_command_structure(t_all *all);
+void	free_command_names(t_all *all);
 
 void				pregame_ritual(t_all *all, int ac, char **av, char **env);
 
@@ -235,5 +240,18 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 */
 
 void				*ft_bzero(void *b, size_t len);
+
+/*
+** File: make_way_to_binary.c
+*/
+
+char				*to_usr_bin(char *command);
+char				*to_usr_local_bin(char **command);
+char				*to_bin(char **command);
+char				*to_usr_sbin(char **command);
+char				*to_local_munki(char **command);
+
+size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
+
 
 #endif

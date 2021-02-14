@@ -110,7 +110,10 @@
 		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/work_with_environments.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/filling_command_structure.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/request_separation.c">
@@ -131,9 +134,6 @@
 		<Unit filename="/Users/gdoge/another_shell/srcs/utils/calloc.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/flags_shutting_up.c">
-			<Option target="another_shell"/>
-		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/utils/gnl.c">
 			<Option target="another_shell"/>
 		</Unit>
@@ -141,6 +141,9 @@
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/utils/is_special_symbol.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/make_way_to_binary.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/utils/putchar.c">
@@ -162,6 +165,9 @@
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strdup.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strlcat.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strlcpy.c">

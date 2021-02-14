@@ -15,9 +15,25 @@ add_executable(another_shell
         srcs/utils/strlcpy.c
         srcs/utils/strcmp.c
         srcs/builtins/work_with_environments.c
-        srcs/utils/flags_shutting_up.c
         srcs/utils/gnl.c srcs/utils/strcpy.c
         srcs/utils/is_shielded.c
-        srcs/parsing/first_circle_of_parsing.c
-        srcs/utils/is_special_symbol.c srcs/pregame_ritual.c srcs/parsing/request_separation.c
-        srcs/builtins/env.c srcs/builtins/pwd.c srcs/utils/putchar.c srcs/utils/putendl.c srcs/utils/putstr.c srcs/signal_handling.c srcs/parsing/second_circle_of_parsing.c srcs/builtins/env.c srcs/builtins/echo.c srcs/builtins/cd.c srcs/builtins/export.c srcs/builtins/unset.c srcs/builtins/exit.c)
+        srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c
+        srcs/utils/is_special_symbol.c
+        srcs/pregame_ritual.c
+        srcs/parsing/request_separation.c
+        srcs/builtins/env.c
+        srcs/builtins/pwd.c
+        srcs/utils/putchar.c
+        srcs/utils/putendl.c
+        srcs/utils/putstr.c
+        srcs/signal_handling.c
+        srcs/parsing/second_circle_of_parsing.c
+        srcs/builtins/env.c
+        srcs/builtins/echo.c
+        srcs/builtins/cd.c
+        srcs/builtins/export.c
+        srcs/builtins/unset.c
+        srcs/builtins/exit.c
+        srcs/utils/make_way_to_binary.c
+        srcs/utils/strlcat.c
+        srcs/parsing/filling_command_structure.c)

@@ -24,7 +24,7 @@ sys/types.h
 sys/wait.h
 -
 
-/Users/gdoge/another_shell/srcs/parsing/second_circle_of_parsing.c
-../../includes/minishell.h
+/Users/gdoge/another_shell/main.c
+includes/minishell.h
 /Users/gdoge/another_shell/includes/minishell.h
 
