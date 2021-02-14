@@ -17,7 +17,7 @@ add_executable(another_shell
         srcs/builtins/work_with_environments.c
         srcs/utils/gnl.c srcs/utils/strcpy.c
         srcs/utils/is_shielded.c
-        srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c
+        srcs/parsing/first_circle_of_parsing.c
         srcs/utils/is_special_symbol.c
         srcs/pregame_ritual.c
         srcs/parsing/request_separation.c
@@ -36,4 +36,4 @@ add_executable(another_shell
         srcs/builtins/exit.c
         srcs/utils/make_way_to_binary.c
         srcs/utils/strlcat.c
-        srcs/parsing/filling_command_structure.c)
+        srcs/parsing/filling_command_structure.c srcs/parsing/memory_cleaning.c)

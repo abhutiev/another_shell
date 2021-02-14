@@ -113,7 +113,10 @@
 		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/filling_command_structure.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c">
+		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing.c">
+			<Option target="another_shell"/>
+		</Unit>
+		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/memory_cleaning.c">
 			<Option target="another_shell"/>
 		</Unit>
 		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/request_separation.c">

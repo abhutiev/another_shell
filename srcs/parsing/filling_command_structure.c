@@ -12,35 +12,6 @@
 
 #include "../../includes/minishell.h"
 
-void	free_command_names(t_all *all)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	while (all->separated_request[i])
-		i++;
-	free(all->separated_request[i]);
-	i = 0;
-	while (all->command[i].name)
-	{
-		j = 0;
-		while (all->command[i].args[j])
-		{
-			free(all->command[i].args[j]);
-			j++;
-		}
-		free(all->command[i].args[j]);
-		free(all->command[i].name);
-		free(all->command[i].args);
-		i++;
-	}
-	free(all->command[i].args);
-	free(all->command[i].name);
-	free(all->separated_request);
-	free(all->command);
-}
-
 void	allocate_memory_for_commands(t_all *all)
 {
 	size_t	i;

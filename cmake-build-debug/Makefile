@@ -413,32 +413,59 @@ srcs/parsing/filling_command_structure.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.s
 .PHONY : srcs/parsing/filling_command_structure.c.s
 
-srcs/parsing/first_circle_of_parsing_and_memory_cleaning.o: srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o
+srcs/parsing/first_circle_of_parsing.o: srcs/parsing/first_circle_of_parsing.c.o
 
-.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.o
+.PHONY : srcs/parsing/first_circle_of_parsing.o
 
 # target to build an object file
-srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o
-.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o
+srcs/parsing/first_circle_of_parsing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o
+.PHONY : srcs/parsing/first_circle_of_parsing.c.o
 
-srcs/parsing/first_circle_of_parsing_and_memory_cleaning.i: srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i
+srcs/parsing/first_circle_of_parsing.i: srcs/parsing/first_circle_of_parsing.c.i
 
-.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.i
+.PHONY : srcs/parsing/first_circle_of_parsing.i
 
 # target to preprocess a source file
-srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i
-.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i
+srcs/parsing/first_circle_of_parsing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.i
+.PHONY : srcs/parsing/first_circle_of_parsing.c.i
 
-srcs/parsing/first_circle_of_parsing_and_memory_cleaning.s: srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s
+srcs/parsing/first_circle_of_parsing.s: srcs/parsing/first_circle_of_parsing.c.s
 
-.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.s
+.PHONY : srcs/parsing/first_circle_of_parsing.s
 
 # target to generate assembly for a file
-srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s
-.PHONY : srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s
+srcs/parsing/first_circle_of_parsing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.s
+.PHONY : srcs/parsing/first_circle_of_parsing.c.s
+
+srcs/parsing/memory_cleaning.o: srcs/parsing/memory_cleaning.c.o
+
+.PHONY : srcs/parsing/memory_cleaning.o
+
+# target to build an object file
+srcs/parsing/memory_cleaning.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o
+.PHONY : srcs/parsing/memory_cleaning.c.o
+
+srcs/parsing/memory_cleaning.i: srcs/parsing/memory_cleaning.c.i
+
+.PHONY : srcs/parsing/memory_cleaning.i
+
+# target to preprocess a source file
+srcs/parsing/memory_cleaning.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.i
+.PHONY : srcs/parsing/memory_cleaning.c.i
+
+srcs/parsing/memory_cleaning.s: srcs/parsing/memory_cleaning.c.s
+
+.PHONY : srcs/parsing/memory_cleaning.s
+
+# target to generate assembly for a file
+srcs/parsing/memory_cleaning.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.s
+.PHONY : srcs/parsing/memory_cleaning.c.s
 
 srcs/parsing/request_separation.o: srcs/parsing/request_separation.c.o
 
@@ -1046,9 +1073,12 @@ help:
 	@echo "... srcs/parsing/filling_command_structure.o"
 	@echo "... srcs/parsing/filling_command_structure.i"
 	@echo "... srcs/parsing/filling_command_structure.s"
-	@echo "... srcs/parsing/first_circle_of_parsing_and_memory_cleaning.o"
-	@echo "... srcs/parsing/first_circle_of_parsing_and_memory_cleaning.i"
-	@echo "... srcs/parsing/first_circle_of_parsing_and_memory_cleaning.s"
+	@echo "... srcs/parsing/first_circle_of_parsing.o"
+	@echo "... srcs/parsing/first_circle_of_parsing.i"
+	@echo "... srcs/parsing/first_circle_of_parsing.s"
+	@echo "... srcs/parsing/memory_cleaning.o"
+	@echo "... srcs/parsing/memory_cleaning.i"
+	@echo "... srcs/parsing/memory_cleaning.s"
 	@echo "... srcs/parsing/request_separation.o"
 	@echo "... srcs/parsing/request_separation.i"
 	@echo "... srcs/parsing/request_separation.s"

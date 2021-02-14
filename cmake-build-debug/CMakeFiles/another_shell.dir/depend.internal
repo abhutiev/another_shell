@@ -31,9 +31,12 @@ CMakeFiles/another_shell.dir/srcs/builtins/work_with_environments.c.o
 CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.o
  /Users/gdoge/another_shell/includes/minishell.h
  /Users/gdoge/another_shell/srcs/parsing/filling_command_structure.c
-CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o
+CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o
  /Users/gdoge/another_shell/includes/minishell.h
- /Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c
+ /Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing.c
+CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o
+ /Users/gdoge/another_shell/includes/minishell.h
+ /Users/gdoge/another_shell/srcs/parsing/memory_cleaning.c
 CMakeFiles/another_shell.dir/srcs/parsing/request_separation.c.o
  /Users/gdoge/another_shell/includes/minishell.h
  /Users/gdoge/another_shell/srcs/parsing/request_separation.c

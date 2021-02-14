@@ -44,10 +44,7 @@ void	parsing_and_execution(t_all *all)
 		free_command_names(all);
 		i++;
 	}
-	free(all->requests.separated[i]);
-	free(all->requests.separated);
-	free(all->requests.line_with_substitutions[i]);
-	free(all->requests.line_with_substitutions);
+	clean_after_yourself(all, i);
 }
 
 int		main(int argc, char **argv, char **en)

@@ -80,7 +80,9 @@ void				second_circle_of_parsing(t_all *all, size_t i);
 
 void	allocate_memory_for_commands(t_all *all);
 void	filling_command_structure(t_all *all);
+
 void	free_command_names(t_all *all);
+void	clean_after_yourself(t_all *all, size_t i);
 
 void				pregame_ritual(t_all *all, int ac, char **av, char **env);
 

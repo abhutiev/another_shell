@@ -246,18 +246,18 @@ CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/utils/is_shielded.c -o CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.s
 
-CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o: CMakeFiles/another_shell.dir/flags.make
-CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o: ../srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o   -c /Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c
+CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o: ../srcs/parsing/first_circle_of_parsing.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o   -c /Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing.c
 
-CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c > CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.i
+CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing.c > CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.i
 
-CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c -o CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.s
+CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing.c -o CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.s
 
 CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o: CMakeFiles/another_shell.dir/flags.make
 CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o: ../srcs/utils/is_special_symbol.c
@@ -493,6 +493,19 @@ CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/parsing/filling_command_structure.c -o CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.s
 
+CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o: CMakeFiles/another_shell.dir/flags.make
+CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o: ../srcs/parsing/memory_cleaning.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o   -c /Users/gdoge/another_shell/srcs/parsing/memory_cleaning.c
+
+CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gdoge/another_shell/srcs/parsing/memory_cleaning.c > CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.i
+
+CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gdoge/another_shell/srcs/parsing/memory_cleaning.c -o CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.s
+
 # Object files for target another_shell
 another_shell_OBJECTS = \
 "CMakeFiles/another_shell.dir/main.c.o" \
@@ -508,7 +521,7 @@ another_shell_OBJECTS = \
 "CMakeFiles/another_shell.dir/srcs/utils/gnl.c.o" \
 "CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o" \
 "CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.o" \
-"CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o" \
+"CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o" \
 "CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o" \
 "CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o" \
 "CMakeFiles/another_shell.dir/srcs/parsing/request_separation.c.o" \
@@ -526,7 +539,8 @@ another_shell_OBJECTS = \
 "CMakeFiles/another_shell.dir/srcs/builtins/exit.c.o" \
 "CMakeFiles/another_shell.dir/srcs/utils/make_way_to_binary.c.o" \
 "CMakeFiles/another_shell.dir/srcs/utils/strlcat.c.o" \
-"CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.o"
+"CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.o" \
+"CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o"
 
 # External object files for target another_shell
 another_shell_EXTERNAL_OBJECTS =
@@ -544,7 +558,7 @@ another_shell: CMakeFiles/another_shell.dir/srcs/builtins/work_with_environments
 another_shell: CMakeFiles/another_shell.dir/srcs/utils/gnl.c.o
 another_shell: CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o
 another_shell: CMakeFiles/another_shell.dir/srcs/utils/is_shielded.c.o
-another_shell: CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o
 another_shell: CMakeFiles/another_shell.dir/srcs/utils/is_special_symbol.c.o
 another_shell: CMakeFiles/another_shell.dir/srcs/pregame_ritual.c.o
 another_shell: CMakeFiles/another_shell.dir/srcs/parsing/request_separation.c.o
@@ -563,9 +577,10 @@ another_shell: CMakeFiles/another_shell.dir/srcs/builtins/exit.c.o
 another_shell: CMakeFiles/another_shell.dir/srcs/utils/make_way_to_binary.c.o
 another_shell: CMakeFiles/another_shell.dir/srcs/utils/strlcat.c.o
 another_shell: CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.o
+another_shell: CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o
 another_shell: CMakeFiles/another_shell.dir/build.make
 another_shell: CMakeFiles/another_shell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking C executable another_shell"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gdoge/another_shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking C executable another_shell"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/another_shell.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -31,8 +31,11 @@ CMakeFiles/another_shell.dir/srcs/builtins/work_with_environments.c.o: ../srcs/b
 CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.o: ../includes/minishell.h
 CMakeFiles/another_shell.dir/srcs/parsing/filling_command_structure.c.o: ../srcs/parsing/filling_command_structure.c
 
-CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o: ../includes/minishell.h
-CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c.o: ../srcs/parsing/first_circle_of_parsing_and_memory_cleaning.c
+CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o: ../includes/minishell.h
+CMakeFiles/another_shell.dir/srcs/parsing/first_circle_of_parsing.c.o: ../srcs/parsing/first_circle_of_parsing.c
+
+CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o: ../includes/minishell.h
+CMakeFiles/another_shell.dir/srcs/parsing/memory_cleaning.c.o: ../srcs/parsing/memory_cleaning.c
 
 CMakeFiles/another_shell.dir/srcs/parsing/request_separation.c.o: ../includes/minishell.h
 CMakeFiles/another_shell.dir/srcs/parsing/request_separation.c.o: ../srcs/parsing/request_separation.c
