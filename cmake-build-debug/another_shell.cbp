@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/gdoge/another_shell/cmake-build-debug"/>
+				<Option working_dir="/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/gdoge/another_shell/cmake-build-debug"/>
+				<Option working_dir="/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/gdoge/another_shell/cmake-build-debug"/>
+				<Option working_dir="/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="another_shell">
-				<Option output="/Users/gdoge/another_shell/cmake-build-debug/another_shell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/gdoge/another_shell/cmake-build-debug"/>
+				<Option output="/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/another_shell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -52,15 +52,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 another_shell"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 another_shell"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="another_shell/fast">
-				<Option output="/Users/gdoge/another_shell/cmake-build-debug/another_shell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/gdoge/another_shell/cmake-build-debug"/>
+				<Option output="/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/another_shell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -73,116 +73,116 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 another_shell/fast"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 another_shell/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/gdoge/another_shell/includes/minishell.h">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/includes/minishell.h">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/main.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/main.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/cd.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/builtins/cd.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/echo.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/builtins/echo.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/env.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/builtins/env.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/exit.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/builtins/exit.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/export.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/builtins/export.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/pwd.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/builtins/pwd.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/unset.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/builtins/unset.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/builtins/work_with_environments.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/builtins/work_with_environments.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/filling_command_structure.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/parsing/filling_command_structure.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/first_circle_of_parsing.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/parsing/first_circle_of_parsing.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/memory_cleaning.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/parsing/memory_cleaning.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/request_separation.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/parsing/request_separation.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/parsing/second_circle_of_parsing.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/parsing/second_circle_of_parsing.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/pregame_ritual.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/pregame_ritual.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/signal_handling.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/signal_handling.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/bzero.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/bzero.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/calloc.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/calloc.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/gnl.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/gnl.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/is_shielded.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/is_shielded.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/is_special_symbol.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/is_special_symbol.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/make_way_to_binary.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/make_way_to_binary.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/putchar.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/putchar.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/putendl.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/putendl.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/putstr.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/putstr.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/split.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/split.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strcmp.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strcmp.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strcpy.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strcpy.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strdup.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strdup.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strlcat.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strlcat.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strlcpy.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strlcpy.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/strlen.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strlen.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/srcs/utils/substr.c">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/substr.c">
 			<Option target="another_shell"/>
 		</Unit>
-		<Unit filename="/Users/gdoge/another_shell/CMakeLists.txt">
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
