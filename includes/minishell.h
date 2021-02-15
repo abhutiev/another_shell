@@ -181,7 +181,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 ** File: strdup.c
 */
 
-char				*ft_strdup(const char *s1);
+char				*ft_strdup(char *s1);
 
 /*
 ** File: strcmp.c

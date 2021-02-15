@@ -1,54 +1,62 @@
-NAME    =   minishell
+NAME	=	minishell
 
-CC      =   gcc
+CC		=	gcc
 
-CFLAGS  =   -Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror
 
-SRCDIR  =   srcs/
+SRCDIR	=	srcs/
 
-PARSINGDIR  = $(addprefix $SRCDIR, parsing/)
+PARSINGDIR	=	parsing/
 
-PARSINGSRC  =   $(addprefix $PARSINGDIR, \
-                second_circle_of_parsing.c \
-                filling_command_structure.c \
-                memory_cleaning.c \
-                request_separation.c \
-                first_circle_of_parsing.c)
+PARSINGSRC	=	$(addprefix ${PARSINGDIR}, \
+				second_circle_of_parsing.c \
+				filling_command_structure.c \
+				memory_cleaning.c \
+				request_separation.c \
+				first_circle_of_parsing.c)
 
 UTILSDIR    =   utils/
 
-UTILSSRC    =   $(addprefix $UTILSDIR, \
-                strlen.c \
-                split.c \
-                calloc.c \
-                bzero.c \
-                substr.c \
-                strdup.c \
-                strlcpy.c \
-                strcmp.c \
-                gnl.c srcs/utils/strcpy.c \
-                is_shielded.c \
-                is_special_symbol.c \
-                putchar.c \
-                putendl.c \
-                putstr.c \
-                make_way_to_binary.c \
-                strlcat.c)
+UTILSSRC    =   $(addprefix ${UTILSDIR}, \
+				strlen.c \
+				split.c \
+				calloc.c \
+				bzero.c \
+				substr.c \
+				strdup.c \
+				strlcpy.c \
+				strcmp.c \
+				gnl.c \
+				strcpy.c \
+				is_shielded.c \
+				is_special_symbol.c \
+				putchar.c \
+				putendl.c \
+				putstr.c \
+				make_way_to_binary.c \
+				strlcat.c)
 
 BUILTINSDIR =   builtins/
 
-BUILTINSSRC =   $(addprefix $BUILTINSDIR, \
-                cd.c \
-                echo.c \
-                env.c \
-                exit.c \
-                export.c \
-                pwd.c \
-                unset.c \
-                work_with_environments.c)
+BUILTINSSRC =	$(addprefix ${BUILTINSDIR}, \
+				cd.c \
+				echo.c \
+				env.c \
+				exit.c \
+				export.c \
+				pwd.c \
+				unset.c \
+				work_with_environments.c)
 
-INCDIR  =   includes/
+SRC		=	$(addprefix ${SRCDIR}, ${BUILTINSSRC} \
+				${PARSINGSRC} \
+				${UTILSSRC})
 
-INC     =   minishell.h
+INCDIR	=	includes/
 
-all: $NAME
+INC		=	minishell.h
+
+all: ${NAME}
+
+${NAME}:
+	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} srcs/pregame_ritual.c srcs/signal_handling.c main.c

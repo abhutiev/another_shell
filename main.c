@@ -14,13 +14,27 @@
 
 
 
-
+void	request_execution(t_all *all)
+{
+	
+	j = 0;
+	while (all->command[j].name)
+	{
+		pid = fork();
+		if (pid == 0)
+		{
+			execve(to_usr_bin(all->command[j].name), all->command[j].args, all->envi);
+			exit(0);
+		}
+		wait(0);
+		j++;
+	}
+}
 
 void	parsing_and_execution(t_all *all)
 {
 	size_t	i;
-	size_t	j;
-	pid_t pid;
+
 
 	i = 0;
 	while (all->requests.separated[i])
@@ -29,18 +43,7 @@ void	parsing_and_execution(t_all *all)
 		second_circle_of_parsing(all, i);
 		allocate_memory_for_commands(all);
 		filling_command_structure(all);
-		j = 0;
-		while (all->command[j].name)
-		{
-			pid = fork();
-			if (pid == 0)
-			{
-				execve(to_usr_bin(all->command[j].name), all->command[j].args, all->envi);
-				exit(0);
-			}
-			wait(0);
-			j++;
-		}
+
 		free_command_names(all);
 		i++;
 	}
