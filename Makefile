@@ -2,7 +2,7 @@ NAME	=	minishell
 
 CC		=	gcc
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=
 
 SRCDIR	=	srcs/
 
@@ -34,7 +34,8 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				putendl.c \
 				putstr.c \
 				make_way_to_binary.c \
-				strlcat.c)
+				strlcat.c \
+				str_to_lowercase.c )
 
 BUILTINSDIR =   builtins/
 
@@ -59,4 +60,4 @@ INC		=	minishell.h
 all: ${NAME}
 
 ${NAME}:
-	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} srcs/pregame_ritual.c srcs/signal_handling.c main.c
+	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} srcs/pregame_ritual.c srcs/signal_handling.c main.c -o minishell

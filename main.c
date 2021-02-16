@@ -12,18 +12,49 @@
 
 #include "includes/minishell.h"
 
-
+int		builtin_executed(t_all *all, size_t j)
+{
+	str_to_lowercase(all, j);
+	if (!ft_strcmp("cd", all->command[j].name))
+		return (1);
+	else if (!ft_strcmp("echo", all->command[j].name))
+		return (echo(all));
+	else if (!ft_strcmp("env", all->command[j].name))
+		return (env(all));
+	else if (!ft_strcmp("exit", all->command[j].name))
+		return (1);
+	else if (!ft_strcmp("export", all->command[j].name))
+		return (1);
+	else if (!ft_strcmp("pwd", all->command[j].name))
+		return (pwd(all));
+	else if (!ft_strcmp("unset", all->command[j].name))
+		return (1);
+	else
+		return (0);
+}
 
 void	request_execution(t_all *all)
 {
-	
+	size_t	j;
+	pid_t	pid;
+
 	j = 0;
 	while (all->command[j].name)
 	{
+		if (builtin_executed(all, j))
+		{
+			j++;
+			continue ;
+		}
 		pid = fork();
 		if (pid == 0)
 		{
-			execve(to_usr_bin(all->command[j].name), all->command[j].args, all->envi);
+			execve((all->command[j].name), all->command[j].args, env_for_execve(all));
+			execve(to_usr_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
+			execve(to_usr_local_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
+			execve(to_local_munki(all->command[j].name), all->command[j].args, env_for_execve(all));
+			execve(to_usr_sbin(all->command[j].name), all->command[j].args, env_for_execve(all));
+			execve(to_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
 			exit(0);
 		}
 		wait(0);
@@ -43,7 +74,7 @@ void	parsing_and_execution(t_all *all)
 		second_circle_of_parsing(all, i);
 		allocate_memory_for_commands(all);
 		filling_command_structure(all);
-
+		request_execution(all);
 		free_command_names(all);
 		i++;
 	}

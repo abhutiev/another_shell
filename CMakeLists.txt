@@ -36,4 +36,4 @@ add_executable(another_shell
         srcs/builtins/exit.c
         srcs/utils/make_way_to_binary.c
         srcs/utils/strlcat.c
-        srcs/parsing/filling_command_structure.c srcs/parsing/memory_cleaning.c)
+        srcs/parsing/filling_command_structure.c srcs/parsing/memory_cleaning.c srcs/utils/str_to_lowercase.c)

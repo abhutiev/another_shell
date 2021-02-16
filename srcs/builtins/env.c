@@ -12,7 +12,8 @@
 
 #include "../../includes/minishell.h"
 
-void	env(t_all *all)
+int	env(t_all *all)
 {
 	display_env(all);
+	return (1);
 }

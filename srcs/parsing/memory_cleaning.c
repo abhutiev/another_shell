@@ -24,7 +24,7 @@ void	free_command_names(t_all *all)
 	i = 0;
 	while (all->command[i].name)
 	{
-		j = 0;
+		j = 1;
 		while (all->command[i].args[j])
 		{
 			free(all->command[i].args[j]);

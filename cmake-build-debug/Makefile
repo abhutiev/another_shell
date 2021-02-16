@@ -845,6 +845,33 @@ srcs/utils/split.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/split.c.s
 .PHONY : srcs/utils/split.c.s
 
+srcs/utils/str_to_lowercase.o: srcs/utils/str_to_lowercase.c.o
+
+.PHONY : srcs/utils/str_to_lowercase.o
+
+# target to build an object file
+srcs/utils/str_to_lowercase.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/str_to_lowercase.c.o
+.PHONY : srcs/utils/str_to_lowercase.c.o
+
+srcs/utils/str_to_lowercase.i: srcs/utils/str_to_lowercase.c.i
+
+.PHONY : srcs/utils/str_to_lowercase.i
+
+# target to preprocess a source file
+srcs/utils/str_to_lowercase.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/str_to_lowercase.c.i
+.PHONY : srcs/utils/str_to_lowercase.c.i
+
+srcs/utils/str_to_lowercase.s: srcs/utils/str_to_lowercase.c.s
+
+.PHONY : srcs/utils/str_to_lowercase.s
+
+# target to generate assembly for a file
+srcs/utils/str_to_lowercase.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/str_to_lowercase.c.s
+.PHONY : srcs/utils/str_to_lowercase.c.s
+
 srcs/utils/strcmp.o: srcs/utils/strcmp.c.o
 
 .PHONY : srcs/utils/strcmp.o
@@ -1121,6 +1148,9 @@ help:
 	@echo "... srcs/utils/split.o"
 	@echo "... srcs/utils/split.i"
 	@echo "... srcs/utils/split.s"
+	@echo "... srcs/utils/str_to_lowercase.o"
+	@echo "... srcs/utils/str_to_lowercase.i"
+	@echo "... srcs/utils/str_to_lowercase.s"
 	@echo "... srcs/utils/strcmp.o"
 	@echo "... srcs/utils/strcmp.i"
 	@echo "... srcs/utils/strcmp.s"

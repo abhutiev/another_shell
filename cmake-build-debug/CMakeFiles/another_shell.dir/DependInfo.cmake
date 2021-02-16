@@ -30,6 +30,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/putendl.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/putendl.c.o"
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/putstr.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o"
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/split.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/split.c.o"
+  "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/str_to_lowercase.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/str_to_lowercase.c.o"
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strcmp.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o"
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strcpy.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o"
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strdup.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/strdup.c.o"

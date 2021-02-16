@@ -19,50 +19,45 @@ char	*to_usr_bin(char *command)
 	bin = (char *)ft_calloc(ft_strlen(command) + 10, 1);
 	ft_strlcpy(bin, "/usr/bin/", 10);
 	ft_strlcat(bin, command, ft_strlen(command) + 10);
-	//free(command);
 	return (bin);
 }
 
-char	*to_usr_local_bin(char **command)
+char	*to_usr_local_bin(char *command)
 {
 	char	*bin;
 
-	bin = (char *)ft_calloc(ft_strlen(*command) + 16, 1);
+	bin = (char *)ft_calloc(ft_strlen(command) + 16, 1);
 	ft_strlcpy(bin, "/usr/local/bin/", 16);
-	ft_strlcat(bin, *command, ft_strlen(*command) + 16);
-	free(command);
+	ft_strlcat(bin, command, ft_strlen(command) + 16);
 	return (bin);
 }
 
-char	*to_bin(char **command)
+char	*to_bin(char *command)
 {
 	char	*bin;
 
-	bin = (char *)ft_calloc(ft_strlen(*command) + 6, 1);
+	bin = (char *)ft_calloc(ft_strlen(command) + 6, 1);
 	ft_strlcpy(bin, "/bin/", 6);
-	ft_strlcat(bin, *command, ft_strlen(*command) + 6);
-	free(command);
+	ft_strlcat(bin, command, ft_strlen(command) + 6);
 	return (bin);
 }
 
-char	*to_usr_sbin(char **command)
+char	*to_usr_sbin(char *command)
 {
 	char	*bin;
 
-	bin = (char *)ft_calloc(ft_strlen(*command) + 11, 1);
+	bin = (char *)ft_calloc(ft_strlen(command) + 11, 1);
 	ft_strlcpy(bin, "/usr/sbin/", 11);
-	ft_strlcat(bin, *command, ft_strlen(*command) + 11);
-	free(command);
+	ft_strlcat(bin, command, ft_strlen(command) + 11);
 	return (bin);
 }
 
-char	*to_local_munki(char **command)
+char	*to_local_munki(char *command)
 {
 	char	*bin;
 
-	bin = (char *)ft_calloc(ft_strlen(*command) + 18, 1);
+	bin = (char *)ft_calloc(ft_strlen(command) + 18, 1);
 	ft_strlcpy(bin, "/usr/local/munki/", 18);
-	ft_strlcat(bin, *command, ft_strlen(*command) + 18);
-	free(command);
+	ft_strlcat(bin, command, ft_strlen(command) + 18);
 	return (bin);
 }

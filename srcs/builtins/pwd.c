@@ -12,11 +12,12 @@
 
 #include "../../includes/minishell.h"
 
-void	pwd(t_all *all)
+int		pwd(t_all *all)
 {
 	char	*res;
 
 	res = getcwd(NULL, 0);
-	ft_putendl_fd(res, 1);
+	ft_putendl_fd(res, 0);
 	free(res);
+	return(1);
 }

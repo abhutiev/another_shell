@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   echo.c                                             :+:      :+:    :+:   */
+/*   str_to_lowercase.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 09:56:00 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/10 09:56:01 by gdoge            ###   ########.fr       */
+/*   Created: 2021/02/16 16:54:43 by gdoge             #+#    #+#             */
+/*   Updated: 2021/02/16 16:54:51 by gdoge            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-int 	echo(t_all *all)
+void	str_to_lowercase(t_all *all, size_t j)
 {
-	int		i;
+	size_t	i;
 
-	i = (ft_strcmp(all->command->args[1], "-n") ? 1 : 2);
-	while (all->command->args[i])
-		ft_putstr_fd(all->command->args[i++], 0);
-	if (ft_strcmp(all->command->args[1], "-n"))
-		ft_putchar_fd('\n', 0);
-	return (1);
+	i = 0;
+	while (all->command[j].name[i])
+	{
+		if ((all->command[j].name[i] <= 'Z') && (all->command[j].name[i] >= 'A'))
+			all->command[j].name[i] += 32;
+		i++;
+	}
 }

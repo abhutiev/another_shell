@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-void	allocate_memory_for_commands(t_all *all)
+void		allocate_memory_for_commands(t_all *all)
 {
 	size_t	i;
 	size_t	counter;
@@ -31,7 +31,17 @@ void	allocate_memory_for_commands(t_all *all)
 	all->command = (t_command *)ft_calloc(counter + 2, sizeof(t_command));
 }
 
-void	filling_command_structure(t_all *all)
+static int	is_pipe_or_redirect(t_all *all, size_t i)
+{
+	if (!ft_strcmp(all->separated_request[i], ">") ||
+		!ft_strcmp(all->separated_request[i], ">>") ||
+			!ft_strcmp(all->separated_request[i], "<") ||
+				!ft_strcmp(all->separated_request[i], "|"))
+		return (1);
+	return (0);
+}
+
+void		filling_command_structure(t_all *all)
 {
 	size_t	i;
 	size_t	j;
@@ -42,7 +52,7 @@ void	filling_command_structure(t_all *all)
 	k = 0;
 	while (all->separated_request[i])
 	{
-		if (!ft_strcmp(all->separated_request[i], ">") || !ft_strcmp(all->separated_request[i], ">>") || !ft_strcmp(all->separated_request[i], "<") || !ft_strcmp(all->separated_request[i], "|"))
+		if (is_pipe_or_redirect(all, i))
 		{
 			free(all->separated_request[i]);
 			all->command[k].args[j - 1] = NULL;
@@ -54,6 +64,8 @@ void	filling_command_structure(t_all *all)
 			if (j == 0)
 			{
 				all->command[k].args = ft_calloc(20, sizeof(char *));
+				all->command[k].args[j++
+				] = all->separated_request[i];
 				all->command[k].name = all->separated_request[i];
 			}
 			else

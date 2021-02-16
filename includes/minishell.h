@@ -23,10 +23,7 @@
 # include <sys/wait.h>
 
 # define SHELL_NAME 	"\033[0;34mbash:\033[1;34m"
-# define PIPE			1
-# define RIGHT_REDIR	2
-# define D_RIGHT_REDIR	3
-# define LEFT_REDIR		4
+
 
 typedef struct		s_env
 {
@@ -54,7 +51,6 @@ typedef struct		s_command
 	char			*name;
 	char			**args;
 	size_t			*number_of_args;
-	size_t			number_of_commands;
 }					t_command;
 
 typedef struct		s_fd
@@ -72,24 +68,25 @@ typedef struct		s_all
 	t_fd			fd;
 	char			**separated_request;
 	char			**envi;
+	size_t			number_of_commands;
 }					t_all;
 
 
 void				first_circle_of_parsing(t_all *all, size_t i);
 void				second_circle_of_parsing(t_all *all, size_t i);
 
-void	allocate_memory_for_commands(t_all *all);
-void	filling_command_structure(t_all *all);
+void				allocate_memory_for_commands(t_all *all);
+void				filling_command_structure(t_all *all);
 
-void	free_command_names(t_all *all);
-void	clean_after_yourself(t_all *all, size_t i);
+void				free_command_names(t_all *all);
+void				clean_after_yourself(t_all *all, size_t i);
 
 void				pregame_ritual(t_all *all, int ac, char **av, char **env);
 
 void				separate_requests(t_all *all);
 void				count_requests(t_all *all);
 
-
+char				**env_for_execve(t_all *all);
 
 
 
@@ -106,13 +103,13 @@ void				count_requests(t_all *all);
 ** File: pwd.c
 */
 
-void				pwd(t_all *all);
+int					pwd(t_all *all);
 
 /*
 ** File: env.c
 */
 
-void				env(t_all *all);
+int					env(t_all *all);
 
 /*
 ** File: cd.c
@@ -122,6 +119,9 @@ void				env(t_all *all);
 /*
 ** File: echo.c
 */
+
+int 				echo(t_all *all);
+
 
 /*
 ** File: export.c
@@ -152,6 +152,16 @@ void				display_env(t_all *all);
 ** ########################## Folder: utils ###############################
 ** ########################################################################
 */
+
+/*
+** File: make_way_to_binary.c
+*/
+
+char				*to_usr_bin(char *command);
+char				*to_usr_local_bin(char *command);
+char				*to_bin(char *command);
+char				*to_usr_sbin(char *command);
+char				*to_local_munki(char *command);
 
 /*
 ** File: strlen.c
@@ -244,16 +254,16 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void				*ft_bzero(void *b, size_t len);
 
 /*
-** File: make_way_to_binary.c
+** File: str_to_lowercase.c
 */
 
-char				*to_usr_bin(char *command);
-char				*to_usr_local_bin(char **command);
-char				*to_bin(char **command);
-char				*to_usr_sbin(char **command);
-char				*to_local_munki(char **command);
+void				str_to_lowercase(t_all *all, size_t j);
 
-size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
+/*
+** File: ft_strlcat.c
+*/
+
+size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 
 #endif

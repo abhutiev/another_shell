@@ -12,30 +12,6 @@
 
 #include "../../includes/minishell.h"
 
-void	load_environments(t_all *all, char **env)
-{
-	size_t	i;
-	size_t	number_of_envs;
-	char	**tmp;
-
-	i = 0;
-	number_of_envs = 0;
-	while (env[number_of_envs])
-	{
-		number_of_envs++;
-	}
-	all->env = (t_env *)ft_calloc(number_of_envs + 100, sizeof(t_env));
-	while (env[i])
-	{
-		tmp = split(env[i], '=');
-		all->env[i].name = tmp[0];
-		all->env[i].value = tmp[1];
-		free(tmp[2]);
-		free(tmp);
-		i++;
-	}
-}
-
 void	add_environment(t_all *all, char *name, char *value)
 {
 	size_t	i;
@@ -55,33 +31,6 @@ void	add_environment(t_all *all, char *name, char *value)
 	}
 	all->env[number_of_envs + 1].name = ft_strdup(name);
 	all->env[number_of_envs + 1].value = ft_strdup(value);
-}
-
-void	sort_environments(t_all *all)
-{
-	int		i;
-	int		j;
-	size_t	number_of_envs;
-	char	*tmp;
-
-	i = -1;
-	number_of_envs = 0;
-	while (all->env[number_of_envs].name)
-		number_of_envs++;
-	while (++i < number_of_envs)
-	{
-		j = -1;
-		while (++j < number_of_envs - i - 1)
-			if (ft_strcmp(all->env[j].name, all->env[j + 1].name) < 0)
-			{
-				tmp = all->env[j].name;
-				all->env[j].name = all->env[j + 1].name;
-				all->env[j + 1].name = tmp;
-				tmp = all->env[j].value;
-				all->env[j].value = all->env[j + 1].value;
-				all->env[j + 1].value = tmp;
-			}
-	}
 }
 
 void	delete_environment(t_all *all, char *name)
@@ -114,7 +63,30 @@ void	display_env(t_all *all)
 	i = 0;
 	while (all->env[i].name)
 	{
-		printf("%s=%s\n", all->env[i].name, all->env[i].value);
+		ft_putstr_fd(all->env[i].name, 0);
+		ft_putchar_fd('=', 0);
+		ft_putendl_fd(all->env[i].value, 0);
 		i++;
 	}
+}
+
+char	**env_for_execve(t_all *all)
+{
+	size_t	i;
+	size_t	number_of_envs;
+	char	**result;
+	i = 0;
+	number_of_envs = 0;
+	while (all->env[number_of_envs].name)
+		number_of_envs++;
+	result = ft_calloc(number_of_envs + 2, sizeof(char *));
+	while (i < number_of_envs - 1)
+	{
+		result[i] = ft_calloc(ft_strlen(all->env[i].name) + ft_strlen(all->env[i].value) + 2, sizeof(char));
+		ft_strcpy(result[i], all->env[i].name);
+		ft_strlcat(result[i], "=", ft_strlen(all->env[i].name) + 2);
+		ft_strlcat(result[i], all->env[i].value, ft_strlen(all->env[i].name) + ft_strlen(all->env[i].value) + 2);
+		i++;
+	}
+	return (result);
 }

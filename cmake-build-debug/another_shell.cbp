@@ -161,6 +161,9 @@
 		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/split.c">
 			<Option target="another_shell"/>
 		</Unit>
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/str_to_lowercase.c">
+			<Option target="another_shell"/>
+		</Unit>
 		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strcmp.c">
 			<Option target="another_shell"/>
 		</Unit>

@@ -25,6 +25,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/another_shell.dir/srcs/utils/putendl.c.o"
   "CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o"
   "CMakeFiles/another_shell.dir/srcs/utils/split.c.o"
+  "CMakeFiles/another_shell.dir/srcs/utils/str_to_lowercase.c.o"
   "CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o"
   "CMakeFiles/another_shell.dir/srcs/utils/strcpy.c.o"
   "CMakeFiles/another_shell.dir/srcs/utils/strdup.c.o"
