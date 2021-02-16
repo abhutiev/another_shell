@@ -12,8 +12,19 @@
 
 #include "../../includes/minishell.h"
 
-int	env(t_all *all)
+int	env(t_all *all, size_t j)
 {
-	display_env(all);
+	size_t	i;
+
+	if (all->command[j].args[1] != NULL)
+		return (1);
+	i = 0;
+	while (all->env[i].name)
+	{
+		ft_putstr_fd(all->env[i].name, 0);
+		ft_putchar_fd('=', 0);
+		ft_putendl_fd(all->env[i].value, 0);
+		i++;
+	}
 	return (1);
 }

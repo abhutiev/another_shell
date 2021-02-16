@@ -22,7 +22,7 @@
 # include <sys/types.h>
 # include <sys/wait.h>
 
-# define SHELL_NAME 	"\033[0;34mbash:\033[1;34m"
+# define SHELL_NAME 	"bash:"
 
 
 typedef struct		s_env
@@ -109,7 +109,7 @@ int					pwd(t_all *all);
 ** File: env.c
 */
 
-int					env(t_all *all);
+int					env(t_all *all, size_t j);
 
 /*
 ** File: cd.c
@@ -120,12 +120,14 @@ int					env(t_all *all);
 ** File: echo.c
 */
 
-int 				echo(t_all *all);
+int 				echo(t_all *all, size_t j);
 
 
 /*
 ** File: export.c
 */
+
+int					export(t_all *all, size_t j);
 
 /*
 ** File: exit.c

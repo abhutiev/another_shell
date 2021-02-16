@@ -18,13 +18,13 @@ int		builtin_executed(t_all *all, size_t j)
 	if (!ft_strcmp("cd", all->command[j].name))
 		return (1);
 	else if (!ft_strcmp("echo", all->command[j].name))
-		return (echo(all));
+		return (echo(all, j));
 	else if (!ft_strcmp("env", all->command[j].name))
-		return (env(all));
+		return (env(all, j));
 	else if (!ft_strcmp("exit", all->command[j].name))
 		return (1);
 	else if (!ft_strcmp("export", all->command[j].name))
-		return (1);
+		return (export(all, j));
 	else if (!ft_strcmp("pwd", all->command[j].name))
 		return (pwd(all));
 	else if (!ft_strcmp("unset", all->command[j].name))
@@ -85,7 +85,6 @@ int		main(int argc, char **argv, char **en)
 {
 	t_all	all;
 
-	all.envi = en;
 	pregame_ritual(&all, argc, argv, en);
 	while (1)
 	{

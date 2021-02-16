@@ -79,6 +79,9 @@ CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o: ../srcs/utils/putstr.c
 CMakeFiles/another_shell.dir/srcs/utils/split.c.o: ../includes/minishell.h
 CMakeFiles/another_shell.dir/srcs/utils/split.c.o: ../srcs/utils/split.c
 
+CMakeFiles/another_shell.dir/srcs/utils/str_to_lowercase.c.o: ../includes/minishell.h
+CMakeFiles/another_shell.dir/srcs/utils/str_to_lowercase.c.o: ../srcs/utils/str_to_lowercase.c
+
 CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o: ../includes/minishell.h
 CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o: ../srcs/utils/strcmp.c
 

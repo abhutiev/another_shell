@@ -79,6 +79,9 @@ CMakeFiles/another_shell.dir/srcs/utils/putstr.c.o
 CMakeFiles/another_shell.dir/srcs/utils/split.c.o
  /Users/gdoge/shell_in_progress/another_shell/includes/minishell.h
  /Users/gdoge/shell_in_progress/another_shell/srcs/utils/split.c
+CMakeFiles/another_shell.dir/srcs/utils/str_to_lowercase.c.o
+ /Users/gdoge/shell_in_progress/another_shell/includes/minishell.h
+ /Users/gdoge/shell_in_progress/another_shell/srcs/utils/str_to_lowercase.c
 CMakeFiles/another_shell.dir/srcs/utils/strcmp.c.o
  /Users/gdoge/shell_in_progress/another_shell/includes/minishell.h
  /Users/gdoge/shell_in_progress/another_shell/srcs/utils/strcmp.c

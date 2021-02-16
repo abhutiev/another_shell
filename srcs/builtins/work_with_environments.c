@@ -20,7 +20,11 @@ void	add_environment(t_all *all, char *name, char *value)
 	i = 0;
 	number_of_envs = 0;
 	while (all->env[number_of_envs].name)
+	{
+		if (!ft_strcmp(all->env[number_of_envs].name, name))
+			delete_environment(all, name);
 		number_of_envs++;
+	}
 	while (all->env[i].name && (ft_strcmp(all->env[i].name, name) > 0))
 		i++;
 	while (number_of_envs + 1 > i)

@@ -109,5 +109,11 @@ void		second_circle_of_parsing(t_all *all, size_t i)
 		all->buffer.iter_1++;
 	}
 	free(all->requests.line_with_substitutions[i]);
+	i = 0;
 	all->separated_request[n] = NULL;
+	while (all->separated_request[i])
+	{
+		//printf("%s\n", all->separated_request[i]);
+		i++;
+	}
 }
