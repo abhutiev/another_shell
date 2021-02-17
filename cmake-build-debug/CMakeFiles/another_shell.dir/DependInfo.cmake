@@ -37,6 +37,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strlcat.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/strlcat.c.o"
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strlcpy.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o"
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strlen.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o"
+  "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strncmp.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/strncmp.c.o"
   "/Users/gdoge/shell_in_progress/another_shell/srcs/utils/substr.c" "/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir/srcs/utils/substr.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

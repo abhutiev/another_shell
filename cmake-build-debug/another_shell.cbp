@@ -182,6 +182,9 @@
 		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strlen.c">
 			<Option target="another_shell"/>
 		</Unit>
+		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/strncmp.c">
+			<Option target="another_shell"/>
+		</Unit>
 		<Unit filename="/Users/gdoge/shell_in_progress/another_shell/srcs/utils/substr.c">
 			<Option target="another_shell"/>
 		</Unit>

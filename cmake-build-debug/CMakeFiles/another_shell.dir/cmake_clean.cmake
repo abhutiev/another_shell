@@ -32,6 +32,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/another_shell.dir/srcs/utils/strlcat.c.o"
   "CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o"
   "CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o"
+  "CMakeFiles/another_shell.dir/srcs/utils/strncmp.c.o"
   "CMakeFiles/another_shell.dir/srcs/utils/substr.c.o"
   "another_shell"
   "another_shell.pdb"

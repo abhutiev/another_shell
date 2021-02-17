@@ -100,6 +100,9 @@ CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o: ../srcs/utils/strlcpy.c
 CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o: ../includes/minishell.h
 CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o: ../srcs/utils/strlen.c
 
+CMakeFiles/another_shell.dir/srcs/utils/strncmp.c.o: ../includes/minishell.h
+CMakeFiles/another_shell.dir/srcs/utils/strncmp.c.o: ../srcs/utils/strncmp.c
+
 CMakeFiles/another_shell.dir/srcs/utils/substr.c.o: ../includes/minishell.h
 CMakeFiles/another_shell.dir/srcs/utils/substr.c.o: ../srcs/utils/substr.c
 

@@ -1034,6 +1034,33 @@ srcs/utils/strlen.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strlen.c.s
 .PHONY : srcs/utils/strlen.c.s
 
+srcs/utils/strncmp.o: srcs/utils/strncmp.c.o
+
+.PHONY : srcs/utils/strncmp.o
+
+# target to build an object file
+srcs/utils/strncmp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strncmp.c.o
+.PHONY : srcs/utils/strncmp.c.o
+
+srcs/utils/strncmp.i: srcs/utils/strncmp.c.i
+
+.PHONY : srcs/utils/strncmp.i
+
+# target to preprocess a source file
+srcs/utils/strncmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strncmp.c.i
+.PHONY : srcs/utils/strncmp.c.i
+
+srcs/utils/strncmp.s: srcs/utils/strncmp.c.s
+
+.PHONY : srcs/utils/strncmp.s
+
+# target to generate assembly for a file
+srcs/utils/strncmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/another_shell.dir/build.make CMakeFiles/another_shell.dir/srcs/utils/strncmp.c.s
+.PHONY : srcs/utils/strncmp.c.s
+
 srcs/utils/substr.o: srcs/utils/substr.c.o
 
 .PHONY : srcs/utils/substr.o
@@ -1169,6 +1196,9 @@ help:
 	@echo "... srcs/utils/strlen.o"
 	@echo "... srcs/utils/strlen.i"
 	@echo "... srcs/utils/strlen.s"
+	@echo "... srcs/utils/strncmp.o"
+	@echo "... srcs/utils/strncmp.i"
+	@echo "... srcs/utils/strncmp.s"
 	@echo "... srcs/utils/substr.o"
 	@echo "... srcs/utils/substr.i"
 	@echo "... srcs/utils/substr.s"

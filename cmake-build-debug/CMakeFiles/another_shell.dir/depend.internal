@@ -100,6 +100,9 @@ CMakeFiles/another_shell.dir/srcs/utils/strlcpy.c.o
 CMakeFiles/another_shell.dir/srcs/utils/strlen.c.o
  /Users/gdoge/shell_in_progress/another_shell/includes/minishell.h
  /Users/gdoge/shell_in_progress/another_shell/srcs/utils/strlen.c
+CMakeFiles/another_shell.dir/srcs/utils/strncmp.c.o
+ /Users/gdoge/shell_in_progress/another_shell/includes/minishell.h
+ /Users/gdoge/shell_in_progress/another_shell/srcs/utils/strncmp.c
 CMakeFiles/another_shell.dir/srcs/utils/substr.c.o
  /Users/gdoge/shell_in_progress/another_shell/includes/minishell.h
  /Users/gdoge/shell_in_progress/another_shell/srcs/utils/substr.c
