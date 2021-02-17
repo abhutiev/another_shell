@@ -19,5 +19,5 @@ int		pwd(t_all *all)
 	res = getcwd(NULL, 0);
 	ft_putendl_fd(res, 0);
 	free(res);
-	return(1);
+	return (1);
 }

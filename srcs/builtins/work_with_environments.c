@@ -60,7 +60,7 @@ void	delete_environment(t_all *all, char *name)
 	all->env[i].value = NULL;
 }
 
-char	*look_for_env(t_all*all, char *name)
+char	*look_for_env(t_all *all, char *name)
 {
 	size_t	i;
 
@@ -79,6 +79,7 @@ char	**env_for_execve(t_all *all)
 	size_t	i;
 	size_t	number_of_envs;
 	char	**result;
+
 	i = 0;
 	number_of_envs = 0;
 	while (all->env[number_of_envs].name)
@@ -86,10 +87,12 @@ char	**env_for_execve(t_all *all)
 	result = ft_calloc(number_of_envs + 2, sizeof(char *));
 	while (i < number_of_envs - 1)
 	{
-		result[i] = ft_calloc(ft_strlen(all->env[i].name) + ft_strlen(all->env[i].value) + 2, sizeof(char));
+		result[i] = ft_calloc(ft_strlen(all->env[i].name)
+				+ ft_strlen(all->env[i].value) + 2, sizeof(char));
 		ft_strcpy(result[i], all->env[i].name);
 		ft_strlcat(result[i], "=", ft_strlen(all->env[i].name) + 2);
-		ft_strlcat(result[i], all->env[i].value, ft_strlen(all->env[i].name) + ft_strlen(all->env[i].value) + 2);
+		ft_strlcat(result[i], all->env[i].value,
+			ft_strlen(all->env[i].name) + ft_strlen(all->env[i].value) + 2);
 		i++;
 	}
 	return (result);

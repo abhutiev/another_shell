@@ -35,7 +35,7 @@ int			export(t_all *all, size_t j)
 	char	**splitted;
 
 	if (all->command[j].args[1] == NULL)
-		return(display_export(all));
+		return (display_export(all));
 	i = 1;
 	k = 0;
 	while (all->command[j].args[i])
