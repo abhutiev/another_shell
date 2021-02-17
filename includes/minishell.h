@@ -21,8 +21,9 @@
 # include <signal.h>
 # include <sys/types.h>
 # include <sys/wait.h>
+# include <sys/stat.h>
 
-# define SHELL_NAME 	"bash:"
+# define SHELL_NAME 	"bash: "
 
 
 typedef struct		s_env
@@ -67,8 +68,7 @@ typedef struct		s_all
 	t_command		*command;
 	t_fd			fd;
 	char			**separated_request;
-	char			**envi;
-	size_t			number_of_commands;
+	size_t			n;
 }					t_all;
 
 
@@ -88,6 +88,7 @@ void				count_requests(t_all *all);
 
 char				**env_for_execve(t_all *all);
 
+char	*look_for_env(t_all*all, char *name);
 
 
 
@@ -266,7 +267,11 @@ void				str_to_lowercase(t_all *all, size_t j);
 */
 
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
+char				*strjoin_for_bin(char const *s1, char const *s2);
+void				skip_spaces(t_all *all);
+void	stop_buffering(t_all *all);
+int		stop_buffering_condition(t_all *all);
 
 
 #endif

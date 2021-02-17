@@ -60,18 +60,18 @@ void	delete_environment(t_all *all, char *name)
 	all->env[i].value = NULL;
 }
 
-void	display_env(t_all *all)
+char	*look_for_env(t_all*all, char *name)
 {
 	size_t	i;
 
 	i = 0;
 	while (all->env[i].name)
 	{
-		ft_putstr_fd(all->env[i].name, 0);
-		ft_putchar_fd('=', 0);
-		ft_putendl_fd(all->env[i].value, 0);
+		if (!ft_strcmp(name, all->env[i].name))
+			return (all->env[i].value);
 		i++;
 	}
+	return (NULL);
 }
 
 char	**env_for_execve(t_all *all)

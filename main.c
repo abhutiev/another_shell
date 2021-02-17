@@ -27,8 +27,8 @@ int		builtin_execution(t_all *all, size_t j)
 		return (export(all, j));
 	else if (!ft_strcmp("pwd", all->command[j].name))
 		return (pwd(all));
-	else if (!ft_strcmp("unset", all->command[j].name))
-		return (1);
+//	else if (!ft_strcmp("unset", all->command[j].name))
+//		return (1);
 	else
 		return (0);
 }
@@ -36,16 +36,22 @@ int		builtin_execution(t_all *all, size_t j)
 void	binary_execution(t_all *all, size_t j)
 {
 	pid_t	pid;
+	char	**ways;
+	size_t	i;
 
+	i = 0;
 	pid = fork();
 	if (pid == 0)
 	{
-		execve((all->command[j].name), all->command[j].args, env_for_execve(all));
-		execve(to_usr_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
-		execve(to_usr_local_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
-		execve(to_local_munki(all->command[j].name), all->command[j].args, env_for_execve(all));
-		execve(to_usr_sbin(all->command[j].name), all->command[j].args, env_for_execve(all));
-		execve(to_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
+		ways = split(look_for_env(all, "PATH"), ':');
+		while (ways[i])
+		{
+			execve(strjoin_for_bin(ways[i], all->command[j].name), all->command[j].args, env_for_execve(all));
+			i++;
+		}
+		ft_putstr_fd(SHELL_NAME, 1);
+		ft_putstr_fd(all->command[j].name, 1);
+		ft_putendl_fd(": No such file or directory", 1);
 		exit(0);
 	}
 	wait(0);

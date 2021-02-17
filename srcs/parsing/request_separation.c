@@ -51,7 +51,7 @@ void	separate_requests(t_all *all)
 	{
 		if (all->buffer.line_1[all->buffer.iter_1] == ';' && !is_shielded(all))
 		{
-			all->requests.separated[all->requests.number] = ft_substr(all->buffer.line_1, prev, all->buffer.iter_1 - prev + 1);
+			all->requests.separated[all->requests.number] = ft_substr(all->buffer.line_1, prev, all->buffer.iter_1 - prev);
 			prev = all->buffer.iter_1 + 1;
 			all->requests.number++;
 		}
