@@ -21,9 +21,12 @@ int	env(t_all *all, size_t j)
 	i = 0;
 	while (all->env[i].name)
 	{
-		ft_putstr_fd(all->env[i].name, 0);
-		ft_putchar_fd('=', 0);
-		ft_putendl_fd(all->env[i].value, 0);
+		if (ft_strlen(all->env[i].value))
+		{
+			ft_putstr_fd(all->env[i].name, 1);
+			ft_putchar_fd('=', 1);
+			ft_putendl_fd(all->env[i].value, 1);
+		}
 		i++;
 	}
 	return (1);

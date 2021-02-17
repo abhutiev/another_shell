@@ -15,10 +15,8 @@
 static void		fill_buffer_from_quotes(t_all *all, char c)
 {
 	all->buffer.iter_1++;
-	while ((all->buffer.line_1[all->buffer.iter_1] != c &&
-	all->buffer.line_1[all->buffer.iter_1] != '>' &&
-	all->buffer.line_1[all->buffer.iter_1] != '|' &&
-	all->buffer.line_1[all->buffer.iter_1] != '<') && !is_shielded(all))
+	while (all->buffer.line_1[all->buffer.iter_1] != c &&
+	all->buffer.line_1[all->buffer.iter_1] != '0' && !is_shielded(all))
 	{
 		all->buffer.line_2[all->buffer.iter_2++] =
 				all->buffer.line_1[all->buffer.iter_1++];

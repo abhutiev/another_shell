@@ -17,7 +17,9 @@ int		echo(t_all *all, size_t j)
 	int		i;
 	int		flag;
 
-	i = (ft_strcmp(all->command[j].args[1], "-n") ? 1 : 2);
+	i = 1;
+	while (!ft_strcmp("-n", all->command[j].args[i]))
+		i++;
 	flag = i - 1;
 	if (all->command[j].args[i] == NULL)
 	{
