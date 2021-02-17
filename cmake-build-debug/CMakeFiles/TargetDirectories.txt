@@ -1,3 +1,0 @@
-/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/gdoge/shell_in_progress/another_shell/cmake-build-debug/CMakeFiles/another_shell.dir
