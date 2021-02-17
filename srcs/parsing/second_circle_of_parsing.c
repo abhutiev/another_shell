@@ -41,6 +41,12 @@ void			end_of_parsing(t_all *all, size_t i)
 {
 	free(all->requests.line_with_substitutions[i]);
 	all->buffer.line_2[all->buffer.iter_2] = '\0';
+	if (!all->buffer.line_2[0])
+	{
+		free(all->buffer.line_2);
+		all->separated_request[all->n] = NULL;
+		return ;
+	}
 	all->buffer.iter_2 = 0;
 	all->separated_request[all->n++] = all->buffer.line_2;
 	all->separated_request[all->n] = NULL;

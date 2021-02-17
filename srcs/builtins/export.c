@@ -35,6 +35,7 @@ int			export(t_all *all, size_t j)
 
 	if (all->command[j].args[1] == NULL)
 		return (display_export(all));
+	printf ("%p\n", all->command[j].args[1]);
 	i = 1;
 	while (all->command[j].args[i])
 	{

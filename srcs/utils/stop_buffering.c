@@ -25,6 +25,7 @@ int		stop_buffering_condition(t_all *all)
 
 void	stop_buffering(t_all *all)
 {
+	skip_spaces(all);
 	all->buffer.line_2[all->buffer.iter_2] = '\0';
 	all->buffer.iter_2 = 0;
 	all->separated_request[all->n++] = all->buffer.line_2;
