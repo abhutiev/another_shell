@@ -12,7 +12,7 @@
 
 #include "includes/minishell.h"
 
-int		builtin_executed(t_all *all, size_t j)
+int		builtin_execution(t_all *all, size_t j)
 {
 	str_to_lowercase(all, j);
 	if (!ft_strcmp("cd", all->command[j].name))
@@ -33,31 +33,37 @@ int		builtin_executed(t_all *all, size_t j)
 		return (0);
 }
 
+void	binary_execution(t_all *all, size_t j)
+{
+	pid_t	pid;
+
+	pid = fork();
+	if (pid == 0)
+	{
+		execve((all->command[j].name), all->command[j].args, env_for_execve(all));
+		execve(to_usr_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
+		execve(to_usr_local_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
+		execve(to_local_munki(all->command[j].name), all->command[j].args, env_for_execve(all));
+		execve(to_usr_sbin(all->command[j].name), all->command[j].args, env_for_execve(all));
+		execve(to_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
+		exit(0);
+	}
+	wait(0);
+}
+
 void	request_execution(t_all *all)
 {
 	size_t	j;
-	pid_t	pid;
 
 	j = 0;
 	while (all->command[j].name)
 	{
-		if (builtin_executed(all, j))
+		if (builtin_execution(all, j))
 		{
 			j++;
 			continue ;
 		}
-		pid = fork();
-		if (pid == 0)
-		{
-			execve((all->command[j].name), all->command[j].args, env_for_execve(all));
-			execve(to_usr_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
-			execve(to_usr_local_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
-			execve(to_local_munki(all->command[j].name), all->command[j].args, env_for_execve(all));
-			execve(to_usr_sbin(all->command[j].name), all->command[j].args, env_for_execve(all));
-			execve(to_bin(all->command[j].name), all->command[j].args, env_for_execve(all));
-			exit(0);
-		}
-		wait(0);
+		binary_execution(all, j);
 		j++;
 	}
 }
@@ -65,7 +71,6 @@ void	request_execution(t_all *all)
 void	parsing_and_execution(t_all *all)
 {
 	size_t	i;
-
 
 	i = 0;
 	while (all->requests.separated[i])

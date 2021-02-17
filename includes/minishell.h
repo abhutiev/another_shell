@@ -266,6 +266,7 @@ void				str_to_lowercase(t_all *all, size_t j);
 */
 
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 
 #endif

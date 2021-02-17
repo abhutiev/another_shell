@@ -35,7 +35,8 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				putstr.c \
 				make_way_to_binary.c \
 				strlcat.c \
-				str_to_lowercase.c )
+				str_to_lowercase.c \
+				strncmp.c)
 
 BUILTINSDIR =   builtins/
 
@@ -60,4 +61,9 @@ INC		=	minishell.h
 all: ${NAME}
 
 ${NAME}:
-	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} srcs/pregame_ritual.c srcs/signal_handling.c main.c -o minishell
+	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} srcs/pregame_ritual.c srcs/signal_handling.c main.c -o ${NAME}
+
+fclean:
+	rm ${NAME}
+
+re: fclean all
