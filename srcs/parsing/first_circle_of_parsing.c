@@ -21,11 +21,7 @@ static void	dollar_substitution(t_all *all)
 	all->buffer.iter_1++;
 	i = 0;
 	while (!is_special_symbol(all->buffer.line_1[all->buffer.iter_1]))
-	{
-		name_of_env[i] = all->buffer.line_1[all->buffer.iter_1];
-		i++;
-		all->buffer.iter_1++;
-	}
+		name_of_env[i++] = all->buffer.line_1[all->buffer.iter_1++];
 	name_of_env[i] = '\0';
 	j = 0;
 	while (all->env[j].name)
@@ -36,7 +32,8 @@ static void	dollar_substitution(t_all *all)
 	}
 	if (all->env[j].name)
 	{
-		ft_strcpy(all->buffer.line_2 + all->buffer.iter_2, all->env[j].value);
+		ft_strcpy(all->buffer.line_2 +
+		all->buffer.iter_2, all->env[j].value);
 		all->buffer.iter_2 += ft_strlen(all->env[j].value);
 	}
 }
@@ -45,7 +42,8 @@ static void	get_argument_from_single_quote(t_all *all)
 {
 	all->buffer.line_2[all->buffer.iter_2++] = '\'';
 	all->buffer.iter_1++;
-	while (all->buffer.line_1[all->buffer.iter_1] && (all->buffer.line_1[all->buffer.iter_1] != '\''  || is_shielded(all)))
+	while (all->buffer.line_1[all->buffer.iter_1] &&
+	(all->buffer.line_1[all->buffer.iter_1] != '\'' || is_shielded(all)))
 	{
 		all->buffer.line_2[all->buffer.iter_2++] =
 				all->buffer.line_1[all->buffer.iter_1++];
@@ -58,7 +56,8 @@ static void	get_argument_from_double_quote(t_all *all)
 {
 	all->buffer.line_2[all->buffer.iter_2++] = '\"';
 	all->buffer.iter_1++;
-	while (all->buffer.line_1[all->buffer.iter_1] && (all->buffer.line_1[all->buffer.iter_1] != '\"'  || is_shielded(all)))
+	while (all->buffer.line_1[all->buffer.iter_1] &&
+	(all->buffer.line_1[all->buffer.iter_1] != '\"' || is_shielded(all)))
 	{
 		if (all->buffer.line_1[all->buffer.iter_1] == '$' && !is_shielded(all))
 			dollar_substitution(all);

@@ -24,7 +24,7 @@ static void	save_fd(t_all *all)
 	all->fd.standard_output = dup(1);
 }
 
-void	sort_environments(t_all *all)
+void		sort_environments(t_all *all)
 {
 	int		i;
 	int		j;
@@ -51,7 +51,7 @@ void	sort_environments(t_all *all)
 	}
 }
 
-void	load_environments(t_all *all, char **env)
+void		load_environments(t_all *all, char **env)
 {
 	size_t	i;
 	size_t	number_of_envs;
@@ -83,6 +83,4 @@ void		pregame_ritual(t_all *all, int ac, char **av, char **env)
 	save_fd(all);
 	dup2(0, all->fd.standard_input);
 	dup2(1, all->fd.standard_output);
-	//signal(SIGINT, );
-	//signal(SIGQUIT, );
 }

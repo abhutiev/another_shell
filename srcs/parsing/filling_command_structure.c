@@ -41,38 +41,36 @@ static int	is_pipe_or_redirect(t_all *all, size_t i)
 	return (0);
 }
 
+static void	command_name_filling(t_all *all)
+{
+	all->command[all->iter.k].args = ft_calloc(20, sizeof(char *));
+	all->command[all->iter.k].args[all->iter.j++] =
+			all->separated_request[all->iter.i];
+	all->command[all->iter.k].name =
+			all->separated_request[all->iter.i];
+}
+
 void		filling_command_structure(t_all *all)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
-
-	j = 0;
-	i = 0;
-	k = 0;
-	while (all->separated_request[i])
+	iterators_to_zero(all);
+	while (all->separated_request[all->iter.i])
 	{
-		if (is_pipe_or_redirect(all, i))
+		if (is_pipe_or_redirect(all, all->iter.i))
 		{
-			free(all->separated_request[i]);
-			all->command[k].args[j - 1] = NULL;
-			k++;
-			j = 0;
+			free(all->separated_request[all->iter.i]);
+			all->command[all->iter.k++].args[all->iter.j - 1] = NULL;
+			all->iter.j = 0;
 		}
 		else
 		{
-			if (j == 0)
-			{
-				all->command[k].args = ft_calloc(20, sizeof(char *));
-				all->command[k].args[j++
-				] = all->separated_request[i];
-				all->command[k].name = all->separated_request[i];
-			}
+			if (all->iter.j == 0)
+				command_name_filling(all);
 			else
-				all->command[k].args[j - 1] = all->separated_request[i];
-			j++;
+				all->command[all->iter.k].args[all->iter.j - 1] =
+						all->separated_request[all->iter.i];
+			all->iter.j++;
 		}
-		i++;
+		all->iter.i++;
 	}
-	all->command[k + 1].name = NULL;
+	all->command[all->iter.k + 1].name = NULL;
 }

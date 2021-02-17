@@ -23,8 +23,7 @@
 # include <sys/wait.h>
 # include <sys/stat.h>
 
-# define SHELL_NAME 	"bash: "
-
+# define SHELL_NAME "bash: "
 
 typedef struct		s_env
 {
@@ -60,17 +59,25 @@ typedef struct		s_fd
 	int				standard_input;
 	int				*pipeline[2];
 }					t_fd;
+
+typedef struct		s_iter
+{
+	size_t	i;
+	size_t	j;
+	size_t	k;
+}					t_iter;
+
 typedef struct		s_all
 {
 	t_env			*env;
-	t_buffer 		buffer;
+	t_buffer		buffer;
 	t_request		requests;
 	t_command		*command;
 	t_fd			fd;
 	char			**separated_request;
+	t_iter			iter;
 	size_t			n;
 }					t_all;
-
 
 void				first_circle_of_parsing(t_all *all, size_t i);
 void				second_circle_of_parsing(t_all *all, size_t i);
@@ -88,9 +95,7 @@ void				count_requests(t_all *all);
 
 char				**env_for_execve(t_all *all);
 
-char	*look_for_env(t_all*all, char *name);
-
-
+char				*look_for_env(t_all*all, char *name);
 
 /*
 ** ########################################################################
@@ -116,13 +121,11 @@ int					env(t_all *all, size_t j);
 ** File: cd.c
 */
 
-
 /*
 ** File: echo.c
 */
 
-int 				echo(t_all *all, size_t j);
-
+int					echo(t_all *all, size_t j);
 
 /*
 ** File: export.c
@@ -270,8 +273,8 @@ size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*strjoin_for_bin(char const *s1, char const *s2);
 void				skip_spaces(t_all *all);
-void	stop_buffering(t_all *all);
-int		stop_buffering_condition(t_all *all);
-
+void				stop_buffering(t_all *all);
+int					stop_buffering_condition(t_all *all);
+void				iterators_to_zero(t_all *all);
 
 #endif
