@@ -18,6 +18,7 @@ PARSINGSRC	=	$(addprefix ${PARSINGDIR}, \
 UTILSDIR    =   utils/
 
 UTILSSRC    =   $(addprefix ${UTILSDIR}, \
+				atoi.c \
 				strlen.c \
 				split.c \
 				calloc.c \
@@ -33,22 +34,26 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				putchar.c \
 				putendl.c \
 				putstr.c \
-				make_way_to_binary.c \
 				strlcat.c \
 				str_to_lowercase.c \
-				strncmp.c)
+				strncmp.c \
+				iterators_to_zero.c \
+				skip_spaces.c \
+				stop_buffering.c \
+				strjoin.c )
 
 BUILTINSDIR =   builtins/
 
 BUILTINSSRC =	$(addprefix ${BUILTINSDIR}, \
 				cd.c \
+				cd_utils.c \
 				echo.c \
 				env.c \
 				exit.c \
 				export.c \
 				pwd.c \
 				unset.c \
-				work_with_environments.c)
+				env_export_utils.c)
 
 SRC		=	$(addprefix ${SRCDIR}, ${BUILTINSSRC} \
 				${PARSINGSRC} \
@@ -61,9 +66,15 @@ INC		=	minishell.h
 all: ${NAME}
 
 ${NAME}:
-	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} srcs/pregame_ritual.c srcs/signal_handling.c main.c -o ${NAME}
+	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} srcs/important/pregame_ritual.c srcs/important/signal_handling.c main.c -o ${NAME}
+
+launch:
+	./${NAME}
 
 fclean:
 	rm ${NAME}
 
-re: fclean all
+re:
+	fclean
+	all
+	launch
