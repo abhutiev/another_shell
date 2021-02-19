@@ -16,8 +16,8 @@ int		pwd(t_all *all)
 {
 	char	*res;
 
-	res = getcwd(NULL, 0);
-	ft_putendl_fd(res, 0);
+	res = getcwd(NULL, -1);
+	ft_putendl_fd(res, 1);
 	free(res);
 	return (1);
 }

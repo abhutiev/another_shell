@@ -33,6 +33,7 @@ typedef struct		s_env
 
 typedef struct		s_buffer
 {
+	char			**buff;
 	char			*line_1;
 	char			*line_2;
 	size_t			iter_1;
@@ -62,9 +63,9 @@ typedef struct		s_fd
 
 typedef struct		s_iter
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	size_t			i;
+	size_t			j;
+	size_t			k;
 }					t_iter;
 
 typedef struct		s_all
@@ -121,6 +122,8 @@ int					env(t_all *all, size_t j);
 ** File: cd.c
 */
 
+int					cd(t_all *all, size_t j);
+
 /*
 ** File: echo.c
 */
@@ -141,6 +144,8 @@ int					export(t_all *all, size_t j);
 ** File: unset.c
 */
 
+int 				unset(t_all *all, size_t j);
+
 /*
 ** File: work_with_environments.c
 */
@@ -158,16 +163,6 @@ void				display_env(t_all *all);
 ** ########################## Folder: utils ###############################
 ** ########################################################################
 */
-
-/*
-** File: make_way_to_binary.c
-*/
-
-char				*to_usr_bin(char *command);
-char				*to_usr_local_bin(char *command);
-char				*to_bin(char *command);
-char				*to_usr_sbin(char *command);
-char				*to_local_munki(char *command);
 
 /*
 ** File: strlen.c

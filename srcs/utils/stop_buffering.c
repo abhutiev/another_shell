@@ -23,13 +23,18 @@ int		stop_buffering_condition(t_all *all)
 		return (0);
 }
 
-void	stop_buffering(t_all *all)
+void	get_ready_for_separator_check(t_all *all)
 {
-	skip_spaces(all);
 	all->buffer.line_2[all->buffer.iter_2] = '\0';
 	all->buffer.iter_2 = 0;
 	all->separated_request[all->n++] = all->buffer.line_2;
 	all->buffer.line_2 = (char *)ft_calloc(1024, 1);
+}
+
+void	stop_buffering(t_all *all)
+{
+	skip_spaces(all);
+	get_ready_for_separator_check(all);
 	if (all->buffer.line_1[all->buffer.iter_1] == '>')
 	{
 		all->separated_request[all->n++] = ft_strdup(">");

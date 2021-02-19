@@ -53,7 +53,9 @@ static void	prepare_for_separation(t_all *all)
 
 static void	grab(t_all *all)
 {
-	all->requests.separated[all->requests.number] = ft_substr(all->buffer.line_1, all->iter.i, all->buffer.iter_1 - all->iter.i);
+	all->requests.separated[all->requests.number] =
+					ft_substr(all->buffer.line_1, all->iter.i,
+						all->buffer.iter_1 - all->iter.i);
 	all->iter.i = all->buffer.iter_1 + 1;
 	all->requests.number++;
 }
@@ -89,12 +91,3 @@ void		separate_requests(t_all *all)
 	all->requests.separated[all->requests.number] = NULL;
 	free(all->buffer.line_1);
 }
-
-//void		separate_requests2(t_all *all)
-//{
-//	all->iter.i = 0;
-//	all->requests.separated = (char **)ft_calloc(all->requests.number + 1, sizeof(char *));
-//	all->requests.line_with_substitutions = (char **)ft_calloc(all->requests.number + 1, sizeof(char *));
-//	all->buffer.iter_1 = 0;
-//	all->requests.number = 0;
-//}

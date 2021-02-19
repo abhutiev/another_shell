@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-int 	unset(t_all *all, size_t j)
+int		unset(t_all *all, size_t j)
 {
 	size_t	i;
 

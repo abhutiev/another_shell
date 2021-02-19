@@ -42,10 +42,15 @@ static int	display_export(t_all *all)
 	{
 		ft_putstr_fd("declare -x ", 1);
 		ft_putstr_fd(all->env[i].name, 1);
-		ft_putstr_fd("=\"", 1);
-		if (ft_strlen(all->env[i].value))
-			ft_putstr_fd(all->env[i].value, 1);
-		ft_putstr_fd("\"\n", 1);
+		if (all->env[i].value)
+		{
+			ft_putchar_fd('=', 1);
+			ft_putchar_fd('\"', 1);
+			if (ft_strlen(all->env[i].value))
+				ft_putstr_fd(all->env[i].value, 1);
+			ft_putchar_fd('\"', 1);
+		}
+		ft_putchar_fd('\n', 1);
 		i++;
 	}
 	return (1);
@@ -68,8 +73,11 @@ static char	**split_export_args(t_all *all, size_t j, size_t i)
 					all->buffer.line_1[all->buffer.iter_1 - 1];
 	}
 	all->buffer.buff[0] = all->buffer.line_2;
-	all->buffer.buff[1] = ft_strdup(all->buffer.line_1
-			+ all->buffer.iter_1 + 1);
+	if (all->buffer.line_1[all->buffer.iter_1] == '=')
+		all->buffer.buff[1] = ft_strdup(all->buffer.line_1
+				+ all->buffer.iter_1 + 1);
+	else
+		all->buffer.buff[1] = NULL;
 	return (all->buffer.buff);
 }
 
