@@ -15,6 +15,11 @@
 static int		cd_to_home(t_all *all)
 {
 	add_environment(all, "OLDPWD", look_for_env(all, "PWD"));
+	if (look_for_env(all, "HOME") == NULL)
+	{
+		ft_putendl_fd("bash: cd: HOME not set", 0);
+		return (2);
+	}
 	chdir(look_for_env(all, "HOME"));
 	add_environment(all, "PWD", look_for_env(all, "HOME"));
 	return (1);
@@ -25,7 +30,8 @@ static int		cd_last(t_all *all)
 	char	*tmp1;
 	char	*tmp2;
 
-	chdir(look_for_env(all,"OLDPWD"));
+	if (chdir(look_for_env(all, "OLDPWD")))
+		return (1);
 	tmp1 = ft_strdup(look_for_env(all, "PWD"));
 	tmp2 = ft_strdup(look_for_env(all, "OLDPWD"));
 	delete_environment(all, "PWD");
@@ -37,19 +43,27 @@ static int		cd_last(t_all *all)
 	return (1);
 }
 
-static int 		cd_from_home_directory(t_all *all)
+static int		cd_from_root_directory(t_all *all, size_t j)
 {
-
+	chdir("/");
+	if (!ft_strcmp(all->command[j].args[1], "/"))
+		return (1);
+	if (cd_from_current_directory(all, j) == 2)
+	{
+		chdir(look_for_env(all, "PWD"));
+		return (2);
+	}
 	return (1);
 }
 
-static int 		cd_from_root_directory(t_all *all)
+static int		cd_from_home_directory(t_all *all, size_t j)
 {
-	return (1);
-}
-
-static int		cd_from_current_directory(t_all *all)
-{
+	chdir(look_for_env(all, "HOME"));
+	if (cd_from_current_directory(all, j) == 2)
+	{
+		chdir(look_for_env(all, "PWD"));
+		return (2);
+	}
 	return (1);
 }
 
@@ -60,10 +74,10 @@ int				cd(t_all *all, size_t j)
 	else if (!ft_strcmp(all->command[j].args[1], "-"))
 		return (cd_last(all));
 	else if (all->command[j].args[1][0] == '/')
-		return (cd_from_home_directory(all));
+		return (cd_from_root_directory(all, j));
 	else if (all->command[j].args[1][0] == '~')
-		return (cd_from_root_directory(all));
+		return (cd_from_home_directory(all, j));
 	else
-		return (cd_from_current_directory(all));
+		return (cd_from_current_directory(all, j));
 	return (1);
 }
