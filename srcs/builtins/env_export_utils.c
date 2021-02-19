@@ -94,7 +94,7 @@ char	**env_for_execve(t_all *all)
 			ft_strcpy(result[i], all->env[i].name);
 			ft_strlcat(result[i], "=", ft_strlen(all->env[i].name) + 2);
 			ft_strlcat(result[i], all->env[i].value,
-			  ft_strlen(all->env[i].name) + ft_strlen(all->env[i].value) + 2);
+				ft_strlen(all->env[i].name) + ft_strlen(all->env[i].value) + 2);
 		}
 		i++;
 	}

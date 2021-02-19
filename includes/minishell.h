@@ -25,6 +25,17 @@
 
 # define SHELL_NAME "bash: "
 
+typedef struct		s_cd
+{
+	char			**splitted_directories;
+	char			*tmp;
+	size_t			i;
+	size_t			k;
+	char			**splitted_path;
+	char			*path;
+	char			*save_pwd;
+}					t_cd;
+
 typedef struct		s_env
 {
 	char			*name;
@@ -119,10 +130,12 @@ int					pwd(t_all *all);
 int					env(t_all *all, size_t j);
 
 /*
-** File: cd.c
+** File: cd.c && cd_utils.c
 */
 
 int					cd(t_all *all, size_t j);
+int					cd_from_current_directory(t_all *all, size_t j);
+
 
 /*
 ** File: echo.c
@@ -266,7 +279,7 @@ void				str_to_lowercase(t_all *all, size_t j);
 
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-char				*strjoin_for_bin(char const *s1, char const *s2);
+char				*strjoin_for_path(char const *s1, char const *s2);
 void				skip_spaces(t_all *all);
 void				stop_buffering(t_all *all);
 int					stop_buffering_condition(t_all *all);

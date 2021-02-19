@@ -12,8 +12,9 @@
 
 #include "../../includes/minishell.h"
 
-void			get_ready_for_cd(t_all *all, t_cd *cd, size_t j)
+static void	get_ready_for_cd(t_all *all, t_cd *cd, size_t j)
 {
+	cd->save_pwd = look_for_env(all, "PWD");
 	cd->i = 0;
 	cd->tmp = getcwd(NULL, -1);
 	cd->splitted_path = split(cd->tmp, '/');
@@ -26,7 +27,7 @@ void			get_ready_for_cd(t_all *all, t_cd *cd, size_t j)
 	}
 }
 
-void			cd_up(t_cd *cd)
+static void	cd_up(t_cd *cd)
 {
 	cd->k = 0;
 	while (cd->splitted_path[cd->k])
@@ -41,7 +42,7 @@ void			cd_up(t_cd *cd)
 	free(cd->splitted_directories[cd->i]);
 }
 
-void			memory_cleaning_and_forming_of_path(t_cd *cd)
+static void	memory_cleaning_and_forming_of_path(t_all *all, t_cd *cd)
 {
 	free(cd->splitted_directories);
 	cd->k = 0;
@@ -62,7 +63,26 @@ void			memory_cleaning_and_forming_of_path(t_cd *cd)
 	}
 }
 
-int		cd_from_current_directory(t_all *all, size_t j)
+static int	changing_of_directory_replacing_env(t_all *all, t_cd *cd, size_t j)
+{
+	if (chdir(cd->path) == -1)
+	{
+		ft_putstr_fd("bash: cd: ", 0);
+		ft_putstr_fd(all->command[j].args[1], 0);
+		ft_putendl_fd(" :No such file or directory", 0);
+		free(cd->path);
+		return (2);
+	}
+	delete_environment(all, "OLDPWD");
+	add_environment(all, "OLDPWD", cd->save_pwd);
+	cd->tmp = getcwd(NULL, -1);
+	add_environment(all, "PWD", cd->tmp);
+	free(cd->tmp);
+	free(cd->path);
+	return (1);
+}
+
+int			cd_from_current_directory(t_all *all, size_t j)
 {
 	t_cd	cd;
 
@@ -82,14 +102,8 @@ int		cd_from_current_directory(t_all *all, size_t j)
 		}
 		cd.i++;
 	}
-	memory_cleaning_and_forming_of_path(&cd);
-	if (chdir(cd.path) == -1)
-	{
-		ft_putstr_fd("bash: cd: ", 0);
-		ft_putstr_fd(all->command[j].args[1], 0);
-		ft_putendl_fd(" :No such file or directory", 0);
+	memory_cleaning_and_forming_of_path(all, &cd);
+	if (changing_of_directory_replacing_env(all, &cd, j) == 2)
 		return (2);
-	}
-	free(cd.path);
 	return (1);
 }

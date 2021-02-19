@@ -14,12 +14,12 @@
 
 static int		cd_to_home(t_all *all)
 {
-	add_environment(all, "OLDPWD", look_for_env(all, "PWD"));
 	if (look_for_env(all, "HOME") == NULL)
 	{
 		ft_putendl_fd("bash: cd: HOME not set", 0);
 		return (2);
 	}
+	add_environment(all, "OLDPWD", look_for_env(all, "PWD"));
 	chdir(look_for_env(all, "HOME"));
 	add_environment(all, "PWD", look_for_env(all, "HOME"));
 	return (1);
@@ -30,8 +30,8 @@ static int		cd_last(t_all *all)
 	char	*tmp1;
 	char	*tmp2;
 
-	if (chdir(look_for_env(all, "OLDPWD")))
-		return (1);
+	if (chdir(look_for_env(all, "OLDPWD")) == -1)
+		return (2);
 	tmp1 = ft_strdup(look_for_env(all, "PWD"));
 	tmp2 = ft_strdup(look_for_env(all, "OLDPWD"));
 	delete_environment(all, "PWD");
