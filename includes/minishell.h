@@ -136,7 +136,6 @@ int					env(t_all *all, size_t j);
 int					cd(t_all *all, size_t j);
 int					cd_from_current_directory(t_all *all, size_t j);
 
-
 /*
 ** File: echo.c
 */
@@ -153,11 +152,13 @@ int					export(t_all *all, size_t j);
 ** File: exit.c
 */
 
+int					exit_bash(t_all *all, size_t j);
+
 /*
 ** File: unset.c
 */
 
-int 				unset(t_all *all, size_t j);
+int					unset(t_all *all, size_t j);
 
 /*
 ** File: work_with_environments.c
@@ -284,5 +285,9 @@ void				skip_spaces(t_all *all);
 void				stop_buffering(t_all *all);
 int					stop_buffering_condition(t_all *all);
 void				iterators_to_zero(t_all *all);
+int					ft_isalpha(int c);
+int					ft_atoi(char *str);
+int					ft_isdigit(int c);
+
 
 #endif
