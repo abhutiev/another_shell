@@ -1,4 +1,4 @@
-NAME	=	minishell
+NAME	=	kekshell
 
 CC		=	gcc
 
@@ -40,7 +40,8 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				iterators_to_zero.c \
 				skip_spaces.c \
 				stop_buffering.c \
-				strjoin.c )
+				strjoin.c \
+				itoa.c )
 
 BUILTINSDIR =   builtins/
 
@@ -55,9 +56,18 @@ BUILTINSSRC =	$(addprefix ${BUILTINSDIR}, \
 				unset.c \
 				env_export_utils.c)
 
+IMPORTANTDIR =   important/
+
+IMPORTANTSRC =	$(addprefix ${IMPORTANTDIR}, \
+				pregame_ritual.c \
+				signal_handling.c \
+				parsing_and_execution.c )
+
 SRC		=	$(addprefix ${SRCDIR}, ${BUILTINSSRC} \
 				${PARSINGSRC} \
-				${UTILSSRC})
+				${UTILSSRC} \
+				${IMPORTANTSRC} \
+				main.c)
 
 INCDIR	=	includes/
 
@@ -66,7 +76,7 @@ INC		=	minishell.h
 all: ${NAME}
 
 ${NAME}:
-	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} srcs/important/pregame_ritual.c srcs/important/signal_handling.c main.c -o ${NAME}
+	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} -o ${NAME}
 
 launch:
 	./${NAME}
@@ -75,6 +85,6 @@ fclean:
 	rm ${NAME}
 
 re:
-	fclean
-	all
-	launch
+	make fclean
+	make all
+	make launch

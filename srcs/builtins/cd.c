@@ -17,11 +17,15 @@ static int		cd_to_home(t_all *all)
 	if (look_for_env(all, "HOME") == NULL)
 	{
 		ft_putendl_fd("bash: cd: HOME not set", 0);
+		delete_environment(all, "?");
+		add_environment(all, "?", "1");
 		return (2);
 	}
 	add_environment(all, "OLDPWD", look_for_env(all, "PWD"));
 	chdir(look_for_env(all, "HOME"));
 	add_environment(all, "PWD", look_for_env(all, "HOME"));
+	delete_environment(all, "?");
+	add_environment(all, "?", "0");
 	return (1);
 }
 
@@ -40,6 +44,8 @@ static int		cd_last(t_all *all)
 	add_environment(all, "OLDPWD", tmp1);
 	free(tmp1);
 	free(tmp2);
+	delete_environment(all, "?");
+	add_environment(all, "?", "0");
 	return (1);
 }
 
@@ -51,8 +57,12 @@ static int		cd_from_root_directory(t_all *all, size_t j)
 	if (cd_from_current_directory(all, j) == 2)
 	{
 		chdir(look_for_env(all, "PWD"));
+		delete_environment(all, "?");
+		add_environment(all, "?", "1");
 		return (2);
 	}
+	delete_environment(all, "?");
+	add_environment(all, "?", "0");
 	return (1);
 }
 
@@ -62,8 +72,12 @@ static int		cd_from_home_directory(t_all *all, size_t j)
 	if (cd_from_current_directory(all, j) == 2)
 	{
 		chdir(look_for_env(all, "PWD"));
+		delete_environment(all, "?");
+		add_environment(all, "?", "1");
 		return (2);
 	}
+	delete_environment(all, "?");
+	add_environment(all, "?", "0");
 	return (1);
 }
 

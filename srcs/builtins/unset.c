@@ -22,5 +22,7 @@ int		unset(t_all *all, size_t j)
 		delete_environment(all, all->command[j].args[i]);
 		i++;
 	}
+	delete_environment(all, "?");
+	add_environment(all, "?", "0");
 	return (1);
 }

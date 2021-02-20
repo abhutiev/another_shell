@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env.c                                              :+:      :+:    :+:   */
+/*   parsing_and_execution.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 18:17:17 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/07 18:17:19 by gdoge            ###   ########.fr       */
+/*   Created: 2021/02/19 13:53:32 by gdoge             #+#    #+#             */
+/*   Updated: 2021/02/19 13:57:00 by gdoge            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-int	env(t_all *all, size_t j)
+void	parsing_and_execution(t_all *all)
 {
 	size_t	i;
 
-	if (all->command[j].args[1] != NULL)
-		return (1);
 	i = 0;
-	while (all->env[i].name)
+	while (all->requests.separated[i])
 	{
-		if (!ft_strcmp(all->env[i].name, "?") || !ft_strcmp(all->env[i].name, "$"))
-		{
-			i++;
-			continue ;
-		}
-		if (ft_strlen(all->env[i].value))
-		{
-			ft_putstr_fd(all->env[i].name, 1);
-			ft_putchar_fd('=', 1);
-			ft_putendl_fd(all->env[i].value, 1);
-		}
+		first_circle_of_parsing(all, i);
+		second_circle_of_parsing(all, i);
+		allocate_memory_for_commands(all);
+		filling_command_structure(all);
+		request_execution(all);
+		free_command_names(all);
 		i++;
 	}
-	return (1);
+	clean_after_yourself(all, i);
 }

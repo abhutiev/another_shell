@@ -25,6 +25,8 @@ int		echo(t_all *all, size_t j)
 	{
 		if (!(i - 1))
 			ft_putchar_fd('\n', 1);
+		delete_environment(all, "?");
+		add_environment(all, "?", "0");
 		return (1);
 	}
 	while (all->command[j].args[i + 1])
@@ -35,5 +37,7 @@ int		echo(t_all *all, size_t j)
 	ft_putstr_fd(all->command[j].args[i], 1);
 	if (!flag)
 		ft_putchar_fd('\n', 1);
+	delete_environment(all, "?");
+	add_environment(all, "?", "0");
 	return (1);
 }

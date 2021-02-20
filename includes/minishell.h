@@ -17,6 +17,7 @@
 # include <stdio.h> //
 # include <fcntl.h>
 # include <string.h>
+# include <errno.h>
 # include <stdlib.h>
 # include <signal.h>
 # include <sys/types.h>
@@ -88,11 +89,14 @@ typedef struct		s_all
 	t_fd			fd;
 	char			**separated_request;
 	t_iter			iter;
+	int				exitcode;
 	size_t			n;
 }					t_all;
 
 void				first_circle_of_parsing(t_all *all, size_t i);
 void				second_circle_of_parsing(t_all *all, size_t i);
+void				parsing_and_execution(t_all *all);
+void				request_execution(t_all *all);
 
 void				allocate_memory_for_commands(t_all *all);
 void				filling_command_structure(t_all *all);
@@ -288,6 +292,7 @@ void				iterators_to_zero(t_all *all);
 int					ft_isalpha(int c);
 int					ft_atoi(char *str);
 int					ft_isdigit(int c);
+char				*ft_itoa(int n);
 
 
 #endif
