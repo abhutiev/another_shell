@@ -33,11 +33,30 @@ void		allocate_memory_for_commands(t_all *all)
 
 static int	is_pipe_or_redirect(t_all *all, size_t i)
 {
-	if (!ft_strcmp(all->separated_request[i], ">") ||
-		!ft_strcmp(all->separated_request[i], ">>") ||
-			!ft_strcmp(all->separated_request[i], "<") ||
-				!ft_strcmp(all->separated_request[i], "|"))
+	if (!ft_strcmp(all->separated_request[i], ">"))
+	{
+		all->command[all->iter.k].output_flag = TO_RIGHT_REDIR;
+		all->number_of_commands++;
 		return (1);
+	}
+	else if (!ft_strcmp(all->separated_request[i], ">>"))
+	{
+		all->number_of_commands++;
+		all->command[all->iter.k].output_flag = TO_RIGHT_DOUBLE_REDIR;
+		return (1);
+	}
+	else if (!ft_strcmp(all->separated_request[i], "<"))
+	{
+		all->number_of_commands++;
+		all->command[all->iter.k].output_flag = TO_LEFT_REDIR;
+		return (1);
+	}
+	else if (!ft_strcmp(all->separated_request[i], "|"))
+	{
+		all->number_of_commands++;
+		all->command[all->iter.k].output_flag = PIPE;
+		return (1);
+	}
 	return (0);
 }
 
@@ -53,6 +72,7 @@ static void	command_name_filling(t_all *all)
 void		filling_command_structure(t_all *all)
 {
 	iterators_to_zero(all);
+	all->number_of_commands = 0;
 	while (all->separated_request[all->iter.i])
 	{
 		if (is_pipe_or_redirect(all, all->iter.i))
@@ -72,5 +92,12 @@ void		filling_command_structure(t_all *all)
 		}
 		all->iter.i++;
 	}
+	size_t i = 0;
+	while (all->command[i].name)
+	{
+		printf("%d\n", all->command[i].output_flag);
+		i++;
+	}
+	all->command[all->iter.k].output_flag = STANDART_OUTPUT;
 	all->command[all->iter.k + 1].name = NULL;
 }

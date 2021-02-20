@@ -50,7 +50,7 @@ void	binary_execution(t_all *all, size_t j)
 			while (ways[i])
 				execve(strjoin_for_path(ways[i++], all->command[j].name), all->command[j].args, env_for_execve(all));
 		}
-		ft_putstr_fd(SHELL_NAME, 1);
+		//ft_putstr_fd(SHELL_NAME, 1);
 		ft_putstr_fd(all->command[j].name, 1);
 		if (look_for_env(all, "PATH"))
 		{
@@ -60,9 +60,9 @@ void	binary_execution(t_all *all, size_t j)
 		}
 		else
 		{
+			ft_putendl_fd(": No such file or directory", 1);
 			delete_environment(all, "?");
 			add_environment(all, "?", ft_strdup("127"));
-			ft_putendl_fd(": No such file or directory", 1);
 		}
 		exit(1);
 	}

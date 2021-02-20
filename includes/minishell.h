@@ -25,7 +25,11 @@
 # include <sys/stat.h>
 
 # define SHELL_NAME "bash: "
-
+# define STANDART_OUTPUT		0
+# define PIPE					1
+# define TO_RIGHT_REDIR			2
+# define TO_LEFT_REDIR			3
+# define TO_RIGHT_DOUBLE_REDIR	4
 typedef struct		s_cd
 {
 	char			**splitted_directories;
@@ -63,7 +67,7 @@ typedef struct		s_command
 {
 	char			*name;
 	char			**args;
-	size_t			*number_of_args;
+	int 			output_flag;
 }					t_command;
 
 typedef struct		s_fd
@@ -91,6 +95,7 @@ typedef struct		s_all
 	t_iter			iter;
 	int				exitcode;
 	size_t			n;
+	size_t			number_of_commands;
 }					t_all;
 
 void				first_circle_of_parsing(t_all *all, size_t i);

@@ -35,7 +35,12 @@ void	stop_buffering(t_all *all)
 {
 	skip_spaces(all);
 	get_ready_for_separator_check(all);
-	if (all->buffer.line_1[all->buffer.iter_1] == '>')
+	if (!ft_strncmp(all->buffer.line_1 + all->buffer.iter_1, ">>", 2))
+	{
+		all->separated_request[all->n++] = ft_strdup("|");
+		all->buffer.iter_1 += 2;
+	}
+	else if (all->buffer.line_1[all->buffer.iter_1] == '>')
 	{
 		all->separated_request[all->n++] = ft_strdup(">");
 		all->buffer.iter_1++;
@@ -49,11 +54,6 @@ void	stop_buffering(t_all *all)
 	{
 		all->separated_request[all->n++] = ft_strdup("|");
 		all->buffer.iter_1++;
-	}
-	else if (!ft_strncmp(all->buffer.line_1 + all->buffer.iter_1, ">>", 2))
-	{
-		all->separated_request[all->n++] = ft_strdup("|");
-		all->buffer.iter_1 += 2;
 	}
 	skip_spaces(all);
 }
