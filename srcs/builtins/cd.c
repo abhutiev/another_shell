@@ -24,8 +24,7 @@ static int		cd_to_home(t_all *all)
 	add_environment(all, "OLDPWD", look_for_env(all, "PWD"));
 	chdir(look_for_env(all, "HOME"));
 	add_environment(all, "PWD", look_for_env(all, "HOME"));
-	delete_environment(all, "?");
-	add_environment(all, "?", "0");
+	change_exitcode_success(all);
 	return (1);
 }
 

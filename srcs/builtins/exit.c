@@ -22,8 +22,8 @@ static int		first_argument_validation(t_all *all, size_t j)
 		if (!ft_isdigit(all->command[j].args[1][i]))
 		{
 			ft_putstr_fd("bash: exit: ", 0);
-			ft_putstr_fd(all->command[j].args[1], 0);
-			ft_putendl_fd(": numeric argument required", 0);
+			ft_putstr_fd(all->command[j].args[1], 1);
+			ft_putendl_fd(": numeric argument required", 1);
 			delete_environment(all, "?");
 			add_environment(all, "?", "255");
 			return (255);
@@ -37,8 +37,8 @@ static int		number_of_arguments_validation(t_all *all, size_t j)
 {
 	if (all->command[j].args[2])
 	{
-		ft_putstr_fd("bash: exit: ", 0);
-		ft_putendl_fd("too many arguments", 0);
+		ft_putstr_fd("bash: exit: ", 1);
+		ft_putendl_fd("too many arguments", 1);
 		delete_environment(all, "?");
 		add_environment(all, "?", "255");
 		return (1);

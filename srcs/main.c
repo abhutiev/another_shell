@@ -60,9 +60,15 @@ void	binary_execution(t_all *all, size_t j)
 				execve(strjoin_for_path(ways[i++], all->command[j].name), all->command[j].args, env_for_execve(all));
 		}
 		error_while_binary_executing(all, j);
+		printf("1\n");
 		exit(1);
 	}
 	wait(0);
+}
+
+int		one_command_execution(t_all * all)
+{
+	return (1);
 }
 
 void	request_execution(t_all *all)
@@ -70,6 +76,8 @@ void	request_execution(t_all *all)
 	size_t	j;
 
 	j = 0;
+	if (all->command[0].output_flag == STANDART_OUTPUT)
+
 	while (all->command[j].name)
 	{
 		if (builtin_execution(all, j))

@@ -1,4 +1,4 @@
-NAME	=	kekshell
+NAME	=	minishell
 
 CC		=	gcc
 
@@ -12,6 +12,7 @@ PARSINGSRC	=	$(addprefix ${PARSINGDIR}, \
 				second_circle_of_parsing.c \
 				filling_command_structure.c \
 				memory_cleaning.c \
+				validation.c \
 				request_separation.c \
 				first_circle_of_parsing.c)
 
@@ -41,6 +42,7 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				skip_spaces.c \
 				stop_buffering.c \
 				strjoin.c \
+				change_last_process_code.c \
 				itoa.c )
 
 BUILTINSDIR =   builtins/

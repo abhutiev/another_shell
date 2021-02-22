@@ -23,14 +23,14 @@ int		validation_of_requests(t_all *all)
 		j = 0;
 		if (!ft_strlen(all->requests.separated[i]))
 		{
-			change_exitcode_and_err_msg(all, "syntax error near unexpected token `;;'", "258", -1);
+			change_exitcode_and_err_msg(all, SNTX_ERR_DOUBLE_SEMICOLON, "258", -1);
 			return (258);
 		}
 		while (all->requests.separated[i][j] == ' ')
 			j++;
 		if (!all->requests.separated[i][j])
 		{
-			change_exitcode_and_err_msg(all, "syntax error near unexpected token `;'", "258", -1);
+			change_exitcode_and_err_msg(all, SNTX_ERR_ONE_SEMICOLON, "258", -1);
 			return (258);
 		}
 		i++;

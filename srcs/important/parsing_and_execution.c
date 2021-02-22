@@ -28,4 +28,5 @@ int		parsing_and_execution(t_all *all)
 		i++;
 	}
 	clean_after_yourself(all, i);
+	return (0);
 }

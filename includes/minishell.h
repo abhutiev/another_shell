@@ -32,6 +32,8 @@
 # define TO_RIGHT_DOUBLE_REDIR	4
 # define CMD_NOT_FOUND			": command not found"
 # define NO_FILE_OR_DIRECTORY	": No such file or directory"
+# define SNTX_ERR_DOUBLE_SEMICOLON	"syntax error near unexpected token `;;'"
+# define SNTX_ERR_ONE_SEMICOLON	"syntax error near unexpected token `;'"
 
 
 
@@ -296,7 +298,7 @@ void				str_to_lowercase(t_all *all, size_t j);
 ** File: ft_strlcat.c
 */
 
-void				change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j);
+int 				change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j);
 void				change_exitcode_success(t_all *all);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);

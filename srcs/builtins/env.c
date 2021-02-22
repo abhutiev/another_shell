@@ -18,7 +18,7 @@ int	env(t_all *all, size_t j)
 
 	if (all->command[j].args[1] != NULL)
 	{
-		change_exitcode_and_err_msg(all, " :No such file or directory", "127", j);
+		change_exitcode_and_err_msg(all, NO_FILE_OR_DIRECTORY, "127", j);
 		return (127);
 	}
 	i = 0;
