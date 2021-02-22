@@ -82,47 +82,6 @@ void	request_execution(t_all *all)
 	}
 }
 
-int 	validation_of_requests(t_all *all)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	while (all->requests.separated[i] != NULL)
-	{
-		j = 0;
-		if (!ft_strlen(all->requests.separated[i]))
-		{
-			change_exitcode_and_err_msg(all, "syntax error near unexpected token `;;'", "258", -1);
-			return (258);
-		}
-		while (all->requests.separated[i][j] == ' ')
-			j++;
-		if (!all->requests.separated[i][j])
-		{
-			change_exitcode_and_err_msg(all, "syntax error near unexpected token `;'", "258", -1);
-			return (258);
-		}
-		i++;
-	}
-	return (0);
-}
-
-void	free_requests(t_all *all)
-{
-	size_t	i;
-
-	i = 0;
-	while (all->requests.separated[i] != NULL)
-	{
-		free(all->requests.separated[i]);
-		i++;
-	}
-	free(all->requests.separated[i]);
-	free(all->requests.line_with_substitutions);
-	free(all->requests.separated);
-}
-
 int		main(int argc, char **argv, char **en)
 {
 	t_all	all;
@@ -136,7 +95,7 @@ int		main(int argc, char **argv, char **en)
 		separate_requests(&all);
 		if (validation_of_requests(&all))
 		{
-			free_requests(&all);
+			free_requests_in_case_of_invalid_request(&all);
 			continue ;
 		}
 		parsing_and_execution(&all);

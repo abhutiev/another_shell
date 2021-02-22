@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-void	change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j)
+int		change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j)
 {
 	ft_putstr_fd(SHELL_NAME, 1);
 	if (j != -1)
@@ -20,4 +20,11 @@ void	change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j)
 	ft_putendl_fd(msg, 1);
 	delete_environment(all, "?");
 	add_environment(all, "?", code);
+	return (ft_atoi(code));
+}
+
+void	change_exitcode_success(t_all *all)
+{
+	delete_environment(all, "?");
+	add_environment(all, "?", "0");
 }

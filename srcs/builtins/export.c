@@ -102,5 +102,6 @@ int			export(t_all *all, size_t j)
 		free(splitted[1]);
 		free(splitted);
 	}
+	change_exitcode_success(all);
 	return (1);
 }

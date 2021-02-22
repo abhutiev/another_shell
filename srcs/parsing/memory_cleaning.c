@@ -48,3 +48,18 @@ void	clean_after_yourself(t_all *all, size_t i)
 	free(all->requests.line_with_substitutions[i]);
 	free(all->requests.line_with_substitutions);
 }
+
+void	free_requests_in_case_of_invalid_request(t_all *all)
+{
+	size_t	i;
+
+	i = 0;
+	while (all->requests.separated[i] != NULL)
+	{
+		free(all->requests.separated[i]);
+		i++;
+	}
+	free(all->requests.separated[i]);
+	free(all->requests.line_with_substitutions);
+	free(all->requests.separated);
+}

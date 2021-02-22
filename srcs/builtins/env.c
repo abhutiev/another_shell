@@ -17,7 +17,10 @@ int	env(t_all *all, size_t j)
 	size_t	i;
 
 	if (all->command[j].args[1] != NULL)
-		return (1);
+	{
+		change_exitcode_and_err_msg(all, " :No such file or directory", "127", j);
+		return (127);
+	}
 	i = 0;
 	while (all->env[i].name)
 	{
@@ -34,5 +37,6 @@ int	env(t_all *all, size_t j)
 		}
 		i++;
 	}
+	change_exitcode_success(all);
 	return (1);
 }

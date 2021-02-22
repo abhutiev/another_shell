@@ -108,11 +108,13 @@ void				second_circle_of_parsing(t_all *all, size_t i);
 int 				parsing_and_execution(t_all *all);
 void				request_execution(t_all *all);
 
+
 void				allocate_memory_for_commands(t_all *all);
 void				filling_command_structure(t_all *all);
 
 void				free_command_names(t_all *all);
 void				clean_after_yourself(t_all *all, size_t i);
+void				free_requests_in_case_of_invalid_request(t_all *all);
 
 void				pregame_ritual(t_all *all, int ac, char **av, char **env);
 
@@ -122,6 +124,8 @@ void				count_requests(t_all *all);
 char				**env_for_execve(t_all *all);
 
 char				*look_for_env(t_all*all, char *name);
+int					validation_of_requests(t_all *all);
+
 
 /*
 ** ########################################################################
@@ -293,6 +297,7 @@ void				str_to_lowercase(t_all *all, size_t j);
 */
 
 void				change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j);
+void				change_exitcode_success(t_all *all);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*strjoin_for_path(char const *s1, char const *s2);
