@@ -33,6 +33,15 @@ int		builtin_execution(t_all *all, size_t j)
 		return (0);
 }
 
+int 	error_while_binary_executing(t_all *all, size_t j)
+{
+	if (look_for_env(all, "PATH"))
+		change_exitcode_and_err_msg(all, CMD_NOT_FOUND, "127", j);
+	else
+		change_exitcode_and_err_msg(all, NO_FILE_OR_DIRECTORY, "127", j);
+	return (127);
+}
+
 void	binary_execution(t_all *all, size_t j)
 {
 	pid_t	pid;
@@ -50,28 +59,10 @@ void	binary_execution(t_all *all, size_t j)
 			while (ways[i])
 				execve(strjoin_for_path(ways[i++], all->command[j].name), all->command[j].args, env_for_execve(all));
 		}
-		//ft_putstr_fd(SHELL_NAME, 1);
-		ft_putstr_fd(all->command[j].name, 1);
-		if (look_for_env(all, "PATH"))
-		{
-			ft_putendl_fd(": command not found", 1);
-			delete_environment(all, "?");
-			add_environment(all, "?", ft_strdup("127"));
-		}
-		else
-		{
-			ft_putendl_fd(": No such file or directory", 1);
-			delete_environment(all, "?");
-			add_environment(all, "?", ft_strdup("127"));
-		}
+		error_while_binary_executing(all, j);
 		exit(1);
 	}
-	wait(&(all->exitcode));
-	if (all->exitcode)
-	{
-		delete_environment(all, "?");
-		add_environment(all, "?", "127");
-	}
+	wait(0);
 }
 
 void	request_execution(t_all *all)
@@ -91,7 +82,31 @@ void	request_execution(t_all *all)
 	}
 }
 
+int 	validation_of_requests(t_all *all)
+{
+	size_t	i;
+	size_t	j;
 
+	i = 0;
+	while (all->requests.separated[i] != NULL)
+	{
+		j = 0;
+		if (!ft_strlen(all->requests.separated[i]))
+		{
+			change_exitcode_and_err_msg(all, "syntax error near unexpected token `;;'", "258", -1);
+			return (258);
+		}
+		while (all->requests.separated[i][j] == ' ')
+			j++;
+		if (!all->requests.separated[i][j])
+		{
+			change_exitcode_and_err_msg(all, "syntax error near unexpected token `;'", "258", -1);
+			return (258);
+		}
+		i++;
+	}
+	return (0);
+}
 
 int		main(int argc, char **argv, char **en)
 {
@@ -104,6 +119,11 @@ int		main(int argc, char **argv, char **en)
 		get_next_line(0, &(all.buffer.line_1));
 		count_requests(&all);
 		separate_requests(&all);
+		if (validation_of_requests(&all))
+		{
+		//	free_requests(all);
+			continue ;
+		}
 		parsing_and_execution(&all);
 	}
 	return (0);

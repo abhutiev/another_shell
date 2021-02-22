@@ -30,6 +30,11 @@
 # define TO_RIGHT_REDIR			2
 # define TO_LEFT_REDIR			3
 # define TO_RIGHT_DOUBLE_REDIR	4
+# define CMD_NOT_FOUND			": command not found"
+# define NO_FILE_OR_DIRECTORY	": No such file or directory"
+
+
+
 typedef struct		s_cd
 {
 	char			**splitted_directories;
@@ -100,7 +105,7 @@ typedef struct		s_all
 
 void				first_circle_of_parsing(t_all *all, size_t i);
 void				second_circle_of_parsing(t_all *all, size_t i);
-void				parsing_and_execution(t_all *all);
+int 				parsing_and_execution(t_all *all);
 void				request_execution(t_all *all);
 
 void				allocate_memory_for_commands(t_all *all);
@@ -287,6 +292,7 @@ void				str_to_lowercase(t_all *all, size_t j);
 ** File: ft_strlcat.c
 */
 
+void				change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*strjoin_for_path(char const *s1, char const *s2);

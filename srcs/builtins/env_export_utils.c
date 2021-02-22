@@ -43,9 +43,7 @@ void	delete_environment(t_all *all, char *name)
 
 	i = 0;
 	while (all->env[i].name && (ft_strcmp(all->env[i].name, name) != 0))
-	{
 		i++;
-	}
 	if (all->env[i].name == 0)
 		return ;
 	free(all->env[i].name);

@@ -92,12 +92,6 @@ void		filling_command_structure(t_all *all)
 		}
 		all->iter.i++;
 	}
-	size_t i = 0;
-	while (all->command[i].name)
-	{
-		printf("%d\n", all->command[i].output_flag);
-		i++;
-	}
 	all->command[all->iter.k].output_flag = STANDART_OUTPUT;
 	all->command[all->iter.k + 1].name = NULL;
 }
