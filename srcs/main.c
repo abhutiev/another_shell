@@ -108,6 +108,21 @@ int 	validation_of_requests(t_all *all)
 	return (0);
 }
 
+void	free_requests(t_all *all)
+{
+	size_t	i;
+
+	i = 0;
+	while (all->requests.separated[i] != NULL)
+	{
+		free(all->requests.separated[i]);
+		i++;
+	}
+	free(all->requests.separated[i]);
+	free(all->requests.line_with_substitutions);
+	free(all->requests.separated);
+}
+
 int		main(int argc, char **argv, char **en)
 {
 	t_all	all;
@@ -121,7 +136,7 @@ int		main(int argc, char **argv, char **en)
 		separate_requests(&all);
 		if (validation_of_requests(&all))
 		{
-		//	free_requests(all);
+			free_requests(&all);
 			continue ;
 		}
 		parsing_and_execution(&all);
