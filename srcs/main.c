@@ -60,7 +60,6 @@ void	binary_execution(t_all *all, size_t j)
 				execve(strjoin_for_path(ways[i++], all->command[j].name), all->command[j].args, env_for_execve(all));
 		}
 		error_while_binary_executing(all, j);
-		printf("1\n");
 		exit(1);
 	}
 	wait(0);
