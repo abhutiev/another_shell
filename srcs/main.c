@@ -70,21 +70,43 @@ int		one_command_execution(t_all * all)
 	return (1);
 }
 
+int 	open_file_descriptors(t_all *all, size_t j)
+{
+	int	k;
+
+	k = 0;
+	while (all->command[j].files[k].name)
+	{
+		if (all->command[j].files[k].output_flag == TO_RIGHT_REDIR)
+			all->command->files[k].fd = open(all->command[j].files[k].name, O_CREAT | O_RDWR | O_TRUNC, 0644);
+		else if (all->command[j].files[k].output_flag == TO_RIGHT_DOUBLE_REDIR)
+			all->command->files[k].fd = open(all->command[j].files[k].name, O_CREAT | O_RDWR | O_APPEND, 0644);
+		if (k > 0)
+			close(all->command->files[k - 1].fd);
+		free(all->command[j].files[k].name);
+		k++;
+	}
+	if (k > 0)
+		dup2(all->command[j].files[k - 1].fd, 1);
+	return (k - 1);
+}
+
+
 void	request_execution(t_all *all)
 {
-	size_t	j;
+	size_t j;
+	int k;
 
 	j = 0;
-	if (all->command[0].output_flag == STANDART_OUTPUT)
-
 	while (all->command[j].name)
 	{
-		if (builtin_execution(all, j))
-		{
-			j++;
-			continue ;
-		}
-		binary_execution(all, j);
+		open_file_descriptors(all, j);
+		if (!builtin_execution(all, j))
+			binary_execution(all, j);
+		close(1);
+		close(k);
+		dup2(all->fd.standard_output, 1);
+		free(all->command[j].files);
 		j++;
 	}
 }
@@ -92,6 +114,7 @@ void	request_execution(t_all *all)
 int		main(int argc, char **argv, char **en)
 {
 	t_all	all;
+	int k;
 
 	pregame_ritual(&all, argc, argv, en);
 	while (1)

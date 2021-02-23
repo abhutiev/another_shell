@@ -70,11 +70,19 @@ typedef struct		s_request
 	size_t			number;
 }					t_request;
 
+typedef struct		s_redirect
+{
+	char			*name;
+	int 			output_flag;
+	int				fd;
+
+}					t_redirect;
+
 typedef struct		s_command
 {
 	char			*name;
 	char			**args;
-	int 			output_flag;
+	t_redirect		*files;
 }					t_command;
 
 typedef struct		s_fd
@@ -89,6 +97,7 @@ typedef struct		s_iter
 	size_t			i;
 	size_t			j;
 	size_t			k;
+	size_t			n;
 }					t_iter;
 
 typedef struct		s_all
@@ -100,7 +109,6 @@ typedef struct		s_all
 	t_fd			fd;
 	char			**separated_request;
 	t_iter			iter;
-	int				exitcode;
 	size_t			n;
 	size_t			number_of_commands;
 }					t_all;

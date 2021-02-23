@@ -37,7 +37,7 @@ void	stop_buffering(t_all *all)
 	get_ready_for_separator_check(all);
 	if (!ft_strncmp(all->buffer.line_1 + all->buffer.iter_1, ">>", 2))
 	{
-		all->separated_request[all->n++] = ft_strdup("|");
+		all->separated_request[all->n++] = ft_strdup(">>");
 		all->buffer.iter_1 += 2;
 	}
 	else if (all->buffer.line_1[all->buffer.iter_1] == '>')
