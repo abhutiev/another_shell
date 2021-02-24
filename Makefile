@@ -32,6 +32,9 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				strcpy.c \
 				is_shielded.c \
 				is_special_symbol.c \
+				is_valid_param_exp.c \
+				is_digit.c \
+				is_alpha.c \
 				putchar.c \
 				putendl.c \
 				putstr.c \

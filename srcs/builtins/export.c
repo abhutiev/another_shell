@@ -6,7 +6,7 @@
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 09:57:59 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/10 09:58:01 by gdoge            ###   ########.fr       */
+/*   Updated: 2021/02/24 18:36:16 by sjeffry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,8 @@ int			export(t_all *all, size_t j)
 	while (all->command[j].args[++i])
 	{
 		splitted = split_export_args(all, j, i);
-		add_environment(all, splitted[0], splitted[1]);
+		if (valid_param_exp(splitted[0], splitted[1]))
+			add_environment(all, splitted[0], splitted[1]);
 		free(splitted[0]);
 		free(splitted[1]);
 		free(splitted);

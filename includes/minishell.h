@@ -6,7 +6,7 @@
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 03:50:41 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/04 03:50:44 by gdoge            ###   ########.fr       */
+/*   Updated: 2021/02/24 18:31:08 by sjeffry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,8 @@ char				**env_for_execve(t_all *all);
 
 char				*look_for_env(t_all*all, char *name);
 int					validation_of_requests(t_all *all);
+
+int					valid_param_exp(char *param, char *arg);
 
 
 /*
@@ -316,6 +318,7 @@ void				stop_buffering(t_all *all);
 int					stop_buffering_condition(t_all *all);
 void				iterators_to_zero(t_all *all);
 int					ft_isalpha(int c);
+int					ft_is_valid_param_exp(int c);
 int					ft_atoi(char *str);
 int					ft_isdigit(int c);
 char				*ft_itoa(int n);
