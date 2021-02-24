@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   work_with_environments.c                           :+:      :+:    :+:   */
+/*   env_export_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 07:08:55 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/04 07:08:56 by gdoge            ###   ########.fr       */
+/*   Updated: 2021/02/24 18:51:36 by sjeffry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,33 @@ char	**env_for_execve(t_all *all)
 		i++;
 	}
 	return (result);
+}
+
+int		valid_param_exp(char *param, char *arg)
+{
+	int			i;
+
+	if ((i = 0) == 0 && ft_isdigit(param[0]))
+	{
+		write(2, "bash: export: `", 15);
+		write(2, param, ft_strlen(param));
+		write(2, "=", 1);
+		write(2, arg, ft_strlen(arg));
+		write(2, "': not a valid identifier\n", 26);
+		return (0);
+	}
+	while (param[i])
+	{
+		if (!ft_is_valid_param_exp(param[i]))
+		{
+			write(2, "bash: export: `", 15);
+			write(2, param, ft_strlen(param));
+			write(2, "=", 1);
+			write(2, arg, ft_strlen(arg));
+			write(2, "': not a valid identifier\n", 26);
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }

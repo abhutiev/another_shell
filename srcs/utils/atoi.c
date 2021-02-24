@@ -6,7 +6,7 @@
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 13:32:15 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/19 13:32:17 by gdoge            ###   ########.fr       */
+/*   Updated: 2021/02/24 18:26:46 by sjeffry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,6 @@ static int		is_sign(char str)
 		return (1);
 	else
 		return (0);
-}
-
-int				ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (c);
-	return (0);
 }
 
 int				ft_atoi(char *str)
