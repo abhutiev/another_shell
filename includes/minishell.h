@@ -145,8 +145,8 @@ char				**env_for_execve(t_all *all);
 char				*look_for_env(t_all*all, char *name);
 int					validation_of_requests(t_all *all);
 
-int					open_file_descriptors(t_all *all, size_t j);
-int					close_file_descriptors(t_all *all, size_t j);
+void				open_file_descriptors(t_all *all, size_t j);
+void				close_file_descriptors(t_all *all, size_t j);
 
 int					valid_param_exp(char *param, char *arg);
 

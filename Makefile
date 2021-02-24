@@ -66,7 +66,8 @@ IMPORTANTDIR =   important/
 IMPORTANTSRC =	$(addprefix ${IMPORTANTDIR}, \
 				pregame_ritual.c \
 				signal_handling.c \
-				parsing_and_execution.c )
+				parsing_and_execution.c \
+				redirects.c)
 
 SRC		=	$(addprefix ${SRCDIR}, ${BUILTINSSRC} \
 				${PARSINGSRC} \
