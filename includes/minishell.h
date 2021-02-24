@@ -31,7 +31,7 @@
 # define TO_LEFT_REDIR			3
 # define TO_RIGHT_DOUBLE_REDIR	4
 # define CMD_NOT_FOUND			": command not found"
-# define NO_FILE_OR_DIRECTORY	": No such file or directory"
+# define NO_FILE_OR_DIR	": No such file or directory"
 # define SNTX_ERR_DOUBLE_SEMICOLON	"syntax error near unexpected token `;;'"
 # define SNTX_ERR_ONE_SEMICOLON	"syntax error near unexpected token `;'"
 
@@ -80,7 +80,7 @@ typedef struct		s_request
 typedef struct		s_redirect
 {
 	char			*name;
-	int 			output_flag;
+	int				output_flag;
 	int				fd;
 
 }					t_redirect;
@@ -124,9 +124,8 @@ typedef struct		s_all
 
 void				first_circle_of_parsing(t_all *all, size_t i);
 void				second_circle_of_parsing(t_all *all, size_t i);
-int 				parsing_and_execution(t_all *all);
+int					parsing_and_execution(t_all *all);
 void				request_execution(t_all *all);
-
 
 void				allocate_memory_for_commands(t_all *all);
 void				filling_command_structure(t_all *all);
@@ -149,7 +148,6 @@ void				open_file_descriptors(t_all *all, size_t j);
 void				close_file_descriptors(t_all *all, size_t j);
 
 int					valid_param_exp(char *param, char *arg);
-
 
 /*
 ** ########################################################################
@@ -320,9 +318,10 @@ void				str_to_lowercase(t_all *all, size_t j);
 ** File: ft_strlcat.c
 */
 
-int 				change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j);
-void				change_exitcode_success(t_all *all);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
+int					change_exitcode_and_err_msg(t_all *all,
+									char *msg, char *code, size_t j);
+void				change_exitcode_success(t_all *all);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*strjoin_for_path(char const *s1, char const *s2);
 void				skip_spaces(t_all *all);
@@ -334,6 +333,6 @@ int					ft_is_valid_param_exp(int c);
 int					ft_atoi(char *str);
 int					ft_isdigit(int c);
 char				*ft_itoa(int n);
-
+void				utils_to_zero(t_redirect_utils *utils);
 
 #endif

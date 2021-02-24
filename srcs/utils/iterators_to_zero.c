@@ -19,3 +19,12 @@ void	iterators_to_zero(t_all *all)
 	all->iter.k = 0;
 	all->iter.n = 0;
 }
+
+void	utils_to_zero(t_redirect_utils *utils)
+{
+	utils->k = 0;
+	utils->last_right = 0;
+	utils->last_left = 0;
+	utils->flag_left = 0;
+	utils->flag_right = 0;
+}

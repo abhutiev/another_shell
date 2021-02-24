@@ -34,14 +34,16 @@ void		allocate_memory_for_commands(t_all *all)
 		i++;
 	}
 	all->command = (t_command *)ft_calloc(counter_comm + 2, sizeof(t_command));
-
 }
 
 static int	is_pipe(t_all *all, size_t i)
 {
 	if (!ft_strcmp(all->separated_request[i], "|"))
 	{
-		all->number_of_commands++;
+		all->command[all->iter.k].files[all->iter.n].name = NULL;
+		all->command[all->iter.k++].args[all->iter.j - 1] = NULL;
+		all->iter.j = 0;
+		all->iter.n = 0;
 		return (1);
 	}
 	return (0);
@@ -51,14 +53,16 @@ int			is_redirect(t_all *all, size_t i)
 {
 	if (!ft_strcmp(all->separated_request[i], ">>"))
 	{
-		all->command[all->iter.k].files[all->iter.n].output_flag = TO_RIGHT_DOUBLE_REDIR;
+		all->command[all->iter.k].files[all->iter.n].output_flag =
+				TO_RIGHT_DOUBLE_REDIR;
 		all->number_of_commands++;
 		free(all->separated_request[i]);
 		return (1);
 	}
 	else if (!ft_strcmp(all->separated_request[i], ">"))
 	{
-		all->command[all->iter.k].files[all->iter.n].output_flag = TO_RIGHT_REDIR;
+		all->command[all->iter.k].files[all->iter.n].output_flag =
+				TO_RIGHT_REDIR;
 		all->number_of_commands++;
 		free(all->separated_request[i]);
 		return (1);
@@ -67,7 +71,8 @@ int			is_redirect(t_all *all, size_t i)
 	{
 		all->number_of_commands++;
 		free(all->separated_request[i]);
-		all->command[all->iter.k].files[all->iter.n].output_flag = TO_LEFT_REDIR;
+		all->command[all->iter.k].files[all->iter.n].output_flag =
+				TO_LEFT_REDIR;
 		return (1);
 	}
 	return (0);
@@ -81,7 +86,6 @@ static void	command_name_filling(t_all *all)
 			all->separated_request[all->iter.i];
 	all->command[all->iter.k].name =
 			all->separated_request[all->iter.i];
-
 }
 
 void		filling_command_structure(t_all *all)
@@ -91,14 +95,10 @@ void		filling_command_structure(t_all *all)
 	while (all->separated_request[all->iter.i])
 	{
 		if (is_pipe(all, all->iter.i))
-		{
-			all->command[all->iter.k].files[all->iter.n].name = NULL;
-			all->command[all->iter.k++].args[all->iter.j - 1] = NULL;
-			all->iter.j = 0;
-			all->iter.n = 0;
-		}
+			all->number_of_commands++;
 		else if (is_redirect(all, all->iter.i))
-			all->command[all->iter.k].files[all->iter.n++].name = all->separated_request[++all->iter.i];
+			all->command[all->iter.k].files[all->iter.n++].name =
+				all->separated_request[++all->iter.i];
 		else
 		{
 			if (all->iter.j == 0)

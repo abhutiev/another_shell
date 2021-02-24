@@ -40,7 +40,8 @@ static int	display_export(t_all *all)
 	i = 0;
 	while (all->env[i].name)
 	{
-		if (!ft_strcmp(all->env[i].name, "?") || !ft_strcmp(all->env[i].name, "$"))
+		if (!ft_strcmp(all->env[i].name, "?")
+				|| !ft_strcmp(all->env[i].name, "$"))
 		{
 			i++;
 			continue ;

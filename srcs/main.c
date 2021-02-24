@@ -38,7 +38,7 @@ int 	error_while_binary_execution(t_all *all, size_t j)
 	if (look_for_env(all, "PATH"))
 		change_exitcode_and_err_msg(all, CMD_NOT_FOUND, "127", j);
 	else
-		change_exitcode_and_err_msg(all, NO_FILE_OR_DIRECTORY, "127", j);
+		change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "127", j);
 	return (127);
 }
 

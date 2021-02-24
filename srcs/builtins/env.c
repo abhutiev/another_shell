@@ -16,15 +16,13 @@ int	env(t_all *all, size_t j)
 {
 	size_t	i;
 
-	if (all->command[j].args[1] != NULL)
-	{
-		change_exitcode_and_err_msg(all, NO_FILE_OR_DIRECTORY, "127", j);
-		return (127);
-	}
 	i = 0;
+	if (all->command[j].args[1] != NULL)
+		return (change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "127", j));
 	while (all->env[i].name)
 	{
-		if (!ft_strcmp(all->env[i].name, "?") || !ft_strcmp(all->env[i].name, "$"))
+		if (!ft_strcmp(all->env[i].name, "?") ||
+		!ft_strcmp(all->env[i].name, "$"))
 		{
 			i++;
 			continue ;

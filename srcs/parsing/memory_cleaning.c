@@ -32,10 +32,8 @@ void	free_command_names(t_all *all)
 		}
 		free(all->command[i].args[j]);
 		free(all->command[i].name);
-		free(all->command[i].args);
-		i++;
+		free(all->command[i++].args);
 		free(all->command[i].files);
-		//free(all->command[i].files)
 	}
 	free(all->command[i].args);
 	free(all->command[i].name);
