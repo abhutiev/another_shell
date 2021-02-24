@@ -15,7 +15,7 @@
 int		change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j)
 {
 	ft_putstr_fd(SHELL_NAME, 1);
-	if (j !=  4294967295)
+	if (j != 4294967295)
 		ft_putstr_fd(all->command[j].name, 1);
 	ft_putendl_fd(msg, 1);
 	delete_environment(all, "?");
