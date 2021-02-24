@@ -14,4 +14,5 @@
 
 void	signal_d_exit(int signal)
 {
+	(void)signal;
 }

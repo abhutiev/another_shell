@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-void		allocate_memory_for_commands(t_all *all)
+void				allocate_memory_for_commands(t_all *all)
 {
 	size_t	i;
 	size_t	counter_comm;
@@ -36,7 +36,7 @@ void		allocate_memory_for_commands(t_all *all)
 	all->command = (t_command *)ft_calloc(counter_comm + 2, sizeof(t_command));
 }
 
-static int	is_pipe(t_all *all, size_t i)
+static int			is_pipe(t_all *all, size_t i)
 {
 	if (!ft_strcmp(all->separated_request[i], "|"))
 	{
@@ -49,7 +49,7 @@ static int	is_pipe(t_all *all, size_t i)
 	return (0);
 }
 
-int			is_redirect(t_all *all, size_t i)
+static int			is_redirect(t_all *all, size_t i)
 {
 	if (!ft_strcmp(all->separated_request[i], ">>"))
 	{
@@ -78,7 +78,7 @@ int			is_redirect(t_all *all, size_t i)
 	return (0);
 }
 
-static void	command_name_filling(t_all *all)
+static void			command_name_filling(t_all *all)
 {
 	all->command[all->iter.k].args = ft_calloc(20, sizeof(char *));
 	all->command[all->iter.k].files = ft_calloc(100, sizeof(t_redirect));
@@ -88,7 +88,7 @@ static void	command_name_filling(t_all *all)
 			all->separated_request[all->iter.i];
 }
 
-void		filling_command_structure(t_all *all)
+void				filling_command_structure(t_all *all)
 {
 	iterators_to_zero(all);
 	all->number_of_commands = 0;

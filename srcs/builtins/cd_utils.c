@@ -42,7 +42,7 @@ static void	cd_up(t_cd *cd)
 	free(cd->splitted_directories[cd->i]);
 }
 
-static void	memory_cleaning_and_forming_of_path(t_all *all, t_cd *cd)
+static void	memory_cleaning_and_forming_of_path(t_cd *cd)
 {
 	free(cd->splitted_directories);
 	cd->k = 0;
@@ -104,7 +104,7 @@ int			cd_from_current_directory(t_all *all, size_t j)
 		}
 		cd.i++;
 	}
-	memory_cleaning_and_forming_of_path(all, &cd);
+	memory_cleaning_and_forming_of_path(&cd);
 	if (changing_of_directory_replacing_env(all, &cd, j) == 2)
 		return (2);
 	return (1);

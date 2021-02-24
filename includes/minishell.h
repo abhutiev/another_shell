@@ -26,7 +26,6 @@
 
 # define SHELL_NAME "bash: "
 # define STANDART_OUTPUT		0
-# define PIPE					1
 # define TO_RIGHT_REDIR			2
 # define TO_LEFT_REDIR			3
 # define TO_RIGHT_DOUBLE_REDIR	4
@@ -122,32 +121,7 @@ typedef struct		s_all
 	size_t			number_of_commands;
 }					t_all;
 
-void				first_circle_of_parsing(t_all *all, size_t i);
-void				second_circle_of_parsing(t_all *all, size_t i);
-int					parsing_and_execution(t_all *all);
 void				request_execution(t_all *all);
-
-void				allocate_memory_for_commands(t_all *all);
-void				filling_command_structure(t_all *all);
-
-void				free_command_names(t_all *all);
-void				clean_after_yourself(t_all *all, size_t i);
-void				free_requests_in_case_of_invalid_request(t_all *all);
-
-void				pregame_ritual(t_all *all, int ac, char **av, char **env);
-
-void				separate_requests(t_all *all);
-void				count_requests(t_all *all);
-
-char				**env_for_execve(t_all *all);
-
-char				*look_for_env(t_all*all, char *name);
-int					validation_of_requests(t_all *all);
-
-void				open_file_descriptors(t_all *all, size_t j);
-void				close_file_descriptors(t_all *all, size_t j);
-
-int					valid_param_exp(char *param, char *arg);
 
 /*
 ** ########################################################################
@@ -201,14 +175,100 @@ int					exit_bash(t_all *all, size_t j);
 int					unset(t_all *all, size_t j);
 
 /*
-** File: work_with_environments.c
+** File: env_export_utils.c
 */
 
-void				load_environments(t_all *all, char **env);
 void				add_environment(t_all *all, char *name, char *value);
-void				sort_environments(t_all *all);
 void				delete_environment(t_all *all, char *name);
-void				display_env(t_all *all);
+char				**env_for_execve(t_all *all);
+char				*look_for_env(t_all*all, char *name);
+
+/*
+** ########################################################################
+** ########## IMPORTANT FUNCTIONS ON WHICH ALL PROGRAM IS BASED ###########
+** ########################################################################
+** ######################### Folder: important ############################
+** ########################################################################
+*/
+
+/*
+** File: execution.c
+*/
+
+void				binary_execution(t_all *all, size_t j);
+int					builtin_execution(t_all *all, size_t j);
+
+/*
+** File: parsing_and_execution.c
+*/
+
+int					parsing_and_execution(t_all *all);
+
+/*
+** File: pregame_ritual.c
+*/
+
+void				pregame_ritual(t_all *all, int ac, char **av, char **env);
+
+/*
+** File: redirects.c
+*/
+
+void				open_file_descriptors(t_all *all, size_t j);
+void				close_file_descriptors(t_all *all, size_t j);
+
+/*
+** File: signal_handling.c
+*/
+
+void				signal_d_exit(int signal);
+
+/*
+** ########################################################################
+** ############ FUNCTIONS WHERE ALL CYCLES OF PARSING HAPPENS #############
+** ########################################################################
+** ########################## Folder: parsing #############################
+** ########################################################################
+*/
+
+/*
+** File: filling_command_structure.c
+*/
+
+void				allocate_memory_for_commands(t_all *all);
+void				filling_command_structure(t_all *all);
+
+/*
+** File: first_circle_of_parsing.c
+*/
+
+void				first_circle_of_parsing(t_all *all, size_t i);
+
+/*
+** File: memory_cleaning.c
+*/
+
+void				free_command_names(t_all *all);
+void				clean_after_yourself(t_all *all, size_t i);
+void				free_requests_in_case_of_invalid_request(t_all *all);
+
+/*
+** File: second_circle_of_parsing.c
+*/
+
+void				second_circle_of_parsing(t_all *all, size_t i);
+/*
+** File: request_separation.c
+*/
+
+void				separate_requests(t_all *all);
+void				count_requests(t_all *all);
+
+/*
+** File: validation.c
+*/
+
+int					validation_of_requests(t_all *all);
 
 /*
 ** ########################################################################
@@ -218,106 +278,23 @@ void				display_env(t_all *all);
 ** ########################################################################
 */
 
-/*
-** File: strlen.c
-*/
-
 size_t				ft_strlen(char *string);
-
-/*
-** File: split.c
-*/
-
 char				**split(char *s, char c);
-
-/*
-** File: calloc.c
-*/
-
 void				*ft_calloc(size_t count, size_t size);
-
-/*
-** File: substr.c
-*/
-
 char				*ft_substr(char const *s, unsigned int start, size_t len);
-
-/*
-** File: strdup.c
-*/
-
 char				*ft_strdup(char *s1);
-
-/*
-** File: strcmp.c
-*/
-
 int					ft_strcmp(char *line1, char *line2);
-
-/*
-** File: gnl.c
-*/
-
 int					get_next_line(int fd, char **line);
-
-/*
-** File: strcpy.c
-*/
-
 void				ft_strcpy(char *dst, char *src);
-
-/*
-** File: is_shielded.c
-*/
-
 int					is_shielded(t_all *all);
-
-/*
-** File: is_special_symbol.c
-*/
-
 int					is_special_symbol(char c);
-
-/*
-** File: putchar.c
-*/
-
 void				ft_putchar_fd(char c, int fd);
-
-/*
-** File: putendl.c
-*/
-
 void				ft_putendl_fd(char *s, int fd);
-
-/*
-** File: putstr.c
-*/
-
+int					valid_param_exp(char *param, char *arg);
 void				ft_putstr_fd(char *s, int fd);
-
-/*
-** File: strlcpy.c
-*/
-
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
-
-/*
-** File: bzero.c
-*/
-
 void				*ft_bzero(void *b, size_t len);
-
-/*
-** File: str_to_lowercase.c
-*/
-
 void				str_to_lowercase(t_all *all, size_t j);
-
-/*
-** File: ft_strlcat.c
-*/
-
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					change_exitcode_and_err_msg(t_all *all,
 									char *msg, char *code, size_t j);

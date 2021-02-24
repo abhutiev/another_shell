@@ -2,7 +2,7 @@ NAME	=	minishell
 
 CC		=	gcc
 
-CFLAGS	=
+CFLAGS	=	-Wall -Wextra -Werror
 
 SRCDIR	=	srcs/
 
@@ -67,7 +67,8 @@ IMPORTANTSRC =	$(addprefix ${IMPORTANTDIR}, \
 				pregame_ritual.c \
 				signal_handling.c \
 				parsing_and_execution.c \
-				redirects.c)
+				redirects.c \
+				execution.c )
 
 SRC		=	$(addprefix ${SRCDIR}, ${BUILTINSSRC} \
 				${PARSINGSRC} \
@@ -77,11 +78,11 @@ SRC		=	$(addprefix ${SRCDIR}, ${BUILTINSSRC} \
 
 INCDIR	=	includes/
 
-INC		=	minishell.h
+INC		=	$(addprefix ${INCDIR}, minishell.h)
 
 all: ${NAME}
 
-${NAME}:
+${NAME}: ${SRC} ${INC}
 	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} -o ${NAME}
 
 launch:

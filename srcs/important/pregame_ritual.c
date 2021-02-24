@@ -24,7 +24,7 @@ static void	save_fd(t_all *all)
 	all->fd.standard_output = dup(1);
 }
 
-void		sort_environments(t_all *all)
+static void	sort_environments(t_all *all)
 {
 	int		i;
 	int		j;
@@ -35,10 +35,10 @@ void		sort_environments(t_all *all)
 	number_of_envs = 0;
 	while (all->env[number_of_envs].name)
 		number_of_envs++;
-	while (++i < number_of_envs)
+	while (++i < (int)number_of_envs)
 	{
 		j = -1;
-		while (++j < number_of_envs - i - 1)
+		while (++j < (int)number_of_envs - i - 1)
 			if (ft_strcmp(all->env[j].name, all->env[j + 1].name) < 0)
 			{
 				tmp = all->env[j].name;
@@ -51,7 +51,7 @@ void		sort_environments(t_all *all)
 	}
 }
 
-void		load_environments(t_all *all, char **env)
+static void	load_environments(t_all *all, char **env)
 {
 	size_t	i;
 	size_t	number_of_envs;

@@ -35,7 +35,7 @@ static void		prepare_for_parsing(t_all *all, size_t i)
 	all->separated_request = (char **)ft_calloc(256, sizeof(char *));
 }
 
-void			end_of_parsing(t_all *all, size_t i)
+static void		end_of_parsing(t_all *all, size_t i)
 {
 	free(all->requests.line_with_substitutions[i]);
 	all->buffer.line_2[all->buffer.iter_2] = '\0';
