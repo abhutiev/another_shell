@@ -19,7 +19,12 @@ void	request_execution(t_all *all)
 	j = 0;
 	while (all->command[j].name)
 	{
-		open_file_descriptors(all, j);
+		if (open_file_descriptors(all, j))
+		{
+			close_file_descriptors(all, j);
+			j++;
+			continue ;
+		}
 		if (!builtin_execution(all, j))
 			binary_execution(all, j);
 		close_file_descriptors(all, j);

@@ -214,7 +214,7 @@ void				pregame_ritual(t_all *all, int ac, char **av, char **env);
 ** File: redirects.c
 */
 
-void				open_file_descriptors(t_all *all, size_t j);
+int					open_file_descriptors(t_all *all, size_t j);
 void				close_file_descriptors(t_all *all, size_t j);
 
 /*

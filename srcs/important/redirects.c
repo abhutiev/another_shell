@@ -34,17 +34,27 @@ static void	to_right_double_redir(t_all *all, t_redirect_utils *utils, size_t j)
 	utils->last_right = utils->k;
 }
 
-static void	to_left_redir(t_all *all, t_redirect_utils *utils, size_t j)
+static int	to_left_redir(t_all *all, t_redirect_utils *utils, size_t j)
 {
 	utils->flag_left = 1;
 	all->command[j].files[utils->k].fd =
 			open(all->command[j].files[utils->k].name, O_RDONLY);
+	if (all->command[j].files[utils->k].fd == -1)
+	{
+		close(all->command[j].files[utils->last_right].fd);
+		utils->last_left = utils->k;
+		close(0);
+		free(all->command[j].files[utils->k].name);
+		change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "1", j);
+		return (1);
+	}
 	if (utils->last_left)
 		close(all->command[j].files[utils->last_right].fd);
 	utils->last_left = utils->k;
+	return (0);
 }
 
-void		open_file_descriptors(t_all *all, size_t j)
+int			open_file_descriptors(t_all *all, size_t j)
 {
 	t_redirect_utils utils;
 
@@ -57,7 +67,8 @@ void		open_file_descriptors(t_all *all, size_t j)
 		TO_RIGHT_DOUBLE_REDIR)
 			to_right_double_redir(all, &utils, j);
 		else if (all->command[j].files[utils.k].output_flag == TO_LEFT_REDIR)
-			to_left_redir(all, &utils, j);
+			if (to_left_redir(all, &utils, j))
+				return (1);
 		free(all->command[j].files[utils.k].name);
 		utils.k++;
 	}
@@ -67,10 +78,12 @@ void		open_file_descriptors(t_all *all, size_t j)
 		dup2(all->command[j].files[utils.last_left].fd, 0);
 	all->fd.fd_out = all->command[j].files[utils.last_right].fd;
 	all->fd.fd_in = all->command[j].files[utils.last_left].fd;
+	return (0);
 }
 
 void		close_file_descriptors(t_all *all, size_t j)
 {
+	close(0);
 	close(1);
 	close(all->fd.fd_in);
 	close(all->fd.fd_out);
