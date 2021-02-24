@@ -37,7 +37,7 @@ int				get_next_line(int fd, char **line)
 		return (-1);
 	i = 0;
 	eof = 1;
-	buffer = (char *)malloc(2048);
+	buffer = (char *)ft_calloc(2048, sizeof(char));
 	while (read(fd, &buffer[i], 1) == 1)
 	{
 		if (buffer[i] == '\n')
@@ -47,7 +47,7 @@ int				get_next_line(int fd, char **line)
 		}
 		i++;
 	}
-	(*line) = (char *)malloc(i + 1);
+	(*line) = (char *)calloc(i + 1, sizeof(char));
 	ncopy(line, buffer, i);
 	free(buffer);
 	return (!eof);

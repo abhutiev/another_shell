@@ -33,7 +33,7 @@ int		builtin_execution(t_all *all, size_t j)
 		return (0);
 }
 
-int 	error_while_binary_executing(t_all *all, size_t j)
+int 	error_while_binary_execution(t_all *all, size_t j)
 {
 	if (look_for_env(all, "PATH"))
 		change_exitcode_and_err_msg(all, CMD_NOT_FOUND, "127", j);
@@ -59,43 +59,15 @@ void	binary_execution(t_all *all, size_t j)
 			while (ways[i])
 				execve(strjoin_for_path(ways[i++], all->command[j].name), all->command[j].args, env_for_execve(all));
 		}
-		error_while_binary_executing(all, j);
+		error_while_binary_execution(all, j);
 		exit(1);
 	}
 	wait(0);
 }
 
-int		one_command_execution(t_all * all)
-{
-	return (1);
-}
-
-int 	open_file_descriptors(t_all *all, size_t j)
-{
-	int	k;
-
-	k = 0;
-	while (all->command[j].files[k].name)
-	{
-		if (all->command[j].files[k].output_flag == TO_RIGHT_REDIR)
-			all->command->files[k].fd = open(all->command[j].files[k].name, O_CREAT | O_RDWR | O_TRUNC, 0644);
-		else if (all->command[j].files[k].output_flag == TO_RIGHT_DOUBLE_REDIR)
-			all->command->files[k].fd = open(all->command[j].files[k].name, O_CREAT | O_RDWR | O_APPEND, 0644);
-		if (k > 0)
-			close(all->command->files[k - 1].fd);
-		free(all->command[j].files[k].name);
-		k++;
-	}
-	if (k > 0)
-		dup2(all->command[j].files[k - 1].fd, 1);
-	return (k - 1);
-}
-
-
 void	request_execution(t_all *all)
 {
 	size_t j;
-	int k;
 
 	j = 0;
 	while (all->command[j].name)
@@ -103,10 +75,7 @@ void	request_execution(t_all *all)
 		open_file_descriptors(all, j);
 		if (!builtin_execution(all, j))
 			binary_execution(all, j);
-		close(1);
-		close(k);
-		dup2(all->fd.standard_output, 1);
-		free(all->command[j].files);
+		close_file_descriptors(all, j);
 		j++;
 	}
 }
