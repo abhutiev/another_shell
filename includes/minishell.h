@@ -87,6 +87,8 @@ typedef struct		s_command
 
 typedef struct		s_fd
 {
+	int				fd_out;
+	int				fd_in;
 	int				standard_output;
 	int				standard_input;
 	int				*pipeline[2];
@@ -136,6 +138,8 @@ char				**env_for_execve(t_all *all);
 char				*look_for_env(t_all*all, char *name);
 int					validation_of_requests(t_all *all);
 
+int					open_file_descriptors(t_all *all, size_t j);
+int					close_file_descriptors(t_all *all, size_t j);
 
 /*
 ** ########################################################################
