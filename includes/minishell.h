@@ -35,7 +35,14 @@
 # define SNTX_ERR_DOUBLE_SEMICOLON	"syntax error near unexpected token `;;'"
 # define SNTX_ERR_ONE_SEMICOLON	"syntax error near unexpected token `;'"
 
-
+typedef struct		s_redirect_utils
+{
+	int				k;
+	int				last_right;
+	int				last_left;
+	int				flag_left;
+	int				flag_right;
+}					t_redirect_utils;
 
 typedef struct		s_cd
 {
