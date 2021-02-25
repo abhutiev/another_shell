@@ -17,8 +17,7 @@ int 	single_command_execution(t_all *all, size_t j)
 	if (!open_file_descriptors(all, j))
 	{
 		if (!builtin_execution(all, j))
-			binary_execution(all, j);
-	}
+:wq	}
 	else
 		return (1);
 	close_file_descriptors(all, j);
