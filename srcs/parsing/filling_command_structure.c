@@ -40,6 +40,7 @@ static int			is_pipe(t_all *all, size_t i)
 {
 	if (!ft_strcmp(all->separated_request[i], "|"))
 	{
+		free(all->separated_request[i]);
 		all->command[all->iter.k].files[all->iter.n].name = NULL;
 		all->command[all->iter.k++].args[all->iter.j - 1] = NULL;
 		all->iter.j = 0;
@@ -55,7 +56,6 @@ static int			is_redirect(t_all *all, size_t i)
 	{
 		all->command[all->iter.k].files[all->iter.n].output_flag =
 				TO_RIGHT_DOUBLE_REDIR;
-		all->number_of_commands++;
 		free(all->separated_request[i]);
 		return (1);
 	}
@@ -63,13 +63,11 @@ static int			is_redirect(t_all *all, size_t i)
 	{
 		all->command[all->iter.k].files[all->iter.n].output_flag =
 				TO_RIGHT_REDIR;
-		all->number_of_commands++;
 		free(all->separated_request[i]);
 		return (1);
 	}
 	else if (!ft_strcmp(all->separated_request[i], "<"))
 	{
-		all->number_of_commands++;
 		free(all->separated_request[i]);
 		all->command[all->iter.k].files[all->iter.n].output_flag =
 				TO_LEFT_REDIR;
@@ -91,11 +89,10 @@ static void			command_name_filling(t_all *all)
 void				filling_command_structure(t_all *all)
 {
 	iterators_to_zero(all);
-	all->number_of_commands = 0;
 	while (all->separated_request[all->iter.i])
 	{
 		if (is_pipe(all, all->iter.i))
-			all->number_of_commands++;
+			all->fd.pipe_flag = 1;
 		else if (is_redirect(all, all->iter.i))
 			all->command[all->iter.k].files[all->iter.n++].name =
 				all->separated_request[++all->iter.i];

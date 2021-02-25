@@ -12,24 +12,58 @@
 
 #include "../includes/minishell.h"
 
-void	request_execution(t_all *all)
+int 	single_command_execution(t_all *all, size_t j)
 {
-	size_t j;
-
-	j = 0;
-	while (all->command[j].name)
+	if (!open_file_descriptors(all, j))
 	{
-		if (open_file_descriptors(all, j))
-		{
-			close_file_descriptors(all, j);
-			j++;
-			continue ;
-		}
 		if (!builtin_execution(all, j))
 			binary_execution(all, j);
-		close_file_descriptors(all, j);
+	}
+	else
+		return (1);
+	close_file_descriptors(all, j);
+	return (0);
+}
+
+void	build_pipeline(t_all *all)
+{
+	size_t	j;
+	all->fd.number_of_pipes = 0;
+	while (all->command[all->fd.number_of_pipes].name)
+		all->fd.number_of_pipes++;
+	all->fd.pipeline = ft_calloc(all->fd.number_of_pipes--, sizeof(int) * 2);
+	j = 0;
+	while (j < all->fd.number_of_pipes)
+	{
+		all->fd.pipeline[j] = ft_calloc(2, sizeof(int));
+		pipe(all->fd.pipeline[j]);
 		j++;
 	}
+}
+
+int		multiple_command_execution(t_all *all)
+{
+	pid_t	pid;
+	size_t	j;
+
+	j = 0;
+	build_pipeline(all);
+	while (all->command[j].name)
+	{
+
+		if (single_command_execution(all, j))
+			return (1);
+		j++;
+	}
+	return (0);
+}
+
+int 	request_execution(t_all *all)
+{
+
+	if (!all->fd.pipe_flag)
+		return (single_command_execution(all, 0));
+	return (multiple_command_execution(all));
 }
 
 int		main(int argc, char **argv, char **en)
@@ -45,7 +79,7 @@ int		main(int argc, char **argv, char **en)
 		separate_requests(&all);
 		if (validation_of_requests(&all))
 		{
-			free_requests_in_case_of_invalid_request(&all);
+			free_memory_in_case_of_invalid_request(&all);
 			continue ;
 		}
 		parsing_and_execution(&all);

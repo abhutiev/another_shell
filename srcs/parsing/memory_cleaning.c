@@ -33,7 +33,6 @@ void	free_command_names(t_all *all)
 		free(all->command[i].args[j]);
 		free(all->command[i].name);
 		free(all->command[i++].args);
-		free(all->command[i].files);
 	}
 	free(all->command[i].args);
 	free(all->command[i].name);
@@ -49,7 +48,7 @@ void	clean_after_yourself(t_all *all, size_t i)
 	free(all->requests.line_with_substitutions);
 }
 
-void	free_requests_in_case_of_invalid_request(t_all *all)
+void	free_memory_in_case_of_invalid_request(t_all *all)
 {
 	size_t	i;
 

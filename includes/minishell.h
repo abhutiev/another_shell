@@ -93,11 +93,13 @@ typedef struct		s_command
 
 typedef struct		s_fd
 {
+	int				pipe_flag;
 	int				fd_out;
 	int				fd_in;
 	int				standard_output;
 	int				standard_input;
-	int				*pipeline[2];
+	size_t			number_of_pipes;
+	int				**pipeline;
 }					t_fd;
 
 typedef struct		s_iter
@@ -118,10 +120,9 @@ typedef struct		s_all
 	char			**separated_request;
 	t_iter			iter;
 	size_t			n;
-	size_t			number_of_commands;
 }					t_all;
 
-void				request_execution(t_all *all);
+int					request_execution(t_all *all);
 
 /*
 ** ########################################################################
@@ -250,7 +251,7 @@ void				first_circle_of_parsing(t_all *all, size_t i);
 
 void				free_command_names(t_all *all);
 void				clean_after_yourself(t_all *all, size_t i);
-void				free_requests_in_case_of_invalid_request(t_all *all);
+void				free_memory_in_case_of_invalid_request(t_all *all);
 
 /*
 ** File: second_circle_of_parsing.c
