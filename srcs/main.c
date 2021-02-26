@@ -17,7 +17,8 @@ int 	single_command_execution(t_all *all, size_t j)
 	if (!open_file_descriptors(all, j))
 	{
 		if (!builtin_execution(all, j))
-:wq	}
+			binary_execution(all, j);
+	}
 	else
 		return (1);
 	close_file_descriptors(all, j);
@@ -32,7 +33,7 @@ void	build_pipeline(t_all *all)
 		all->fd.number_of_pipes++;
 	all->fd.pipeline = ft_calloc(all->fd.number_of_pipes--, sizeof(int) * 2);
 	j = 0;
-	while (j < all->fd.number_of_pipes)
+	while (j <= all->fd.number_of_pipes)
 	{
 		all->fd.pipeline[j] = ft_calloc(2, sizeof(int));
 		pipe(all->fd.pipeline[j]);
@@ -40,18 +41,42 @@ void	build_pipeline(t_all *all)
 	}
 }
 
+void	close_all_pipes(t_all *all)
+{
+	size_t	j;
+
+	j = 0;
+	while (j <= all->fd.number_of_pipes)
+	{
+		close(all->fd.pipeline[j][0]);
+		close(all->fd.pipeline[j][1]);
+		free(all->fd.pipeline[j]);
+		j++;
+	}
+	dup2(all->fd.standard_output, 1);
+	dup2(all->fd.standard_input, 0);
+	free(all->fd.pipeline);
+}
+
 int		multiple_command_execution(t_all *all)
 {
-	pid_t	pid;
 	size_t	j;
 
 	j = 0;
 	build_pipeline(all);
 	while (all->command[j].name)
 	{
-
-		if (single_command_execution(all, j))
-			return (1);
+		if (!all->command[j + 1].name)
+		{
+			dup2(all->fd.standard_output, 1); // возвращаем дескриптор 1 на место
+		}
+		else
+			dup2(all->fd.pipeline[j + 1][0], 1); // пиши в 0 пайп следующего вместо 1
+		if (j != 0)
+			dup2(all->fd.pipeline[j][1], 0); // читай из 1 пайп вместо 0
+//		if (!open_file_descriptors(all, j))
+		binary_execution(all, j);
+//		close_file_descriptors(all, j);
 		j++;
 	}
 	return (0);

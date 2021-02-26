@@ -41,7 +41,7 @@ static int	to_left_redir(t_all *all, t_redirect_utils *utils, size_t j)
 			open(all->command[j].files[utils->k].name, O_RDONLY);
 	if (all->command[j].files[utils->k].fd == -1)
 	{
-		close(all->command[j].files[utils->last_right].fd);
+		close(all->command[j].files[utils->last_left].fd);
 		utils->last_left = utils->k;
 		close(0);
 		free(all->command[j].files[utils->k].name);
@@ -49,7 +49,7 @@ static int	to_left_redir(t_all *all, t_redirect_utils *utils, size_t j)
 		return (1);
 	}
 	if (utils->last_left)
-		close(all->command[j].files[utils->last_right].fd);
+		close(all->command[j].files[utils->last_left].fd);
 	utils->last_left = utils->k;
 	return (0);
 }
