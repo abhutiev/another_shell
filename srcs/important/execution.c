@@ -83,7 +83,7 @@ void        close_some(size_t fd0, size_t fd1, t_all *all)
     }
 }
 
-void		binary_execution_for_pipes(t_all *all, size_t j)
+void		fork_work(t_all *all, size_t j)
 {
 	char	**ways;
 	size_t	i;

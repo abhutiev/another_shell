@@ -59,6 +59,32 @@ void	close_all_pipes(t_all *all)
     free(all->fd.pipeline);
 }
 
+void	wait_all(t_all *all)
+{
+	size_t j = 0;
+
+//	dup2(all->fd.standard_output, 1);
+//	dup2(all->fd.standard_input, 0);
+	while (all->pid[j])
+	{
+		waitpid(all->pid[j], NULL, WUNTRACED);
+//		if (all->command[j + 1].name != NULL)
+//			printf("%d\n", close(all->fd.pipeline[j][1]));
+		if (!j)
+		{
+			close(0);
+			printf("%d\n", close(all->fd.pipeline[j][0]));
+			printf("%d\n", close(all->fd.pipeline[j][1]));
+		}
+		else if (all->command[j + 1].name != NULL)
+		{
+			printf("%d\n", close(all->fd.pipeline[j][1]));
+		}
+		j++;
+	}
+	free(all->pid);
+}
+
 int		multiple_command_execution(t_all *all)
 {
 	size_t	j;
@@ -67,7 +93,7 @@ int		multiple_command_execution(t_all *all)
     build_pipeline(all);
 	while (all->command[j].name)
 	{
-		binary_execution_for_pipes(all, j);
+		fork_work(all, j);
 		j++;
 	}
 
