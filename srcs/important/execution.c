@@ -68,7 +68,7 @@ void		binary_execution(t_all *all, size_t j)
 	wait(0);
 }
 
-void		binary_execution_for_pipes(t_all *all, size_t j)
+void		fork_work(t_all *all, size_t j)
 {
 	char	**ways;
 	size_t	i;

@@ -125,7 +125,7 @@ typedef struct		s_all
 }					t_all;
 
 int					request_execution(t_all *all);
-void		binary_execution_for_pipes(t_all *all, size_t j);
+void		fork_work(t_all *all, size_t j);
 
 /*
 ** ########################################################################
