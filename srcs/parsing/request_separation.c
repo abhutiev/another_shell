@@ -89,5 +89,5 @@ void		separate_requests(t_all *all)
 		}
 	}
 	all->requests.separated[all->requests.number] = NULL;
-//	free(all->buffer.line_1);
+	free(all->buffer.line_1);
 }

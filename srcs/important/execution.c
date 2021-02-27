@@ -44,23 +44,56 @@ static int	error_while_binary_execution(t_all *all, size_t j)
 
 void		binary_execution(t_all *all, size_t j)
 {
-	pid_t	pid;
 	char	**ways;
 	size_t	i;
+	pid_t	pid;
 
-	i = 0;
 	pid = fork();
 	if (pid == 0)
 	{
-		execve(all->command[j].name, all->command[j].args, env_for_execve(all));
+		execve(all->command[j].name, all->command[j].args,
+			   env_for_execve(all));
 		ways = split(look_for_env(all, "PATH"), ':');
+		i = 0;
 		if (ways)
+		{
 			while (ways[i])
 				execve(strjoin_for_path(ways[i++],
-						all->command[j].name), all->command[j].args,
-													env_for_execve(all));
+										all->command[j].name), all->command[j].args,
+		   													env_for_execve(all));
+		}
 		error_while_binary_execution(all, j);
 		exit(1);
 	}
 	wait(0);
+}
+
+void		binary_execution_for_pipes(t_all *all, size_t j)
+{
+	char	**ways;
+	size_t	i;
+
+	all->pid[j] = fork();
+	if (all->pid[j] == 0)
+	{
+		if (all->command[j + 1].name != NULL)
+		{
+			close(all->fd.pipeline[j][0]);
+		}
+		if (j != 0)
+		{
+			close(all->fd.pipeline[j - 1][1]);
+		}
+		execve(all->command[j].name, all->command[j].args, env_for_execve(all));
+		ways = split(look_for_env(all, "PATH"), ':');
+		i = 0;
+		if (ways)
+		{
+			while (ways[i])
+				execve(strjoin_for_path(ways[i++],
+					all->command[j].name), all->command[j].args, env_for_execve(all));
+		}
+		error_while_binary_execution(all, j);
+		exit(1);
+	}
 }

@@ -16,7 +16,7 @@ static int		cd_to_home(t_all *all)
 {
 	if (look_for_env(all, "HOME") == NULL)
 	{
-		ft_putendl_fd("bash: cd: HOME not set", 0);
+		ft_putendl_fd("bash: cd: HOME not set", 1);
 		delete_environment(all, "?");
 		add_environment(all, "?", "1");
 		return (2);

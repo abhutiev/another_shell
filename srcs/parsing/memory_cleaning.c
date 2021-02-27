@@ -16,6 +16,7 @@ void	free_command_names(t_all *all)
 {
 	size_t	i;
 	size_t	j;
+	size_t	k;
 
 	i = 0;
 	while (all->separated_request[i])
@@ -32,7 +33,13 @@ void	free_command_names(t_all *all)
 		}
 		free(all->command[i].args[j]);
 		free(all->command[i].name);
-		free(all->command[i++].args);
+		free(all->command[i].args);
+		k = 0;
+		while (all->command[i].files[k].name)
+		{
+			free(all->command[i].files[k++].name);
+		}
+		free(all->command[i++].files);
 	}
 	free(all->command[i].args);
 	free(all->command[i].name);

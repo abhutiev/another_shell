@@ -44,7 +44,6 @@ static int	to_left_redir(t_all *all, t_redirect_utils *utils, size_t j)
 		close(all->command[j].files[utils->last_left].fd);
 		utils->last_left = utils->k;
 		close(0);
-		free(all->command[j].files[utils->k].name);
 		change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "1", j);
 		return (1);
 	}
@@ -69,7 +68,6 @@ int			open_file_descriptors(t_all *all, size_t j)
 		else if (all->command[j].files[utils.k].output_flag == TO_LEFT_REDIR)
 			if (to_left_redir(all, &utils, j))
 				return (1);
-		free(all->command[j].files[utils.k].name);
 		utils.k++;
 	}
 	if (utils.flag_right)
@@ -81,7 +79,7 @@ int			open_file_descriptors(t_all *all, size_t j)
 	return (0);
 }
 
-void		close_file_descriptors(t_all *all, size_t j)
+void		close_file_descriptors(t_all *all)
 {
 	close(0);
 	close(1);
@@ -89,5 +87,5 @@ void		close_file_descriptors(t_all *all, size_t j)
 	close(all->fd.fd_out);
 	dup2(all->fd.standard_output, 1);
 	dup2(all->fd.standard_input, 0);
-	free(all->command[j].files);
+
 }

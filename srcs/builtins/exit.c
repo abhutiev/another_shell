@@ -21,7 +21,7 @@ static int		first_argument_validation(t_all *all, size_t j)
 	{
 		if (!ft_isdigit(all->command[j].args[1][i]))
 		{
-			ft_putstr_fd("bash: exit: ", 0);
+			ft_putstr_fd("bash: exit: ", 1);
 			ft_putstr_fd(all->command[j].args[1], 1);
 			ft_putendl_fd(": numeric argument required", 1);
 			delete_environment(all, "?");

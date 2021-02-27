@@ -120,9 +120,12 @@ typedef struct		s_all
 	char			**separated_request;
 	t_iter			iter;
 	size_t			n;
+	pid_t			*pid;
+	int				status;
 }					t_all;
 
 int					request_execution(t_all *all);
+void		binary_execution_for_pipes(t_all *all, size_t j);
 
 /*
 ** ########################################################################
@@ -216,7 +219,7 @@ void				pregame_ritual(t_all *all, int ac, char **av, char **env);
 */
 
 int					open_file_descriptors(t_all *all, size_t j);
-void				close_file_descriptors(t_all *all, size_t j);
+void				close_file_descriptors(t_all *all);
 
 /*
 ** File: signal_handling.c

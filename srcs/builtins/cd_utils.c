@@ -67,9 +67,9 @@ static int	changing_of_directory_replacing_env(t_all *all, t_cd *cd, size_t j)
 {
 	if (chdir(cd->path) == -1)
 	{
-		ft_putstr_fd("bash: cd: ", 0);
-		ft_putstr_fd(all->command[j].args[1], 0);
-		ft_putendl_fd(": No such file or directory", 0);
+		ft_putstr_fd("bash: cd: ", 1);
+		ft_putstr_fd(all->command[j].args[1], 1);
+		ft_putendl_fd(": No such file or directory", 1);
 		delete_environment(all, "?");
 		add_environment(all, "?", ft_strdup("1"));
 		free(cd->path);
