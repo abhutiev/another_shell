@@ -99,7 +99,7 @@ typedef struct		s_fd
 	int				standard_output;
 	int				standard_input;
 	size_t			number_of_pipes;
-	int				**pipeline;
+    int				**pipeline;
 }					t_fd;
 
 typedef struct		s_iter

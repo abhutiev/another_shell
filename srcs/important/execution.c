@@ -68,6 +68,21 @@ void		binary_execution(t_all *all, size_t j)
 	wait(0);
 }
 
+void        close_some(size_t fd0, size_t fd1, t_all *all)
+{
+    size_t	j;
+
+    j = 0;
+    while (j < all->fd.number_of_pipes)
+    {
+        if (j != fd0 && all->fd.pipeline[j][0])
+            close(all->fd.pipeline[j][0]);
+        if (j != fd1 && all->fd.pipeline[j][1])
+            close(all->fd.pipeline[j][1]);
+        j++;
+    }
+}
+
 void		binary_execution_for_pipes(t_all *all, size_t j)
 {
 	char	**ways;
@@ -76,14 +91,23 @@ void		binary_execution_for_pipes(t_all *all, size_t j)
 	all->pid[j] = fork();
 	if (all->pid[j] == 0)
 	{
-		if (all->command[j + 1].name != NULL)
-		{
-			close(all->fd.pipeline[j][0]);
-		}
-		if (j != 0)
-		{
-			close(all->fd.pipeline[j - 1][1]);
-		}
+        if (j == 0)
+        {
+            dup2(all->fd.pipeline[j][1], 1);
+            close_some(10000, j, all);
+        }
+        else if (all->command[j + 1].name != NULL)
+        {
+            dup2(all->fd.pipeline[j - 1][0], 0);
+            dup2(all->fd.pipeline[j][1], 1);
+            close_some((j - 1), j, all);
+        }
+        else if (all->command[j + 1].name == NULL)
+        {
+            dup2(all->fd.pipeline[j - 1][0], 0);
+            dup2(all->fd.standard_output, 1);
+            close_some((j - 1), 10000, all);
+        }
 		execve(all->command[j].name, all->command[j].args, env_for_execve(all));
 		ways = split(look_for_env(all, "PATH"), ':');
 		i = 0;

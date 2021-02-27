@@ -27,53 +27,36 @@ int 	single_command_execution(t_all *all, size_t j)
 
 void	build_pipeline(t_all *all)
 {
-	size_t	j;
-	all->fd.number_of_pipes = 0;
-	while (all->command[all->fd.number_of_pipes].name)
-		all->fd.number_of_pipes++;
-	all->pid = (pid_t *)ft_calloc(all->fd.number_of_pipes + 1, sizeof(pid_t));
-	all->fd.pipeline = ft_calloc(all->fd.number_of_pipes--, sizeof(int) * 2);
-	j = 0;
-	while (j < all->fd.number_of_pipes)
-	{
-		all->fd.pipeline[j] = ft_calloc(2, sizeof(int));
-		pipe(all->fd.pipeline[j]);
-		j++;
-	}
+    size_t	j;
+    all->fd.number_of_pipes = 0;
+    while (all->command[all->fd.number_of_pipes].name)
+        all->fd.number_of_pipes++;
+    all->pid = (pid_t *)ft_calloc(all->fd.number_of_pipes + 1, sizeof(pid_t));
+    all->fd.pipeline = ft_calloc(all->fd.number_of_pipes--, sizeof(int) * 2);
+    j = 0;
+    while (j < all->fd.number_of_pipes)
+    {
+        all->fd.pipeline[j] = ft_calloc(2, sizeof(int));
+        pipe(all->fd.pipeline[j]);
+        j++;
+    }
 }
 
 void	close_all_pipes(t_all *all)
 {
-	size_t	j;
+    size_t	j;
 
-	j = 0;
-	close(0);
-	close(1);
-	dup2(all->fd.standard_output, 1);
-	dup2(all->fd.standard_input, 0);
-	while (j < all->fd.number_of_pipes)
-	{
-		close(all->fd.pipeline[j][0]);
-		close(all->fd.pipeline[j][1]);
-		free(all->fd.pipeline[j]);
-		j++;
-	}
-	free(all->fd.pipeline);
-}
-
-void	wait_all(t_all *all)
-{
-	size_t j = 0;
-
-	while (all->pid[j])
-	{
-		waitpid(all->pid[j], NULL, WUNTRACED);
-		if (all->command[j + 1].name != NULL)
-			close(all->fd.pipeline[j][1]);
-		if (j)
-			close(all->fd.pipeline[j - 1][0]);
-		j++;
-	}
+    j = 0;
+    dup2(all->fd.standard_output, 1);
+    dup2(all->fd.standard_input, 0);
+    while (j < all->fd.number_of_pipes)
+    {
+        close(all->fd.pipeline[j][0]);
+        close(all->fd.pipeline[j][1]);
+        free(all->fd.pipeline[j]);
+        j++;
+    }
+    free(all->fd.pipeline);
 }
 
 int		multiple_command_execution(t_all *all)
@@ -81,26 +64,37 @@ int		multiple_command_execution(t_all *all)
 	size_t	j;
 
 	j = 0;
-	build_pipeline(all);
+    build_pipeline(all);
 	while (all->command[j].name)
 	{
-		if (all->command[j + 1].name == NULL)
-		{
-			dup2(all->fd.standard_output, 1);
-		}
-		else
-		{
-			dup2(all->fd.pipeline[j][1], 1);
-		}
-		if (j != 0)
-		{
-			dup2(all->fd.pipeline[j - 1][0], 0);
-		}
 		binary_execution_for_pipes(all, j);
 		j++;
 	}
-	wait_all(all);
-	close_all_pipes(all);
+
+	j = 0;
+	while (all->pid[j]) {
+        if (j == 0)
+        {
+            close(all->fd.pipeline[j][1]);
+        }
+        else if (all->command[j + 1].name != NULL)
+        {
+            waitpid(all->pid[j - 1], NULL, WUNTRACED);
+            close(all->fd.pipeline[j - 1][0]);
+            waitpid(all->pid[j], NULL, WUNTRACED);
+            close(all->fd.pipeline[j][1]);
+        }
+        else if (all->command[j + 1].name == NULL)
+        {
+            close(all->fd.pipeline[j - 1][1]);
+            waitpid(all->pid[j], NULL, WUNTRACED);
+            close(all->fd.pipeline[j - 1][0]);
+        }
+        j++;
+    }
+    wait(0);
+    free(all->pid);
+    close_all_pipes(all);
 	return (0);
 }
 
