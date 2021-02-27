@@ -58,7 +58,6 @@ void	close_all_pipes(t_all *all)
 		free(all->fd.pipeline[j]);
 		j++;
 	}
-	free(all->pid);
 	free(all->fd.pipeline);
 }
 
@@ -82,7 +81,6 @@ int		multiple_command_execution(t_all *all)
 	size_t	j;
 
 	j = 0;
-
 	build_pipeline(all);
 	while (all->command[j].name)
 	{
@@ -98,13 +96,7 @@ int		multiple_command_execution(t_all *all)
 		{
 			dup2(all->fd.pipeline[j - 1][0], 0);
 		}
-		if (!open_file_descriptors(all, j))
-		{
-			binary_execution(all, j);
-		}
-		else
-			return (1);
-		close_file_descriptors(all);
+		binary_execution_for_pipes(all, j);
 		j++;
 	}
 	wait_all(all);
