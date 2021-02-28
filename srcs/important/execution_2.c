@@ -72,10 +72,39 @@ int		find_left_redirect_pipe(t_all *all)
 	return (current_fd);
 }
 
+int		find_right_redirect_pipe(t_all *all, size_t j)
+{
+	size_t	k;
+	int		output_fd;
+	k = 0;
+
+	output_fd = 0;
+	while (all->command[j].files[k].name)
+	{
+		if (all->command[j].files[k].output_flag == TO_RIGHT_REDIR)
+		{
+			if (output_fd)
+				close(output_fd);
+			output_fd = open(all->command[j].files[k].name,
+							 O_CREAT | O_RDWR | O_TRUNC, 0644);
+		}
+		else if (all->command[j].files[k].output_flag == TO_RIGHT_DOUBLE_REDIR)
+		{
+			if (output_fd)
+				close(output_fd);
+			output_fd = open(all->command[j].files[k].name,
+							 O_CREAT | O_RDWR | O_APPEND, 0644);
+		}
+		k++;
+	}
+	return (output_fd);
+}
+
 int		multiple_command_execution(t_all *all)
 {
 	size_t	j;
 	int		input_fd;
+	int		output_fd;
 
 	j = 0;
 	input_fd = find_left_redirect_pipe(all);
@@ -85,7 +114,12 @@ int		multiple_command_execution(t_all *all)
 		dup2(input_fd, 0);
 	build_pipeline(all);
 	while (all->command[j].name)
+	{
+		output_fd = find_right_redirect_pipe(all, j);
+		if (output_fd)
+			dup2(output_fd, all->fd.pipeline[j][1]);
 		fork_work(all, j++);
+	}
 	j = 0;
 	while (all->pid[j]) {
 		if (j == 0)
