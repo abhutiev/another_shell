@@ -47,9 +47,3 @@ void	signal_ctrl_backslash(int sig)
 		}
 	}
 }
-
-void	signal_ctrl_d(int sig)
-{
-	(void)sig;
-	exit(0);
-}

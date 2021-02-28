@@ -14,7 +14,6 @@
 # define MINISHELL_H
 
 # include <unistd.h>
-# include <stdio.h> //
 # include <fcntl.h>
 # include <string.h>
 # include <errno.h>
@@ -37,15 +36,6 @@
 # define NUM_ARG_REQUIRED			": numeric argument required"
 
 int					g_lobal;
-
-typedef struct		s_redirect_utils
-{
-	int				k;
-	int				last_right;
-	int				last_left;
-	int				flag_left;
-	int				flag_right;
-}					t_redirect_utils;
 
 typedef struct		s_cd
 {
@@ -128,11 +118,9 @@ typedef struct		s_all
 	int				status;
 }					t_all;
 
-int					request_execution(t_all *all);
-void		fork_work(t_all *all, size_t j);
-void	signal_ctrl_c(int signal);
-void	signal_ctrl_backslash(int sig);
-void	signal_ctrl_d(int sig);
+int					error_while_binary_execution(t_all *all, size_t j);
+void				execve_call(t_all *all, size_t j);
+int					multiple_command_execution(t_all *all);
 
 /*
 ** ########################################################################
@@ -206,8 +194,8 @@ char				*look_for_env(t_all*all, char *name);
 ** File: execution.c
 */
 
-void				binary_execution(t_all *all, size_t j);
-int					builtin_execution(t_all *all, size_t j);
+void				execve_call(t_all *all, size_t j);
+int					single_command_execution(t_all *all, size_t j);
 
 /*
 ** File: parsing_and_execution.c
@@ -225,14 +213,15 @@ void				pregame_ritual(t_all *all, int ac, char **av, char **env);
 ** File: redirects.c
 */
 
-int					open_file_descriptors(t_all *all, size_t j);
-void				close_file_descriptors(t_all *all);
+int					find_right_redirect_pipe(t_all *all, size_t j);
+int					find_left_redirect_pipe(t_all *all);
 
 /*
 ** File: signal_handling.c
 */
 
-void				signal_d_exit(int signal);
+void				signal_ctrl_backslash(int sig);
+void				signal_ctrl_c(int signal);
 
 /*
 ** ########################################################################
@@ -321,6 +310,7 @@ int					ft_is_valid_param_exp(int c);
 int					ft_atoi(char *str);
 int					ft_isdigit(int c);
 char				*ft_itoa(int n);
-void				utils_to_zero(t_redirect_utils *utils);
+void				build_pipeline(t_all *all);
+void				close_all_pipes(t_all *all);
 
 #endif

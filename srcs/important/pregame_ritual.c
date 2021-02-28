@@ -85,7 +85,6 @@ void		pregame_ritual(t_all *all, int ac, char **av, char **env)
 	save_fd(all);
 	signal(SIGINT, signal_ctrl_c);
 	signal(SIGQUIT, signal_ctrl_backslash);
-	signal(SIGTERM, signal_ctrl_d);
 	dup2(0, all->fd.standard_input);
 	dup2(1, all->fd.standard_output);
 }

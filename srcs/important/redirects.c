@@ -12,79 +12,55 @@
 
 #include "../../includes/minishell.h"
 
-static void	to_right_redir(t_all *all, t_redirect_utils *utils, size_t j)
+int		find_left_redirect_pipe(t_all *all)
 {
-	utils->flag_right = 1;
-	all->command[j].files[utils->k].fd =
-			open(all->command[j].files[utils->k].name,
-						O_CREAT | O_RDWR | O_TRUNC, 0644);
-	if (utils->last_right)
-		close(all->command[j].files[utils->last_right].fd);
-	utils->last_right = utils->k;
+	size_t	i;
+	int		current_fd;
+
+	i = 0;
+	current_fd = 0;
+	while (all->command[0].files[i].name)
+	{
+		if (all->command[0].files[i].output_flag == TO_LEFT_REDIR)
+		{
+			if (current_fd != 0)
+				close(current_fd);
+			current_fd = open(all->command[0].files[i].name, O_RDONLY);
+			if (current_fd == -1)
+			{
+				change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "1", 0);
+				return (-1);
+			}
+		}
+		i++;
+	}
+	return (current_fd);
 }
 
-static void	to_right_double_redir(t_all *all, t_redirect_utils *utils, size_t j)
+int		find_right_redirect_pipe(t_all *all, size_t j)
 {
-	utils->flag_right = 1;
-	all->command[j].files[utils->k].fd =
-			open(all->command[j].files[utils->k].name,
+	size_t	k;
+	int		output_fd;
+
+	k = 0;
+	output_fd = 0;
+	while (all->command[j].files[k].name)
+	{
+		if (all->command[j].files[k].output_flag == TO_RIGHT_REDIR)
+		{
+			if (output_fd)
+				close(output_fd);
+			output_fd = open(all->command[j].files[k].name,
+							O_CREAT | O_RDWR | O_TRUNC, 0644);
+		}
+		else if (all->command[j].files[k].output_flag == TO_RIGHT_DOUBLE_REDIR)
+		{
+			if (output_fd)
+				close(output_fd);
+			output_fd = open(all->command[j].files[k].name,
 							O_CREAT | O_RDWR | O_APPEND, 0644);
-	if (utils->last_right)
-		close(all->command[j].files[utils->last_right].fd);
-	utils->last_right = utils->k;
-}
-
-static int	to_left_redir(t_all *all, t_redirect_utils *utils, size_t j)
-{
-	utils->flag_left = 1;
-	all->command[j].files[utils->k].fd =
-			open(all->command[j].files[utils->k].name, O_RDONLY);
-	if (all->command[j].files[utils->k].fd == -1)
-	{
-		close(all->command[j].files[utils->last_left].fd);
-		utils->last_left = utils->k;
-		close(0);
-		change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "1", j);
-		return (1);
+		}
+		k++;
 	}
-	if (utils->last_left)
-		close(all->command[j].files[utils->last_left].fd);
-	utils->last_left = utils->k;
-	return (0);
-}
-
-int			open_file_descriptors(t_all *all, size_t j)
-{
-	t_redirect_utils utils;
-
-	utils_to_zero(&utils);
-	while (all->command[j].files[utils.k].name)
-	{
-		if (all->command[j].files[utils.k].output_flag == TO_RIGHT_REDIR)
-			to_right_redir(all, &utils, j);
-		else if (all->command[j].files[utils.k].output_flag ==
-		TO_RIGHT_DOUBLE_REDIR)
-			to_right_double_redir(all, &utils, j);
-		else if (all->command[j].files[utils.k].output_flag == TO_LEFT_REDIR)
-			if (to_left_redir(all, &utils, j))
-				return (1);
-		utils.k++;
-	}
-	if (utils.flag_right)
-		dup2(all->command[j].files[utils.last_right].fd, 1);
-	if (utils.flag_left)
-		dup2(all->command[j].files[utils.last_left].fd, 0);
-	all->fd.fd_out = all->command[j].files[utils.last_right].fd;
-	all->fd.fd_in = all->command[j].files[utils.last_left].fd;
-	return (0);
-}
-
-void		close_file_descriptors(t_all *all)
-{
-	close(0);
-	close(1);
-	close(all->fd.fd_in);
-	close(all->fd.fd_out);
-	dup2(all->fd.standard_output, 1);
-	dup2(all->fd.standard_input, 0);
+	return (output_fd);
 }

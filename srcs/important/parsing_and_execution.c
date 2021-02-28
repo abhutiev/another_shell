@@ -26,6 +26,13 @@ static void	is_signals_changed_last_process_code(t_all *all)
 	}
 }
 
+static int	request_execution(t_all *all)
+{
+	if (!all->fd.pipe_flag)
+		return (single_command_execution(all, 0));
+	return (multiple_command_execution(all));
+}
+
 int			parsing_and_execution(t_all *all)
 {
 	size_t	i;

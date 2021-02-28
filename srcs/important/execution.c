@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execution.c                                        :+:      :+:    :+:   */
+/*   execution_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 22:57:17 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/24 22:57:18 by gdoge            ###   ########.fr       */
+/*   Created: 2021/02/28 15:22:59 by gdoge             #+#    #+#             */
+/*   Updated: 2021/02/28 15:23:01 by gdoge            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
-int			builtin_execution(t_all *all, size_t j)
+static int	builtin_execution(t_all *all, size_t j)
 {
 	str_to_lowercase(all, j);
 	if (ft_strcmp("cd", all->command[j].name) == 0)
@@ -33,91 +33,54 @@ int			builtin_execution(t_all *all, size_t j)
 		return (0);
 }
 
-static int	error_while_binary_execution(t_all *all, size_t j)
+void		execve_call(t_all *all, size_t j)
 {
-	if (look_for_env(all, "PATH"))
-		change_exitcode_and_err_msg(all, CMD_NOT_FOUND, "127", j);
-	else
-		change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "127", j);
-	return (127);
+	size_t	i;
+	char	**ways;
+
+	execve(all->command[j].name, all->command[j].args,
+										env_for_execve(all));
+	ways = split(look_for_env(all, "PATH"), ':');
+	i = 0;
+	if (ways)
+	{
+		while (ways[i])
+			execve(strjoin_for_path(ways[i++],
+				all->command[j].name),
+					all->command[j].args, env_for_execve(all));
+	}
+	error_while_binary_execution(all, j);
+	exit(1);
 }
 
-void		binary_execution(t_all *all, size_t j)
+static void	binary_exec_no_pipe(t_all *all)
 {
-	char	**ways;
-	size_t	i;
 	pid_t	pid;
 
 	pid = fork();
 	if (pid == 0)
-	{
-		execve(all->command[j].name, all->command[j].args,
-			   env_for_execve(all));
-		ways = split(look_for_env(all, "PATH"), ':');
-		i = 0;
-		if (ways)
-		{
-			while (ways[i])
-				execve(strjoin_for_path(ways[i++],
-						all->command[j].name), all->command[j].args,
-		   							env_for_execve(all));
-		}
-		error_while_binary_execution(all, j);
-		exit(1);
-	}
+		execve_call(all, 0);
 	wait(0);
 }
 
-void        close_some(size_t fd0, size_t fd1, t_all *all)
+int			single_command_execution(t_all *all, size_t j)
 {
-    size_t	j;
+	int		fd_in;
+	int		fd_out;
 
-    j = 0;
-    while (j < all->fd.number_of_pipes)
-    {
-        if (j != fd0 && all->fd.pipeline[j][0])
-            close(all->fd.pipeline[j][0]);
-        if (j != fd1 && all->fd.pipeline[j][1])
-            close(all->fd.pipeline[j][1]);
-        j++;
-    }
-}
-
-void		fork_work(t_all *all, size_t j)
-{
-	char	**ways;
-	size_t	i;
-
-	all->pid[j] = fork();
-	if (all->pid[j] == 0)
-	{
-        if (j == 0)
-        {
-            dup2(all->fd.pipeline[j][1], 1);
-            close_some(10000, j, all);
-        }
-        else if (all->command[j + 1].name != NULL)
-        {
-            dup2(all->fd.pipeline[j - 1][0], 0);
-            dup2(all->fd.pipeline[j][1], 1);
-            close_some((j - 1), j, all);
-        }
-        else if (all->command[j + 1].name == NULL)
-        {
-            dup2(all->fd.pipeline[j - 1][0], 0);
-            dup2(all->fd.standard_output, 1);
-            close_some((j - 1), 10000, all);
-        }
-		execve(all->command[j].name, all->command[j].args, env_for_execve(all));
-		ways = split(look_for_env(all, "PATH"), ':');
-		i = 0;
-		if (ways)
-		{
-			while (ways[i])
-				execve(strjoin_for_path(ways[i++],
-					all->command[j].name), all->command[j].args, env_for_execve(all));
-		}
-		error_while_binary_execution(all, j);
-		exit(1);
-	}
+	fd_in = find_left_redirect_pipe(all);
+	fd_out = find_right_redirect_pipe(all, j);
+	if (fd_in == -1)
+		return (1);
+	else if (fd_in)
+		dup2(fd_in, 0);
+	if (fd_out)
+		dup2(fd_out, 1);
+	if (!builtin_execution(all, j))
+		binary_exec_no_pipe(all);
+	close(fd_in);
+	close(fd_out);
+	dup2(all->fd.standard_output, 1);
+	dup2(all->fd.standard_input, 0);
+	return (0);
 }

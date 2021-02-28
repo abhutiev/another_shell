@@ -52,19 +52,12 @@ static int			is_pipe(t_all *all, size_t i)
 
 static int			is_redirect(t_all *all, size_t i)
 {
-	if (!ft_strcmp(all->separated_request[i], ">>"))
+	if (!ft_strcmp(all->separated_request[i], ">>") ||
+					!ft_strcmp(all->separated_request[i], ">"))
 	{
 		all->command[all->iter.k].files[all->iter.n].output_flag =
-				TO_RIGHT_DOUBLE_REDIR;
-		all->command[all->iter.k].files[all->iter.n].name =
-				all->separated_request[++all->iter.i];
-		free(all->separated_request[i]);
-		return (1);
-	}
-	else if (!ft_strcmp(all->separated_request[i], ">"))
-	{
-		all->command[all->iter.k].files[all->iter.n].output_flag =
-				TO_RIGHT_REDIR;
+		!ft_strcmp(all->separated_request[i], ">>") ?
+		TO_RIGHT_DOUBLE_REDIR : TO_RIGHT_REDIR;
 		all->command[all->iter.k].files[all->iter.n].name =
 				all->separated_request[++all->iter.i];
 		free(all->separated_request[i]);
