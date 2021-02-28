@@ -140,7 +140,7 @@ int		main(int argc, char **argv, char **en)
 	{
 		ft_putstr_fd(SHELL_NAME, 1);
 		if (!get_next_line(0, &(all.buffer.line_1)))
-			exit(ft_putendl_fd("\nexit", 1));
+			exit(ft_putendl_fd("  \b\b\nexit", 1));
 		count_requests(&all);
 		separate_requests(&all);
 		if (validation_of_requests(&all))
@@ -150,5 +150,4 @@ int		main(int argc, char **argv, char **en)
 		}
 		parsing_and_execution(&all);
 	}
-	return (0);
 }

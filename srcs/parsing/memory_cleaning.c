@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-void	free_command_names(t_all *all)
+void	free_after_parsing(t_all *all)
 {
 	size_t	i;
 	size_t	j;
@@ -21,24 +21,18 @@ void	free_command_names(t_all *all)
 	i = 0;
 	while (all->separated_request[i])
 		i++;
-	free(all->separated_request[i]);
 	i = 0;
 	while (all->command[i].name)
 	{
 		j = 1;
 		while (all->command[i].args[j])
-		{
-			free(all->command[i].args[j]);
-			j++;
-		}
+			free(all->command[i].args[j++]);
 		free(all->command[i].args[j]);
 		free(all->command[i].name);
 		free(all->command[i].args);
 		k = 0;
 		while (all->command[i].files[k].name)
-		{
 			free(all->command[i].files[k++].name);
-		}
 		free(all->command[i++].files);
 	}
 	free(all->command[i].args);

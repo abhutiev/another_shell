@@ -87,5 +87,4 @@ void		close_file_descriptors(t_all *all)
 	close(all->fd.fd_out);
 	dup2(all->fd.standard_output, 1);
 	dup2(all->fd.standard_input, 0);
-
 }

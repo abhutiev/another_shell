@@ -20,9 +20,12 @@ void	signal_ctrl_c(int sig)
 	if (sig == SIGINT)
 	{
 		g_lobal = 1;
+		ft_putstr_fd("\b\b  \b\b", 1);
 		ft_putendl_fd("", 1);
 		if (pid)
+		{
 			ft_putstr_fd(SHELL_NAME, 1);
+		}
 	}
 }
 
@@ -36,7 +39,7 @@ void	signal_ctrl_backslash(int sig)
 		if (!pid)
 		{
 			ft_putendl_fd("Quit: 3", 1);
-			g_lobal = 1;
+			g_lobal = 131;
 		}
 		else
 		{

@@ -24,7 +24,7 @@ int		parsing_and_execution(t_all *all)
 		allocate_memory_for_commands(all);
 		filling_command_structure(all);
 		request_execution(all);
-		free_command_names(all);
+		free_after_parsing(all);
 		i++;
 	}
 	clean_after_yourself(all, i);

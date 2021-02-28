@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-int 	ft_putendl_fd(char *s, int fd)
+int		ft_putendl_fd(char *s, int fd)
 {
 	size_t	length;
 	size_t	i;

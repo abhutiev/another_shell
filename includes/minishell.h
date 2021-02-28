@@ -36,7 +36,7 @@
 # define TOO_MANY_ARGS				": too many arguments"
 # define NUM_ARG_REQUIRED			": numeric argument required"
 
-int 				g_lobal;
+int					g_lobal;
 
 typedef struct		s_redirect_utils
 {
@@ -103,7 +103,7 @@ typedef struct		s_fd
 	int				standard_output;
 	int				standard_input;
 	size_t			number_of_pipes;
-    int				**pipeline;
+	int				**pipeline;
 }					t_fd;
 
 typedef struct		s_iter
@@ -259,7 +259,7 @@ void				first_circle_of_parsing(t_all *all, size_t i);
 ** File: memory_cleaning.c
 */
 
-void				free_command_names(t_all *all);
+void				free_after_parsing(t_all *all);
 void				clean_after_yourself(t_all *all, size_t i);
 void				free_memory_in_case_of_invalid_request(t_all *all);
 
