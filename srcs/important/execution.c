@@ -59,8 +59,8 @@ void		binary_execution(t_all *all, size_t j)
 		{
 			while (ways[i])
 				execve(strjoin_for_path(ways[i++],
-										all->command[j].name), all->command[j].args,
-		   													env_for_execve(all));
+						all->command[j].name), all->command[j].args,
+		   							env_for_execve(all));
 		}
 		error_while_binary_execution(all, j);
 		exit(1);

@@ -52,4 +52,4 @@ add_executable(another_shell
 		srcs/parsing/validation.c
 		srcs/important/redirects.c
 		srcs/utils/is_digit.c
-		srcs/utils/is_valid_param_exp.c srcs/important/execution.c)
+		srcs/utils/is_valid_param_exp.c srcs/important/execution.c srcs/important/execution_2.c)

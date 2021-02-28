@@ -68,7 +68,8 @@ IMPORTANTSRC =	$(addprefix ${IMPORTANTDIR}, \
 				signal_handling.c \
 				parsing_and_execution.c \
 				redirects.c \
-				execution.c )
+				execution.c \
+				execution_2.c)
 
 SRC		=	$(addprefix ${SRCDIR}, ${BUILTINSSRC} \
 				${PARSINGSRC} \

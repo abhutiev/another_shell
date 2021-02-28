@@ -12,7 +12,21 @@
 
 #include "../../includes/minishell.h"
 
-int		parsing_and_execution(t_all *all)
+static void	is_signals_changed_last_process_code(t_all *all)
+{
+	char	*buf;
+
+	if (g_lobal)
+	{
+		delete_environment(all, "?");
+		buf = ft_itoa(g_lobal);
+		add_environment(all, "?", buf);
+		free(buf);
+		g_lobal = 0;
+	}
+}
+
+int			parsing_and_execution(t_all *all)
 {
 	size_t	i;
 
@@ -25,6 +39,7 @@ int		parsing_and_execution(t_all *all)
 		filling_command_structure(all);
 		request_execution(all);
 		free_after_parsing(all);
+		is_signals_changed_last_process_code(all);
 		i++;
 	}
 	clean_after_yourself(all, i);
