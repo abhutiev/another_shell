@@ -43,8 +43,7 @@ static int		cd_last(t_all *all)
 	add_environment(all, "OLDPWD", tmp1);
 	free(tmp1);
 	free(tmp2);
-	delete_environment(all, "?");
-	add_environment(all, "?", "0");
+	change_exitcode_success(all);
 	return (1);
 }
 
@@ -60,8 +59,7 @@ static int		cd_from_root_directory(t_all *all, size_t j)
 		add_environment(all, "?", "1");
 		return (2);
 	}
-	delete_environment(all, "?");
-	add_environment(all, "?", "0");
+	change_exitcode_success(all);
 	return (1);
 }
 
@@ -75,8 +73,7 @@ static int		cd_from_home_directory(t_all *all, size_t j)
 		add_environment(all, "?", "1");
 		return (2);
 	}
-	delete_environment(all, "?");
-	add_environment(all, "?", "0");
+	change_exitcode_success(all);
 	return (1);
 }
 

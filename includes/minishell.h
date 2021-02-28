@@ -131,6 +131,8 @@ typedef struct		s_all
 int					request_execution(t_all *all);
 void		fork_work(t_all *all, size_t j);
 void	signal_ctrl_c(int signal);
+void	signal_ctrl_backslash(int sig);
+void	signal_ctrl_d(int sig);
 
 /*
 ** ########################################################################
@@ -298,7 +300,7 @@ void				ft_strcpy(char *dst, char *src);
 int					is_shielded(t_all *all);
 int					is_special_symbol(char c);
 void				ft_putchar_fd(char c, int fd);
-void				ft_putendl_fd(char *s, int fd);
+int					ft_putendl_fd(char *s, int fd);
 int					valid_param_exp(char *param, char *arg);
 void				ft_putstr_fd(char *s, int fd);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);

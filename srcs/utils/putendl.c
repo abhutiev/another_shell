@@ -12,13 +12,13 @@
 
 #include "../../includes/minishell.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int 	ft_putendl_fd(char *s, int fd)
 {
 	size_t	length;
 	size_t	i;
 
 	if (s == NULL)
-		return ;
+		return (0);
 	length = ft_strlen(s);
 	i = 0;
 	while (i < length)
@@ -27,4 +27,5 @@ void	ft_putendl_fd(char *s, int fd)
 		i++;
 	}
 	ft_putchar_fd('\n', fd);
+	return (0);
 }

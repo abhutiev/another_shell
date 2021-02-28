@@ -51,8 +51,7 @@ int				exit_bash(t_all *all, size_t j)
 
 	if (all->command[j].args[1] == NULL)
 	{
-		delete_environment(all, "?");
-		add_environment(all, "?", 0);
+		change_exitcode_success(all);
 		exit(0);
 	}
 	if (first_argument_validation(all, j))
