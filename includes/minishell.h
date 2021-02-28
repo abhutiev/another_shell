@@ -24,15 +24,19 @@
 # include <sys/wait.h>
 # include <sys/stat.h>
 
-# define SHELL_NAME "bash: "
-# define STANDART_OUTPUT		0
-# define TO_RIGHT_REDIR			2
-# define TO_LEFT_REDIR			3
-# define TO_RIGHT_DOUBLE_REDIR	4
-# define CMD_NOT_FOUND			": command not found"
-# define NO_FILE_OR_DIR	": No such file or directory"
+# define SHELL_NAME 				"govnobash: "
+# define STANDART_OUTPUT			0
+# define TO_RIGHT_REDIR				2
+# define TO_LEFT_REDIR				3
+# define TO_RIGHT_DOUBLE_REDIR		4
+# define CMD_NOT_FOUND				": command not found"
+# define NO_FILE_OR_DIR				": No such file or directory"
 # define SNTX_ERR_DOUBLE_SEMICOLON	"syntax error near unexpected token `;;'"
-# define SNTX_ERR_ONE_SEMICOLON	"syntax error near unexpected token `;'"
+# define SNTX_ERR_ONE_SEMICOLON		"syntax error near unexpected token `;'"
+# define TOO_MANY_ARGS				": too many arguments"
+# define NUM_ARG_REQUIRED			": numeric argument required"
+
+int 				g_lobal;
 
 typedef struct		s_redirect_utils
 {
@@ -126,6 +130,7 @@ typedef struct		s_all
 
 int					request_execution(t_all *all);
 void		fork_work(t_all *all, size_t j);
+void	signal_ctrl_c(int signal);
 
 /*
 ** ########################################################################

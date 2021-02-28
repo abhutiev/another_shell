@@ -73,14 +73,29 @@ static void	load_environments(t_all *all, char **env)
 		free(tmp);
 		i++;
 	}
+	all->env[i].name = ft_strdup("?");
+	all->env[i].value = ft_strdup("0");
 	sort_environments(all);
 }
+
+void	signal_ctrl_c(int sig)
+{
+	if (sig == SIGINT)
+	{
+		g_lobal = 1;
+		ft_putendl_fd("", 1);
+		ft_putstr_fd(SHELL_NAME, 1);
+		signal(SIGINT, signal_ctrl_c);
+	}
+}
+
 
 void		pregame_ritual(t_all *all, int ac, char **av, char **env)
 {
 	flags_shutting_up(ac, av);
 	load_environments(all, env);
 	save_fd(all);
+	signal(SIGINT, signal_ctrl_c);
 	dup2(0, all->fd.standard_input);
 	dup2(1, all->fd.standard_output);
 }

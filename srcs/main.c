@@ -138,7 +138,7 @@ int		main(int argc, char **argv, char **en)
 	pregame_ritual(&all, argc, argv, en);
 	while (1)
 	{
-		write(1, SHELL_NAME, ft_strlen(SHELL_NAME));
+		ft_putstr_fd(SHELL_NAME, 1);
 		get_next_line(0, &(all.buffer.line_1));
 		count_requests(&all);
 		separate_requests(&all);

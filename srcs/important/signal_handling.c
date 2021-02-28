@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-
-void	signal_d_exit(int signal)
-{
-	(void)signal;
-}
+//
+//void	signal_ctrl_c(int signal)
+//{
+//	(void)signal;
+//}

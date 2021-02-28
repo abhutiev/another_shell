@@ -21,9 +21,10 @@ static int		first_argument_validation(t_all *all, size_t j)
 	{
 		if (!ft_isdigit(all->command[j].args[1][i]))
 		{
-			ft_putstr_fd("bash: exit: ", 1);
+			ft_putstr_fd(SHELL_NAME, 1);
+			ft_putstr_fd("exit: ", 1);
 			ft_putstr_fd(all->command[j].args[1], 1);
-			ft_putendl_fd(": numeric argument required", 1);
+			ft_putendl_fd(NUM_ARG_REQUIRED, 1);
 			delete_environment(all, "?");
 			add_environment(all, "?", "255");
 			return (255);
@@ -37,10 +38,7 @@ static int		number_of_arguments_validation(t_all *all, size_t j)
 {
 	if (all->command[j].args[2])
 	{
-		ft_putstr_fd("bash: exit: ", 1);
-		ft_putendl_fd("too many arguments", 1);
-		delete_environment(all, "?");
-		add_environment(all, "?", "255");
+		change_exitcode_and_err_msg(all, TOO_MANY_ARGS, "1", j);
 		return (1);
 	}
 	return (0);
@@ -65,6 +63,5 @@ int				exit_bash(t_all *all, size_t j)
 	code = ft_atoi(all->command[j].args[1]) % 256;
 	tmp = ft_itoa(code);
 	add_environment(all, "?", tmp);
-	free(tmp);
 	exit(code);
 }
