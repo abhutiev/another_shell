@@ -23,7 +23,7 @@
 # include <sys/wait.h>
 # include <sys/stat.h>
 
-# define SHELL_NAME 				"govnobash: "
+# define SHELL_NAME 				"\033[01;35mb\033[01;34ma\033[01;33ms\033[1;31mh: "
 # define STANDART_OUTPUT			0
 # define TO_RIGHT_REDIR				2
 # define TO_LEFT_REDIR				3
@@ -88,8 +88,6 @@ typedef struct		s_command
 typedef struct		s_fd
 {
 	int				pipe_flag;
-	int				fd_out;
-	int				fd_in;
 	int				standard_output;
 	int				standard_input;
 	size_t			number_of_pipes;

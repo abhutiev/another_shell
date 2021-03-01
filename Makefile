@@ -46,7 +46,8 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				stop_buffering.c \
 				strjoin.c \
 				change_last_process_code.c \
-				itoa.c )
+				itoa.c \
+				pipeline_utils.c )
 
 BUILTINSDIR =   builtins/
 
@@ -68,8 +69,8 @@ IMPORTANTSRC =	$(addprefix ${IMPORTANTDIR}, \
 				signal_handling.c \
 				parsing_and_execution.c \
 				redirects.c \
-				execution.c \
-				execution_2.c)
+				pipe_execution.c \
+				execution.c)
 
 SRC		=	$(addprefix ${SRCDIR}, ${BUILTINSSRC} \
 				${PARSINGSRC} \
