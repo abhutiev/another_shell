@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   strjoin.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gdoge <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 16:17:06 by gdoge             #+#    #+#             */
-/*   Updated: 2021/02/17 16:17:07 by gdoge            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../../includes/minishell.h"
 
-char			*strjoin_for_path(char const *s1, char const *s2)
+char	*strjoin_for_path(char const *s1, char const *s2)
 {
 	size_t	new_size;
 	char	*new_str;

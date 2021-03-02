@@ -21,8 +21,8 @@ int	env(t_all *all, size_t j)
 		return (change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "127", j));
 	while (all->env[i].name)
 	{
-		if (!ft_strcmp(all->env[i].name, "?") ||
-		!ft_strcmp(all->env[i].name, "$"))
+		if (!ft_strcmp(all->env[i].name, "?")
+			|| !ft_strcmp(all->env[i].name, "$"))
 		{
 			i++;
 			continue ;

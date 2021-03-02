@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-static int		first_argument_validation(t_all *all, size_t j)
+static int	first_argument_validation(t_all *all, size_t j)
 {
 	size_t	i;
 
@@ -21,7 +21,7 @@ static int		first_argument_validation(t_all *all, size_t j)
 	{
 		if (!ft_isdigit(all->command[j].args[1][i]))
 		{
-			ft_putstr_fd(SHELL_NAME, 1);
+			ft_putstr_fd(SHL_NAME, 1);
 			ft_putstr_fd("exit: ", 1);
 			ft_putstr_fd(all->command[j].args[1], 1);
 			ft_putendl_fd(NUM_ARG_REQUIRED, 1);
@@ -34,7 +34,7 @@ static int		first_argument_validation(t_all *all, size_t j)
 	return (0);
 }
 
-static int		number_of_arguments_validation(t_all *all, size_t j)
+static int	number_of_arguments_validation(t_all *all, size_t j)
 {
 	if (all->command[j].args[2])
 	{
@@ -44,7 +44,7 @@ static int		number_of_arguments_validation(t_all *all, size_t j)
 	return (0);
 }
 
-int				exit_bash(t_all *all, size_t j)
+int	exit_bash(t_all *all, size_t j)
 {
 	char	*tmp;
 	int		code;

@@ -24,7 +24,7 @@ void	signal_ctrl_c(int sig)
 		ft_putendl_fd("", 1);
 		if (pid)
 		{
-			ft_putstr_fd(SHELL_NAME, 1);
+			ft_putstr_fd(SHL_NAME, 1);
 		}
 	}
 }

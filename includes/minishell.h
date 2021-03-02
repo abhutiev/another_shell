@@ -23,7 +23,7 @@
 # include <sys/wait.h>
 # include <sys/stat.h>
 
-# define SHELL_NAME 				"\033[01;35mb\033[01;34ma\033[01;33ms\033[1;31mh: "
+# define SHL_NAME 					"bash: "
 # define STANDART_OUTPUT			0
 # define TO_RIGHT_REDIR				2
 # define TO_LEFT_REDIR				3
@@ -37,7 +37,7 @@
 
 int					g_lobal;
 
-typedef struct		s_cd
+typedef struct s_cd
 {
 	char			**splitted_directories;
 	char			*tmp;
@@ -48,13 +48,13 @@ typedef struct		s_cd
 	char			*save_pwd;
 }					t_cd;
 
-typedef struct		s_env
+typedef struct s_env
 {
 	char			*name;
 	char			*value;
 }					t_env;
 
-typedef struct		s_buffer
+typedef struct s_buffer
 {
 	char			**buff;
 	char			*line_1;
@@ -63,14 +63,14 @@ typedef struct		s_buffer
 	size_t			iter_2;
 }					t_buffer;
 
-typedef struct		s_request
+typedef struct s_request
 {
 	char			**separated;
 	char			**line_with_substitutions;
 	size_t			number;
 }					t_request;
 
-typedef struct		s_redirect
+typedef struct s_redirect
 {
 	char			*name;
 	int				output_flag;
@@ -78,14 +78,14 @@ typedef struct		s_redirect
 
 }					t_redirect;
 
-typedef struct		s_command
+typedef struct s_command
 {
 	char			*name;
 	char			**args;
 	t_redirect		*files;
 }					t_command;
 
-typedef struct		s_fd
+typedef struct s_fd
 {
 	int				pipe_flag;
 	int				standard_output;
@@ -94,7 +94,7 @@ typedef struct		s_fd
 	int				**pipeline;
 }					t_fd;
 
-typedef struct		s_iter
+typedef struct s_iter
 {
 	size_t			i;
 	size_t			j;
@@ -102,7 +102,7 @@ typedef struct		s_iter
 	size_t			n;
 }					t_iter;
 
-typedef struct		s_all
+typedef struct s_all
 {
 	t_env			*env;
 	t_buffer		buffer;
@@ -288,14 +288,14 @@ int					is_shielded(t_all *all);
 int					is_special_symbol(char c);
 void				ft_putchar_fd(char c, int fd);
 int					ft_putendl_fd(char *s, int fd);
-int					valid_param_exp(char *param, char *arg);
+int					export_validation(t_all *all, char *name, size_t j);
 void				ft_putstr_fd(char *s, int fd);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void				*ft_bzero(void *b, size_t len);
 void				str_to_lowercase(t_all *all, size_t j);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					change_exitcode_and_err_msg(t_all *all,
-									char *msg, char *code, size_t j);
+						char *msg, char *code, size_t j);
 void				change_exitcode_success(t_all *all);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*strjoin_for_path(char const *s1, char const *s2);
@@ -304,7 +304,6 @@ void				stop_buffering(t_all *all);
 int					stop_buffering_condition(t_all *all);
 void				iterators_to_zero(t_all *all);
 int					ft_isalpha(int c);
-int					ft_is_valid_param_exp(int c);
 int					ft_atoi(char *str);
 int					ft_isdigit(int c);
 char				*ft_itoa(int n);

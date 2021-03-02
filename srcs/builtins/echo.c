@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-int		echo(t_all *all, size_t j)
+int	echo(t_all *all, size_t j)
 {
 	int		i;
 	int		flag;

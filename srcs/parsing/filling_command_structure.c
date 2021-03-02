@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-void				allocate_memory_for_commands(t_all *all)
+void	allocate_memory_for_commands(t_all *all)
 {
 	size_t	i;
 	size_t	counter_comm;
@@ -25,9 +25,9 @@ void				allocate_memory_for_commands(t_all *all)
 	{
 		if (!ft_strcmp(all->separated_request[i], "|"))
 			counter_comm++;
-		else if (!ft_strcmp(all->separated_request[i], ">") ||
-				!ft_strcmp(all->separated_request[i], ">>") ||
-				!ft_strcmp(all->separated_request[i], "<"))
+		else if (!ft_strcmp(all->separated_request[i], ">")
+			|| !ft_strcmp(all->separated_request[i], ">>")
+			|| !ft_strcmp(all->separated_request[i], "<"))
 		{
 			counter_redir++;
 		}
@@ -36,7 +36,7 @@ void				allocate_memory_for_commands(t_all *all)
 	all->command = (t_command *)ft_calloc(counter_comm + 2, sizeof(t_command));
 }
 
-static int			is_pipe(t_all *all, size_t i)
+static int	is_pipe(t_all *all, size_t i)
 {
 	if (!ft_strcmp(all->separated_request[i], "|"))
 	{
@@ -50,42 +50,45 @@ static int			is_pipe(t_all *all, size_t i)
 	return (0);
 }
 
-static int			is_redirect(t_all *all, size_t i)
+static int	is_redirect(t_all *all, size_t i)
 {
-	if (!ft_strcmp(all->separated_request[i], ">>") ||
-					!ft_strcmp(all->separated_request[i], ">"))
+	if (!ft_strcmp(all->separated_request[i], ">>")
+		|| !ft_strcmp(all->separated_request[i], ">"))
 	{
-		all->command[all->iter.k].files[all->iter.n].output_flag =
-		!ft_strcmp(all->separated_request[i], ">>") ?
-		TO_RIGHT_DOUBLE_REDIR : TO_RIGHT_REDIR;
-		all->command[all->iter.k].files[all->iter.n].name =
-				all->separated_request[++all->iter.i];
+		if (!ft_strcmp(all->separated_request[i], ">>"))
+			all->command[all->iter.k].files[all->iter.n].output_flag
+				= TO_RIGHT_DOUBLE_REDIR;
+		else
+			all->command[all->iter.k].files[all->iter.n].output_flag
+				= TO_RIGHT_REDIR;
+		all->command[all->iter.k].files[all->iter.n].name
+			= all->separated_request[++all->iter.i];
 		free(all->separated_request[i]);
 		return (1);
 	}
 	else if (!ft_strcmp(all->separated_request[i], "<"))
 	{
 		free(all->separated_request[i]);
-		all->command[0].files[all->iter.n].name =
-				all->separated_request[++all->iter.i];
-		all->command[0].files[all->iter.n].output_flag =
-				TO_LEFT_REDIR;
+		all->command[0].files[all->iter.n].name
+			= all->separated_request[++all->iter.i];
+		all->command[0].files[all->iter.n].output_flag
+			= TO_LEFT_REDIR;
 		return (1);
 	}
 	return (0);
 }
 
-static void			command_name_filling(t_all *all)
+static void	command_name_filling(t_all *all)
 {
 	all->command[all->iter.k].args = ft_calloc(20, sizeof(char *));
 	all->command[all->iter.k].files = ft_calloc(100, sizeof(t_redirect));
-	all->command[all->iter.k].args[all->iter.j++] =
-			all->separated_request[all->iter.i];
-	all->command[all->iter.k].name =
-			all->separated_request[all->iter.i];
+	all->command[all->iter.k].args[all->iter.j++]
+		= all->separated_request[all->iter.i];
+	all->command[all->iter.k].name
+		= all->separated_request[all->iter.i];
 }
 
-void				filling_command_structure(t_all *all)
+void	filling_command_structure(t_all *all)
 {
 	iterators_to_zero(all);
 	while (all->separated_request[all->iter.i])
@@ -99,8 +102,8 @@ void				filling_command_structure(t_all *all)
 			if (all->iter.j == 0)
 				command_name_filling(all);
 			else
-				all->command[all->iter.k].args[all->iter.j - 1] =
-						all->separated_request[all->iter.i];
+				all->command[all->iter.k].args[all->iter.j - 1]
+					= all->separated_request[all->iter.i];
 			all->iter.j++;
 		}
 		all->iter.i++;

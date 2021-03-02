@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-int			is_shielded(t_all *all)
+int	is_shielded(t_all *all)
 {
 	int		counter;
 	size_t	i;

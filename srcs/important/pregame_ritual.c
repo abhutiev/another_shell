@@ -39,6 +39,7 @@ static void	sort_environments(t_all *all)
 	{
 		j = -1;
 		while (++j < (int)number_of_envs - i - 1)
+		{
 			if (ft_strcmp(all->env[j].name, all->env[j + 1].name) < 0)
 			{
 				tmp = all->env[j].name;
@@ -48,6 +49,7 @@ static void	sort_environments(t_all *all)
 				all->env[j].value = all->env[j + 1].value;
 				all->env[j + 1].value = tmp;
 			}
+		}
 	}
 }
 
@@ -78,7 +80,7 @@ static void	load_environments(t_all *all, char **env)
 	sort_environments(all);
 }
 
-void		pregame_ritual(t_all *all, int ac, char **av, char **env)
+void	pregame_ritual(t_all *all, int ac, char **av, char **env)
 {
 	flags_shutting_up(ac, av);
 	load_environments(all, env);

@@ -26,7 +26,7 @@ static size_t	ncopy(char **dst, const char *src, size_t len)
 	return (i);
 }
 
-int				get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	char	*buffer;
 	char	check;

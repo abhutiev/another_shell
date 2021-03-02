@@ -40,7 +40,7 @@ static size_t	ft_word_count(char const *s, char c)
 	return (counter);
 }
 
-static char		**ft_free_all(char ***result, size_t counter)
+static char	**ft_free_all(char ***result, size_t counter)
 {
 	size_t	i;
 
@@ -57,7 +57,7 @@ static char		**ft_free_all(char ***result, size_t counter)
 	return (NULL);
 }
 
-static char		**ft_if_empty_string(void)
+static char	**ft_if_empty_string(void)
 {
 	char	**result;
 
@@ -66,7 +66,7 @@ static char		**ft_if_empty_string(void)
 	return (result);
 }
 
-char			**split(char *s, char c)
+char	**split(char *s, char c)
 {
 	size_t	i;
 	char	**result;
@@ -82,6 +82,7 @@ char			**split(char *s, char c)
 	if (result == NULL)
 		return (NULL);
 	while (i < ft_strlen(s))
+	{
 		if (s[i++] != c)
 		{
 			result[counter] = ft_substr(s, i - 1, ft_word_len(s + i - 1, c));
@@ -90,5 +91,6 @@ char			**split(char *s, char c)
 			i = i - 1 + ft_word_len(s + i - 1, c);
 			counter++;
 		}
+	}
 	return (result);
 }

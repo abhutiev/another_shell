@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-static int		ft_iswhitespace(char str)
+static int	ft_iswhitespace(char str)
 {
 	if ((str >= 9 && str <= 13) || (str == 32))
 		return (1);
@@ -20,7 +20,7 @@ static int		ft_iswhitespace(char str)
 		return (0);
 }
 
-static int		is_sign(char str)
+static int	is_sign(char str)
 {
 	if ((str == '-') || (str == '+'))
 		return (1);
@@ -28,7 +28,7 @@ static int		is_sign(char str)
 		return (0);
 }
 
-int				ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int				i;
 	int				sign;
@@ -46,5 +46,5 @@ int				ft_atoi(char *str)
 			(sign = -1);
 	while (ft_isdigit(str[i]))
 		res = res * 10 + str[i++] - '0';
-	return ((int)(res) * sign);
+	return ((int)(res) *sign);
 }

@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-static int		cd_to_home(t_all *all)
+static int	cd_to_home(t_all *all)
 {
 	if (look_for_env(all, "HOME") == NULL)
 	{
@@ -28,7 +28,7 @@ static int		cd_to_home(t_all *all)
 	return (1);
 }
 
-static int		cd_last(t_all *all)
+static int	cd_last(t_all *all)
 {
 	char	*tmp1;
 	char	*tmp2;
@@ -47,7 +47,7 @@ static int		cd_last(t_all *all)
 	return (1);
 }
 
-static int		cd_from_root_directory(t_all *all, size_t j)
+static int	cd_from_root_directory(t_all *all, size_t j)
 {
 	chdir("/");
 	if (!ft_strcmp(all->command[j].args[1], "/"))
@@ -63,7 +63,7 @@ static int		cd_from_root_directory(t_all *all, size_t j)
 	return (1);
 }
 
-static int		cd_from_home_directory(t_all *all, size_t j)
+static int	cd_from_home_directory(t_all *all, size_t j)
 {
 	chdir(look_for_env(all, "HOME"));
 	if (cd_from_current_directory(all, j) == 2)
@@ -77,7 +77,7 @@ static int		cd_from_home_directory(t_all *all, size_t j)
 	return (1);
 }
 
-int				cd(t_all *all, size_t j)
+int	cd(t_all *all, size_t j)
 {
 	if (all->command[j].args[1] == NULL)
 		return (cd_to_home(all));
@@ -89,5 +89,4 @@ int				cd(t_all *all, size_t j)
 		return (cd_from_home_directory(all, j));
 	else
 		return (cd_from_current_directory(all, j));
-	return (1);
 }

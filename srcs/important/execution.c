@@ -33,7 +33,7 @@ static int	builtin_execution(t_all *all, size_t j)
 		return (0);
 }
 
-void		execve_call(t_all *all, size_t j)
+void	execve_call(t_all *all, size_t j)
 {
 	size_t	i;
 	char	**ways;
@@ -63,7 +63,7 @@ static void	binary_exec_no_pipe(t_all *all)
 	wait(0);
 }
 
-int			single_command_execution(t_all *all, size_t j)
+int	single_command_execution(t_all *all, size_t j)
 {
 	int		fd_in;
 	int		fd_out;

@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-int		validation_of_requests(t_all *all)
+int	validation_of_requests(t_all *all)
 {
 	size_t	i;
 	size_t	j;

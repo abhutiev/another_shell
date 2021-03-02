@@ -12,14 +12,14 @@
 
 #include "../includes/minishell.h"
 
-int		main(int argc, char **argv, char **en)
+int	main(int argc, char **argv, char **en)
 {
 	t_all	all;
 
 	pregame_ritual(&all, argc, argv, en);
 	while (1)
 	{
-		ft_putstr_fd(SHELL_NAME, 1);
+		ft_putstr_fd(SHL_NAME, 1);
 		if (!get_next_line(0, &(all.buffer.line_1)))
 			exit(ft_putendl_fd("  \b\b\nexit", 1));
 		count_requests(&all);

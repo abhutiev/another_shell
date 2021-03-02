@@ -81,7 +81,7 @@ static void	wait_processes_close_fd(t_all *all)
 	close_all_pipes(all);
 }
 
-int			multiple_command_execution(t_all *all)
+int	multiple_command_execution(t_all *all)
 {
 	size_t	j;
 	int		input_fd;

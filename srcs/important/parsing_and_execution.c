@@ -33,7 +33,7 @@ static int	request_execution(t_all *all)
 	return (multiple_command_execution(all));
 }
 
-int			parsing_and_execution(t_all *all)
+int	parsing_and_execution(t_all *all)
 {
 	size_t	i;
 

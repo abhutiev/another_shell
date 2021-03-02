@@ -16,13 +16,16 @@ static size_t	len_str_to_prepare(int n)
 {
 	size_t			counter;
 
-	counter = 1;
-	while (n /= 10)
+	counter = 0;
+	while (n)
+	{
 		counter++;
+		n /= 10;
+	}
 	return (counter);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char			*result;
 	int				length;
@@ -31,7 +34,7 @@ char			*ft_itoa(int n)
 
 	is_negative = n < 0;
 	length = len_str_to_prepare(n) + is_negative;
-	result = (char *)malloc(sizeof(char) * (length + 1));
+	result = (char *)ft_calloc(sizeof(char), (length + 1));
 	if (!result)
 		return (NULL);
 	num = n;

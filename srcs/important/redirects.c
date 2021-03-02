@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-int		find_left_redirect_pipe(t_all *all)
+int	find_left_redirect_pipe(t_all *all)
 {
 	size_t	i;
 	int		current_fd;
@@ -37,7 +37,7 @@ int		find_left_redirect_pipe(t_all *all)
 	return (current_fd);
 }
 
-int		find_right_redirect_pipe(t_all *all, size_t j)
+int	find_right_redirect_pipe(t_all *all, size_t j)
 {
 	size_t	k;
 	int		output_fd;
@@ -51,14 +51,14 @@ int		find_right_redirect_pipe(t_all *all, size_t j)
 			if (output_fd)
 				close(output_fd);
 			output_fd = open(all->command[j].files[k].name,
-							O_CREAT | O_RDWR | O_TRUNC, 0644);
+					O_CREAT | O_RDWR | O_TRUNC, 0644);
 		}
 		else if (all->command[j].files[k].output_flag == TO_RIGHT_DOUBLE_REDIR)
 		{
 			if (output_fd)
 				close(output_fd);
 			output_fd = open(all->command[j].files[k].name,
-							O_CREAT | O_RDWR | O_APPEND, 0644);
+					O_CREAT | O_RDWR | O_APPEND, 0644);
 		}
 		k++;
 	}

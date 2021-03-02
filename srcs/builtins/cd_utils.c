@@ -80,7 +80,7 @@ static int	changing_of_directory_replacing_env(t_all *all, t_cd *cd, size_t j)
 	return (1);
 }
 
-int			cd_from_current_directory(t_all *all, size_t j)
+int	cd_from_current_directory(t_all *all, size_t j)
 {
 	t_cd	cd;
 

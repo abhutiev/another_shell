@@ -88,7 +88,7 @@ char	**env_for_execve(t_all *all)
 		if (all->env[i].value)
 		{
 			result[i] = ft_calloc(ft_strlen(all->env[i].name)
-				+ ft_strlen(all->env[i].value) + 2, sizeof(char));
+					+ ft_strlen(all->env[i].value) + 2, sizeof(char));
 			ft_strcpy(result[i], all->env[i].name);
 			ft_strlcat(result[i], "=", ft_strlen(all->env[i].name) + 2);
 			ft_strlcat(result[i], all->env[i].value,
@@ -97,33 +97,4 @@ char	**env_for_execve(t_all *all)
 		i++;
 	}
 	return (result);
-}
-
-int		valid_param_exp(char *param, char *arg)
-{
-	int			i;
-
-	if ((i = 0) == 0 && ft_isdigit(param[0]))
-	{
-		write(2, "bash: export: `", 15);
-		write(2, param, ft_strlen(param));
-		write(2, "=", 1);
-		write(2, arg, ft_strlen(arg));
-		write(2, "': not a valid identifier\n", 26);
-		return (0);
-	}
-	while (param[i])
-	{
-		if (!ft_is_valid_param_exp(param[i]))
-		{
-			write(2, "bash: export: `", 15);
-			write(2, param, ft_strlen(param));
-			write(2, "=", 1);
-			write(2, arg, ft_strlen(arg));
-			write(2, "': not a valid identifier\n", 26);
-			return (0);
-		}
-		i++;
-	}
-	return (1);
 }

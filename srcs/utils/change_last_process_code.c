@@ -12,9 +12,9 @@
 
 #include "../../includes/minishell.h"
 
-int		change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j)
+int	change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j)
 {
-	ft_putstr_fd(SHELL_NAME, 1);
+	ft_putstr_fd(SHL_NAME, 1);
 	if (j != 4294967295)
 		ft_putstr_fd(all->command[j].name, 1);
 	ft_putendl_fd(msg, 1);
@@ -29,7 +29,7 @@ void	change_exitcode_success(t_all *all)
 	add_environment(all, "?", "0");
 }
 
-int		error_while_binary_execution(t_all *all, size_t j)
+int	error_while_binary_execution(t_all *all, size_t j)
 {
 	if (look_for_env(all, "PATH"))
 		change_exitcode_and_err_msg(all, CMD_NOT_FOUND, "127", j);

@@ -12,7 +12,7 @@
 
 #include "../../includes/minishell.h"
 
-int		pwd(t_all *all)
+int	pwd(t_all *all)
 {
 	char	*res;
 
