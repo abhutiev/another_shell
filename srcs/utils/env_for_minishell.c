@@ -1,6 +1,6 @@
 #include "../../includes/minishell.h"
 
-char	**allocate_memory_for_env(t_all *all)
+static char	**allocate_memory_for_env(t_all *all)
 {
 	size_t	number_of_envs;
 	char	**result;
@@ -12,12 +12,11 @@ char	**allocate_memory_for_env(t_all *all)
 	return (result);
 }
 
-void	rewrite_shlvl(t_all *all, char ***result, size_t *i)
+void	rewrite_shlvl(t_all *all, char ***result, size_t i)
 {
-	*(result[*i]) = ft_calloc(200, 1);
-	ft_strcpy(*result[*i], "SHLVL=");
-	ft_strlcat(*result[*i], ft_itoa(ft_atoi(all->env[*i].value) + 1), 180);
-	*i++;
+	*(result[i]) = ft_calloc(200, 1);
+	ft_strcpy(*result[i], "SHLVL=");
+	ft_strlcat(*result[i], ft_itoa(ft_atoi(all->env[i].value) + 1), 180);
 }
 
 char	**env_for_minishell(t_all *all)
@@ -31,7 +30,8 @@ char	**env_for_minishell(t_all *all)
 	{
 		if (!ft_strcmp(all->env[i].name, "SHLVL"))
 		{
-			rewrite_shlvl(all, &result, &i);
+			rewrite_shlvl(all, &result, i);
+			i++;
 			continue ;
 		}
 		if (all->env[i].value)

@@ -6,7 +6,8 @@ int	echo(t_all *all, size_t j)
 	int		flag;
 
 	i = 1;
-	while (!ft_strncmp("-n", all->command[j].args[i], 2))
+	while (all->command[j].args[i]
+		&& !ft_strncmp("-n", all->command[j].args[i], 2))
 		i++;
 	flag = i - 1;
 	if (all->command[j].args[i] == NULL)

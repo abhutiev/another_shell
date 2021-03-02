@@ -47,7 +47,8 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				strjoin.c \
 				change_last_process_code.c \
 				itoa.c \
-				pipeline_utils.c )
+				pipeline_utils.c \
+				env_for_minishell.c )
 
 BUILTINSDIR =   builtins/
 
