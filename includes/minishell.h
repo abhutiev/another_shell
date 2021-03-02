@@ -23,6 +23,9 @@
 # include <sys/wait.h>
 # include <sys/stat.h>
 
+
+#include <stdio.h>
+
 # define SHL_NAME 					"bash: "
 # define STANDART_OUTPUT			0
 # define TO_RIGHT_REDIR				2
@@ -119,6 +122,7 @@ typedef struct s_all
 int					error_while_binary_execution(t_all *all, size_t j);
 void				execve_call(t_all *all, size_t j);
 int					multiple_command_execution(t_all *all);
+char				**env_for_minishell(t_all *all);
 
 /*
 ** ########################################################################
@@ -179,6 +183,7 @@ void				add_environment(t_all *all, char *name, char *value);
 void				delete_environment(t_all *all, char *name);
 char				**env_for_execve(t_all *all);
 char				*look_for_env(t_all*all, char *name);
+char	**env_for_minishell(t_all *all);
 
 /*
 ** ########################################################################

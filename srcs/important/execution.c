@@ -26,8 +26,11 @@ void	execve_call(t_all *all, size_t j)
 	size_t	i;
 	char	**ways;
 
+	if (!ft_strcmp(all->command[j].name, "./minishell"))
+		execve(all->command[j].name, all->command[j].args,
+			   env_for_minishell(all));
 	execve(all->command[j].name, all->command[j].args,
-										env_for_execve(all));
+		env_for_execve(all));
 	ways = split(look_for_env(all, "PATH"), ':');
 	i = 0;
 	if (ways)
