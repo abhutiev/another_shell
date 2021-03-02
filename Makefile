@@ -47,6 +47,7 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				strjoin.c \
 				change_last_process_code.c \
 				itoa.c \
+				request_validation_after_first_circle.c \
 				pipeline_utils.c \
 				env_for_minishell.c )
 

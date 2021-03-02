@@ -29,6 +29,8 @@ int	parsing_and_execution(t_all *all)
 	while (all->requests.separated[i])
 	{
 		first_circle_of_parsing(all, i);
+		if (requests_validation_after_first_circle(all, i))
+			return (1);
 		second_circle_of_parsing(all, i);
 		allocate_memory_for_commands(all);
 		filling_command_structure(all);
