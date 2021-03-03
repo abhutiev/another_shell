@@ -37,6 +37,8 @@
 # define SNTX_ERR_ONE_SEMICOLON		"syntax error near unexpected token `;'"
 # define TOO_MANY_ARGS				": too many arguments"
 # define NUM_ARG_REQUIRED			": numeric argument required"
+# define SHITTY_CASE				"shitty and multiline cases not in \
+subject, but we've tried to handle it"
 
 int					g_lobal;
 
@@ -239,7 +241,7 @@ void				signal_ctrl_c(int signal);
 */
 
 void				allocate_memory_for_commands(t_all *all);
-void				filling_command_structure(t_all *all);
+int 				filling_command_structure(t_all *all);
 
 /*
 ** File: first_circle_of_parsing.c

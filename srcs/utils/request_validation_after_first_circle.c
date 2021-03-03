@@ -30,8 +30,7 @@ static int	free_if_not_valid_after_first_circle(t_all *all, size_t i)
 	free(all->requests.line_with_substitutions);
 	free(all->requests.separated);
 	change_exitcode_and_err_msg_with_no_command_name(all,
-		 "shitty and multiline cases not in subject, but we've tried to handle it",
-		 "258");
+		SHITTY_CASE, "258");
 	return (1);
 }
 

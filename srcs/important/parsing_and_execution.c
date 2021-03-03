@@ -33,7 +33,8 @@ int	parsing_and_execution(t_all *all)
 			return (1);
 		second_circle_of_parsing(all, i);
 		allocate_memory_for_commands(all);
-		filling_command_structure(all);
+		if (filling_command_structure(all) == 2)
+			return (1);
 		request_execution(all);
 		free_after_parsing(all);
 		is_signals_changed_last_process_code(all);
