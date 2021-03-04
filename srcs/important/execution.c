@@ -39,17 +39,22 @@ void	execve_call(t_all *all, size_t j)
 					all->command[j].args, env_for_execve(all));
 	}
 	error_while_binary_execution(all, j);
-	exit(1);
+	exit(127);
 }
 
 static void	binary_exec_no_pipe(t_all *all)
 {
 	pid_t	pid;
+	char	*tmp;
 
 	pid = fork();
 	if (pid == 0)
 		execve_call(all, 0);
-	wait(0);
+	wait(&(all->status));
+	delete_environment(all, "?");
+	tmp = ft_itoa(all->status / 255);
+	add_environment(all, "?", tmp);
+	free(tmp);
 }
 
 int	single_command_execution(t_all *all, size_t j)
