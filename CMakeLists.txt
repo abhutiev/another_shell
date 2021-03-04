@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(another_shell)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 98)
 
 add_executable(another_shell
 		srcs/main.c
@@ -52,4 +52,10 @@ add_executable(another_shell
 		srcs/parsing/validation.c
 		srcs/important/redirects.c
 		srcs/utils/is_digit.c
-		srcs/utils/is_valid_param_exp.c srcs/important/pipe_execution.c srcs/important/execution.c srcs/utils/pipeline_utils.c srcs/utils/env_for_minishell.c srcs/utils/request_validation_after_first_circle.c srcs/utils/validation_after_filling.c)
+		srcs/utils/is_valid_param_exp.c
+		srcs/important/pipe_execution.c
+		srcs/important/execution.c
+		srcs/utils/pipeline_utils.c
+		srcs/utils/env_for_minishell.c
+		srcs/utils/request_validation_after_first_circle.c
+		srcs/utils/validation_after_filling.c)
