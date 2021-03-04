@@ -261,7 +261,7 @@ void				free_memory_in_case_of_invalid_request(t_all *all);
 ** File: second_circle_of_parsing.c
 */
 
-void				second_circle_of_parsing(t_all *all, size_t i);
+int 				second_circle_of_parsing(t_all *all, size_t i);
 /*
 ** File: request_separation.c
 */
@@ -319,5 +319,6 @@ char				*ft_itoa(int n);
 void				build_pipeline(t_all *all);
 void				close_all_pipes(t_all *all);
 int					requests_validation_after_first_circle(t_all *all, size_t i);
+int					free_after_filling(t_all *all);
 
 #endif

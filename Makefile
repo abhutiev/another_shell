@@ -49,7 +49,8 @@ UTILSSRC    =   $(addprefix ${UTILSDIR}, \
 				itoa.c \
 				request_validation_after_first_circle.c \
 				pipeline_utils.c \
-				env_for_minishell.c )
+				env_for_minishell.c \
+				validation_after_filling.c )
 
 BUILTINSDIR =   builtins/
 

@@ -28,6 +28,8 @@ static int	is_pipe(t_all *all, size_t i)
 {
 	if (!ft_strcmp(all->separated_request[i], "|"))
 	{
+		if (!all->iter.j)
+			return (2);
 		free(all->separated_request[i]);
 		all->command[all->iter.k].files[all->iter.n].name = NULL;
 		all->command[all->iter.k++].args[all->iter.j - 1] = NULL;
@@ -40,8 +42,6 @@ static int	is_pipe(t_all *all, size_t i)
 
 static int	is_redirect(t_all *all, size_t i)
 {
-	if (!all->iter.j)
-		return (2);
 	if (!ft_strcmp(all->separated_request[i], ">>")
 		|| !ft_strcmp(all->separated_request[i], ">"))
 	{
@@ -54,6 +54,8 @@ static int	is_redirect(t_all *all, size_t i)
 		all->command[all->iter.k].files[all->iter.n].name
 			= all->separated_request[++all->iter.i];
 		free(all->separated_request[i]);
+		if (!all->iter.j)
+			return (2);
 		return (1);
 	}
 	else if (!ft_strcmp(all->separated_request[i], "<"))
@@ -63,6 +65,8 @@ static int	is_redirect(t_all *all, size_t i)
 			= all->separated_request[++all->iter.i];
 		all->command[0].files[all->iter.n].output_flag
 			= TO_LEFT_REDIR;
+		if (!all->iter.j)
+			return (2);
 		return (1);
 	}
 	return (0);
@@ -81,14 +85,22 @@ static void	command_name_filling(t_all *all)
 int	filling_command_structure(t_all *all)
 {
 	iterators_to_zero(all);
+
 	while (all->separated_request[all->iter.i])
 	{
 		if (is_pipe(all, all->iter.i) == 1)
+		{
 			all->fd.pipe_flag = 1;
+		}
 		else if (is_redirect(all, all->iter.i) == 1)
+		{
 			all->iter.n++;
+		}
 		else if (is_pipe(all, all->iter.i) == 2 || is_redirect(all, all->iter.i) == 2)
+		{
+			free_after_filling(all);
 			return (change_exitcode_and_err_msg_with_no_command_name(all, SHITTY_CASE, "2"));
+		}
 		else
 		{
 			if (all->iter.j == 0)
@@ -100,10 +112,14 @@ int	filling_command_structure(t_all *all)
 		}
 		all->iter.i++;
 	}
-	if (!all->iter.n)
-		return (2);
-	all->command[all->iter.k].files[all->iter.n].output_flag = STANDART_OUTPUT;
-	all->command[all->iter.k].files[all->iter.n].name = NULL;
+	if ((is_pipe(all, all->iter.i - 1) || is_redirect(all, all->iter.i - 1)))
+	{
+		free(all->separated_request[all->iter.i]);
+		free_after_filling(all);
+		return (change_exitcode_and_err_msg_with_no_command_name(all, SHITTY_CASE, "2"));
+	}
 	all->command[all->iter.k + 1].name = NULL;
+	all->command[all->iter.k].files[all->iter.n].name = NULL;
+	all->command[all->iter.k].files[all->iter.n].output_flag = STANDART_OUTPUT;
 	return (0);
 }

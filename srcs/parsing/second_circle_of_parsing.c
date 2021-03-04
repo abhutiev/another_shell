@@ -23,7 +23,7 @@ static void	prepare_for_parsing(t_all *all, size_t i)
 	all->separated_request = (char **)ft_calloc(256, sizeof(char *));
 }
 
-static void	end_of_parsing(t_all *all, size_t i)
+static int	end_of_parsing(t_all *all, size_t i)
 {
 	free(all->requests.line_with_substitutions[i]);
 	all->buffer.line_2[all->buffer.iter_2] = '\0';
@@ -31,14 +31,16 @@ static void	end_of_parsing(t_all *all, size_t i)
 	{
 		free(all->buffer.line_2);
 		all->separated_request[all->n] = NULL;
-		return ;
+		return (1);
 	}
 	all->buffer.iter_2 = 0;
-	all->separated_request[all->n++] = all->buffer.line_2;
+	all->separated_request[all->n] = all->buffer.line_2;
+	all->n++;
 	all->separated_request[all->n] = NULL;
+	return (0);
 }
 
-void	second_circle_of_parsing(t_all *all, size_t i)
+int	second_circle_of_parsing(t_all *all, size_t i)
 {
 	prepare_for_parsing(all, i);
 	while (all->buffer.line_1[all->buffer.iter_1]
@@ -63,5 +65,7 @@ void	second_circle_of_parsing(t_all *all, size_t i)
 					= all->buffer.line_1[all->buffer.iter_1++];
 		}
 	}
-	end_of_parsing(all, i);
+	if (end_of_parsing(all, i) == 2)
+		return (2);
+	return (0);
 }

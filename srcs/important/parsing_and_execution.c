@@ -30,11 +30,21 @@ int	parsing_and_execution(t_all *all)
 	{
 		first_circle_of_parsing(all, i);
 		if (requests_validation_after_first_circle(all, i))
-			return (1);
-		second_circle_of_parsing(all, i);
+		{
+			i++;
+			continue ;
+		}
+		if (second_circle_of_parsing(all, i) == 2)
+		{
+			i++;
+			continue ;
+		}
 		allocate_memory_for_commands(all);
 		if (filling_command_structure(all) == 2)
-			return (1);
+		{
+			i++;
+			continue ;
+		}
 		request_execution(all);
 		free_after_parsing(all);
 		is_signals_changed_last_process_code(all);

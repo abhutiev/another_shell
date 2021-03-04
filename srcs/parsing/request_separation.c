@@ -32,7 +32,7 @@ static void	prepare_for_separation(t_all *all)
 {
 	all->iter.i = 0;
 	all->requests.separated
-		= (char **)ft_calloc(all->requests.number + 1, sizeof(char *));
+		= (char **)ft_calloc(all->requests.number + 100, sizeof(char *));
 	all->requests.line_with_substitutions
 		= (char **)ft_calloc(all->requests.number + 1, sizeof(char *));
 	all->buffer.iter_1 = 0;
