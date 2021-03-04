@@ -11,8 +11,7 @@ int	change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j)
 	return (ft_atoi(code));
 }
 
-int	change_exitcode_and_err_msg_with_no_command_name
-	(t_all *all, char *msg, char *code)
+int	err_msg_with_no_command_name(t_all *all, char *msg, char *code)
 {
 	ft_putstr_fd(SHL_NAME, 1);
 	ft_putendl_fd(msg, 1);

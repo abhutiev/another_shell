@@ -8,7 +8,8 @@ int	main(int argc, char **argv, char **en)
 	while (1)
 	{
 		ft_putstr_fd(SHL_NAME, 1);
-		if (!get_next_line(0, &(all.buffer.line_1)) && !ft_strcmp(all.buffer.line_1, ""))
+		if (!get_next_line(0, &(all.buffer.line_1))
+			&& !ft_strcmp(all.buffer.line_1, ""))
 			exit(ft_putendl_fd("  \b\b\nexit", 1));
 		count_requests(&all);
 		separate_requests(&all);

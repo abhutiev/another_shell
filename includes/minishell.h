@@ -23,9 +23,6 @@
 # include <sys/wait.h>
 # include <sys/stat.h>
 
-
-#include <stdio.h>
-
 # define SHL_NAME 					"bash: "
 # define STANDART_OUTPUT			0
 # define TO_RIGHT_REDIR				2
@@ -58,6 +55,15 @@ typedef struct s_env
 	char			*name;
 	char			*value;
 }					t_env;
+
+typedef struct s_gnl_utils
+{
+	char	*buffer;
+	int		eof;
+	int		help;
+	size_t	i;
+
+}					t_gnl_utils;
 
 typedef struct s_buffer
 {
@@ -229,7 +235,6 @@ void				signal_ctrl_backslash(int sig);
 void				signal_ctrl_c(int signal);
 void				fake_signal_ctrl_backslash(int sig);
 
-
 /*
 ** ########################################################################
 ** ############ FUNCTIONS WHERE ALL CYCLES OF PARSING HAPPENS #############
@@ -243,7 +248,7 @@ void				fake_signal_ctrl_backslash(int sig);
 */
 
 void				allocate_memory_for_commands(t_all *all);
-int 				filling_command_structure(t_all *all);
+int					filling_command_structure(t_all *all);
 
 /*
 ** File: first_circle_of_parsing.c
@@ -263,7 +268,7 @@ void				free_memory_in_case_of_invalid_request(t_all *all);
 ** File: second_circle_of_parsing.c
 */
 
-int 				second_circle_of_parsing(t_all *all, size_t i);
+int					second_circle_of_parsing(t_all *all, size_t i);
 /*
 ** File: request_separation.c
 */
@@ -305,8 +310,8 @@ void				str_to_lowercase(t_all *all, size_t j);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					change_exitcode_and_err_msg(t_all *all,
 						char *msg, char *code, size_t j);
-int					change_exitcode_and_err_msg_with_no_command_name
-						(t_all *all, char *msg, char *code);
+int					err_msg_with_no_command_name(t_all *all,
+						 char *msg, char *code);
 void				change_exitcode_success(t_all *all);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*strjoin_for_path(char const *s1, char const *s2);
@@ -320,7 +325,8 @@ int					ft_isdigit(int c);
 char				*ft_itoa(int n);
 void				build_pipeline(t_all *all);
 void				close_all_pipes(t_all *all);
-int					requests_validation_after_first_circle(t_all *all, size_t i);
+int					requests_validation_after_first_circle(t_all *all,
+						size_t i);
 int					free_after_filling(t_all *all);
 
 #endif

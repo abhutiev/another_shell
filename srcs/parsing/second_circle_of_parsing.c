@@ -72,7 +72,6 @@ int	second_circle_of_parsing(t_all *all, size_t i)
 					= all->buffer.line_1[all->buffer.iter_1++];
 		}
 	}
-	if (end_of_parsing(all, i) == 2)
-		return (2);
+	end_of_parsing(all, i);
 	return (0);
 }

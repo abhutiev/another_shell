@@ -56,6 +56,5 @@ add_executable(another_shell
 		srcs/important/pipe_execution.c
 		srcs/important/execution.c
 		srcs/utils/pipeline_utils.c
-		srcs/utils/env_for_minishell.c
 		srcs/utils/request_validation_after_first_circle.c
 		srcs/utils/validation_after_filling.c)

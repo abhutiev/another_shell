@@ -47,7 +47,7 @@ int	exit_bash(t_all *all, size_t j)
 	if (number_of_arguments_validation(all, j))
 		return (1);
 	delete_environment(all, "?");
-	code = ft_atoi(all->command[j].args[1]) % 256;
+	code = ft_atoi(all->command[j].args[1]) % 255;
 	tmp = ft_itoa(code);
 	add_environment(all, "?", tmp);
 	exit(code);

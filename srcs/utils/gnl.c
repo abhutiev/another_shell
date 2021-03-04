@@ -14,39 +14,38 @@ static size_t	ncopy(char **dst, const char *src, size_t len)
 	return (i);
 }
 
+void	get_ready_to_gnl(t_gnl_utils *gnl)
+{
+	gnl->i = 0;
+	gnl->eof = 1;
+	gnl->buffer = (char *)ft_calloc(2048, sizeof(char));
+	gnl->help = 1;
+}
+
 int	get_next_line(int fd, char **line)
 {
-	char	*buffer;
-	char	check;
-	int		eof;
-	int		help;
-	size_t	i;
+	t_gnl_utils	gnl;
 
-	if (!line || (read(fd, &check, 0) < 0))
-		return (-1);
-	i = 0;
-	eof = 1;
-	buffer = (char *)ft_calloc(2048, sizeof(char));
-	help = 1;
-	while (help == 1)
+	get_ready_to_gnl(&gnl);
+	while (gnl.help == 1)
 	{
-		help = read(fd, &buffer[i], 1);
-		if (!help && i)
+		gnl.help = read(fd, &gnl.buffer[gnl.i], 1);
+		if (!gnl.help && gnl.i)
 		{
-			help = 1;
+			gnl.help = 1;
 			continue ;
 		}
-		else if (!help)
+		else if (!gnl.help)
 			break ;
-		if (buffer[i] == '\n')
+		if (gnl.buffer[gnl.i] == '\n')
 		{
-			eof = 0;
+			gnl.eof = 0;
 			break ;
 		}
-		i++;
+		gnl.i++;
 	}
-	(*line) = (char *)calloc(i + 1, sizeof(char));
-	ncopy(line, buffer, i);
-	free(buffer);
-	return (!eof);
+	(*line) = (char *)calloc(gnl.i + 1, sizeof(char));
+	ncopy(line, gnl.buffer, gnl.i);
+	free(gnl.buffer);
+	return (!gnl.eof);
 }

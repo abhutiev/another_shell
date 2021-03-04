@@ -23,32 +23,22 @@ static int	request_execution(t_all *all)
 
 int	parsing_and_execution(t_all *all)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	while (all->requests.separated[i])
+	i = -1;
+	while (all->requests.separated[++i])
 	{
 		first_circle_of_parsing(all, i);
 		if (requests_validation_after_first_circle(all, i))
-		{
-			i++;
 			continue ;
-		}
 		if (second_circle_of_parsing(all, i) == 2)
-		{
-			i++;
 			continue ;
-		}
 		allocate_memory_for_commands(all);
 		if (filling_command_structure(all) == 2)
-		{
-			i++;
 			continue ;
-		}
 		request_execution(all);
 		free_after_parsing(all);
 		is_signals_changed_last_process_code(all);
-		i++;
 	}
 	clean_after_yourself(all, i);
 	return (0);
