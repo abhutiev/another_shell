@@ -227,6 +227,8 @@ int					find_left_redirect_pipe(t_all *all);
 
 void				signal_ctrl_backslash(int sig);
 void				signal_ctrl_c(int signal);
+void				fake_signal_ctrl_backslash(int sig);
+
 
 /*
 ** ########################################################################

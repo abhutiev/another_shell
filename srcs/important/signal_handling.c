@@ -4,7 +4,7 @@ void	signal_ctrl_c(int sig)
 {
 	int		pid;
 
-	pid = waitpid(-1, NULL, WNOHANG);
+	pid = waitpid(-1, NULL, WUNTRACED);
 	if (sig == SIGINT)
 	{
 		g_lobal = 1;
@@ -34,4 +34,9 @@ void	signal_ctrl_backslash(int sig)
 			ft_putstr_fd("\b\b  \b\b", 1);
 		}
 	}
+}
+
+void	fake_signal_ctrl_backslash(int sig)
+{
+	(void)sig;
 }
