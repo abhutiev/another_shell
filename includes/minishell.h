@@ -23,7 +23,7 @@
 # include <sys/wait.h>
 # include <sys/stat.h>
 
-# define SHL_NAME 					"bash: "
+# define SHL_NAME 					"almostbash: "
 # define STANDART_OUTPUT			0
 # define TO_RIGHT_REDIR				2
 # define TO_LEFT_REDIR				3

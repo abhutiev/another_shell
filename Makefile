@@ -84,18 +84,45 @@ INCDIR	=	includes/
 
 INC		=	$(addprefix ${INCDIR}, minishell.h)
 
+OBJS	=	${SRC:.c=.o}
+
+GREEN	=	\033[0;32m
+
+CYAN	=	\033[0;36m
+
+MAGENTA	=	\033[0;35m
+
+LGREEN	=	\033[1;32m
+
+LYELLOW	=	\033[1;33m
+
+LRED	=	\033[1;31m
+
+LBLUE	=	\033[1;34m
+
+WHITE	=	\033[1;39m
+
 all: ${NAME}
 
-${NAME}: ${SRC} ${INC}
-	${CC} ${CFLAGS} -I ${INCDIR} ${SRC} -o ${NAME}
+${NAME}: ${SRC} ${INC} ${OBJS}
+	@${CC} ${CFLAGS} -I ${INCDIR} ${OBJS} -o ${NAME}
+	@echo "${CYAN}Our shell is ready to use${WHITE}"
 
 launch:
-	./${NAME}
+	@./${NAME}
+
+%.o: %.c
+	@${CC} ${CFLAGS} -I ${INCDIR} -c $< -o $@
+	@echo "${MAGENTA}Object file: ${LYELLOW}$@ ${GREEN}successfully compiled${WHITE}"
+
+clean:
+	@rm ${OBJS}
+	@echo "${LRED}Object files successfully deleted${WHITE}"
 
 fclean:
-	rm ${NAME}
+	@make clean
+	@rm ${NAME}
 
 re:
 	make fclean
 	make all
-	make launch
