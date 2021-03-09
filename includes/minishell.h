@@ -131,7 +131,6 @@ typedef struct s_all
 int					error_while_binary_execution(t_all *all, size_t j);
 void				execve_call(t_all *all, size_t j);
 int					multiple_command_execution(t_all *all);
-char				**env_for_minishell(t_all *all);
 
 /*
 ** ########################################################################
@@ -192,7 +191,6 @@ void				add_environment(t_all *all, char *name, char *value);
 void				delete_environment(t_all *all, char *name);
 char				**env_for_execve(t_all *all);
 char				*look_for_env(t_all*all, char *name);
-char				**env_for_minishell(t_all *all);
 
 /*
 ** ########################################################################
@@ -312,6 +310,7 @@ int					change_exitcode_and_err_msg(t_all *all,
 						char *msg, char *code, size_t j);
 int					err_msg_with_no_command_name(t_all *all,
 						 char *msg, char *code);
+int					change_exitcode_and_errno(t_all *all, char *code, size_t j);
 void				change_exitcode_success(t_all *all);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*strjoin_for_path(char const *s1, char const *s2);

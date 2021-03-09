@@ -55,7 +55,7 @@ static int	changing_of_directory_replacing_env(t_all *all, t_cd *cd, size_t j)
 {
 	if (chdir(cd->path) == -1)
 	{
-		change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "1", j);
+		change_exitcode_and_errno(all, "1", j);
 		free(cd->path);
 		return (2);
 	}

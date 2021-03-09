@@ -15,7 +15,7 @@ static void	close_excess_fd(t_all *all, size_t fd_in, size_t fd_out)
 	}
 }
 
-static void	binary_exec_in_pipe(t_all *all, size_t j)
+static void	binary_exec_in_pipe(t_all *all, size_t j, int output_fd)
 {
 	g_signal_mode = 0;
 	all->pid[j] = fork();
@@ -35,7 +35,8 @@ static void	binary_exec_in_pipe(t_all *all, size_t j)
 		else if (all->command[j + 1].name == NULL)
 		{
 			dup2(all->fd.pipeline[j - 1][0], 0);
-			dup2(all->fd.standard_output, 1);
+			if (output_fd)
+				dup2(output_fd, 1);
 			close_excess_fd(all, (j - 1), 10000);
 		}
 		execve_call(all, j);
@@ -86,9 +87,7 @@ int	multiple_command_execution(t_all *all)
 	while (all->command[j].name)
 	{
 		output_fd = find_right_redirect_pipe(all, j);
-		if (output_fd)
-			dup2(output_fd, all->fd.pipeline[j][1]);
-		binary_exec_in_pipe(all, j++);
+		binary_exec_in_pipe(all, j++, output_fd);
 	}
 	wait_processes_close_fd(all);
 	return (0);

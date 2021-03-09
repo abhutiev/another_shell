@@ -10,6 +10,17 @@ int	change_exitcode_and_err_msg(t_all *all, char *msg, char *code, size_t j)
 	return (ft_atoi(code));
 }
 
+int	change_exitcode_and_errno(t_all *all, char *code, size_t j)
+{
+	ft_putstr_fd(SHL_NAME, 1);
+	ft_putstr_fd(all->command[j].name, 1);
+	ft_putstr_fd(": ", 1);
+	ft_putendl_fd(strerror(errno), 1);
+	delete_environment(all, "?");
+	add_environment(all, "?", code);
+	return (ft_atoi(code));
+}
+
 int	err_msg_with_no_command_name(t_all *all, char *msg, char *code)
 {
 	ft_putstr_fd(SHL_NAME, 1);

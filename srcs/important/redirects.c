@@ -16,7 +16,7 @@ int	find_left_redirect_pipe(t_all *all)
 			current_fd = open(all->command[0].files[i].name, O_RDONLY);
 			if (current_fd == -1)
 			{
-				change_exitcode_and_err_msg(all, NO_FILE_OR_DIR, "1", 0);
+				change_exitcode_and_errno(all, "1", 0);
 				return (-1);
 			}
 		}
