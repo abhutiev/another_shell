@@ -7,6 +7,7 @@ int	main(int argc, char **argv, char **en)
 	pregame_ritual(&all, argc, argv, en);
 	while (1)
 	{
+		g_signal_mode = 1;
 		ft_putstr_fd(SHL_NAME, 1);
 		if (!get_next_line(0, &(all.buffer.line_1))
 			&& !ft_strcmp(all.buffer.line_1, ""))

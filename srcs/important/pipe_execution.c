@@ -17,6 +17,7 @@ static void	close_excess_fd(t_all *all, size_t fd_in, size_t fd_out)
 
 static void	binary_exec_in_pipe(t_all *all, size_t j)
 {
+	g_signal_mode = 0;
 	all->pid[j] = fork();
 	if (all->pid[j] == 0)
 	{

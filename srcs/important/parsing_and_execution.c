@@ -28,6 +28,7 @@ int	parsing_and_execution(t_all *all)
 	i = -1;
 	while (all->requests.separated[++i])
 	{
+		is_signals_changed_last_process_code(all);
 		first_circle_of_parsing(all, i);
 		if (requests_validation_after_first_circle(all, i))
 			continue ;
@@ -38,7 +39,6 @@ int	parsing_and_execution(t_all *all)
 			continue ;
 		request_execution(all);
 		free_after_parsing(all);
-		is_signals_changed_last_process_code(all);
 	}
 	clean_after_yourself(all, i);
 	return (0);

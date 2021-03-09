@@ -38,6 +38,8 @@
 subject, but we've tried to handle it"
 
 int					g_lobal;
+int					g_signal_mode;
+
 
 typedef struct s_cd
 {
@@ -233,7 +235,6 @@ int					find_left_redirect_pipe(t_all *all);
 
 void				signal_ctrl_backslash(int sig);
 void				signal_ctrl_c(int signal);
-void				fake_signal_ctrl_backslash(int sig);
 
 /*
 ** ########################################################################

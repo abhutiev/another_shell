@@ -119,10 +119,7 @@ clean:
 	@rm ${OBJS}
 	@echo "${LRED}Object files successfully deleted${WHITE}"
 
-fclean:
-	@make clean
+fclean: clean
 	@rm ${NAME}
 
-re:
-	make fclean
-	make all
+re: fclean all

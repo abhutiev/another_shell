@@ -26,7 +26,6 @@ void	execve_call(t_all *all, size_t j)
 	size_t	i;
 	char	**ways;
 
-	signal(SIGQUIT, fake_signal_ctrl_backslash);
 	execve(all->command[j].name, all->command[j].args,
 		env_for_execve(all));
 	ways = split(look_for_env(all, "PATH"), ':');
@@ -47,6 +46,7 @@ static void	binary_exec_no_pipe(t_all *all)
 	pid_t	pid;
 	char	*tmp;
 
+	g_signal_mode = 0;
 	pid = fork();
 	if (pid == 0)
 		execve_call(all, 0);
