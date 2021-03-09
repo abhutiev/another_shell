@@ -10,7 +10,6 @@ void	signal_ctrl_c(int sig)
 			ft_putstr_fd("\b\b  \b\b", 1);
 			ft_putchar_fd('\n', 1);
 			ft_putstr_fd(SHL_NAME, 1);
-			return;
 		}
 		else
 		{

@@ -40,7 +40,6 @@ subject, but we've tried to handle it"
 int					g_lobal;
 int					g_signal_mode;
 
-
 typedef struct s_cd
 {
 	char			**splitted_directories;

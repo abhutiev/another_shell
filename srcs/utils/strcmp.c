@@ -10,10 +10,8 @@ int	ft_strcmp(char *line1, char *line2)
 	while (line1[i])
 	{
 		if (line1[i] != line2[i])
-		{
 			return (line2[i] - line1[i]);
-		}
 		i++;
 	}
-	return (line1[i] - line2[i]);
+	return (line2[i] - line1[i]);
 }
