@@ -19,6 +19,7 @@
 # include <errno.h>
 # include <stdlib.h>
 # include <signal.h>
+# include <stdio.h>
 # include <sys/types.h>
 # include <sys/wait.h>
 # include <sys/stat.h>
@@ -224,7 +225,8 @@ void				pregame_ritual(t_all *all, int ac, char **av, char **env);
 */
 
 int					find_right_redirect_pipe(t_all *all, size_t j);
-int					find_left_redirect_pipe(t_all *all);
+int					find_left_redirect_pipe(t_all *all, size_t j);
+int					check_left_redirect_pipe(t_all *all);
 
 /*
 ** File: signal_handling.c

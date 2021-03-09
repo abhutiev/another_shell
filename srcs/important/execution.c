@@ -62,18 +62,18 @@ int	single_command_execution(t_all *all, size_t j)
 	int		fd_in;
 	int		fd_out;
 
-	fd_in = find_left_redirect_pipe(all);
-	fd_out = find_right_redirect_pipe(all, j);
-	if (fd_in == -1)
-		return (1);
-	else if (fd_in)
+	fd_in = find_left_redirect_pipe(all, 0);
+	fd_out = find_right_redirect_pipe(all, 0);
+	if (fd_in)
 		dup2(fd_in, 0);
 	if (fd_out)
 		dup2(fd_out, 1);
 	if (!builtin_execution(all, j))
 		binary_exec_no_pipe(all);
-	close(fd_in);
-	close(fd_out);
+	if (fd_in)
+		close(fd_in);
+	if (fd_out)
+		close(fd_out);
 	dup2(all->fd.standard_output, 1);
 	dup2(all->fd.standard_input, 0);
 	return (0);

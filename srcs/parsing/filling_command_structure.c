@@ -61,9 +61,9 @@ static int	is_redirect(t_all *all, size_t i)
 	else if (!ft_strcmp(all->separated_request[i], "<"))
 	{
 		free(all->separated_request[i]);
-		all->command[0].files[all->iter.n].name
+		all->command[all->iter.k].files[all->iter.n].name
 			= all->separated_request[++all->iter.i];
-		all->command[0].files[all->iter.n].output_flag
+		all->command[all->iter.k].files[all->iter.n].output_flag
 			= TO_LEFT_REDIR;
 		if (!all->iter.j)
 			return (2);

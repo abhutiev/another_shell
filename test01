@@ -1,0 +1,9 @@
+CMakeLists.txt
+Makefile
+README.md
+cmake-build-debug
+includes
+minishell
+srcs
+test00
+test01
