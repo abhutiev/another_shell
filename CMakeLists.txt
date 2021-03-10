@@ -57,4 +57,4 @@ add_executable(another_shell
 		srcs/important/execution.c
 		srcs/utils/pipeline_utils.c
 		srcs/utils/request_validation_after_first_circle.c
-		srcs/utils/validation_after_filling.c)
+		srcs/utils/validation_after_filling.c srcs/utils/realloc.c)

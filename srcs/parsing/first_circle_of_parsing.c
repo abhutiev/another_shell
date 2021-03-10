@@ -8,6 +8,9 @@ static void	dollar_substitution(t_all *all)
 
 	all->buffer.iter_1++;
 	i = 0;
+	if (all->buffer.line_1[all->buffer.iter_1] == '\''
+		|| all->buffer.line_1[all->buffer.iter_1] == '\"')
+		all->buffer.iter_1++;
 	while (!is_special_symbol(all->buffer.line_1[all->buffer.iter_1]))
 		name_of_env[i++] = all->buffer.line_1[all->buffer.iter_1++];
 	name_of_env[i] = '\0';

@@ -62,6 +62,8 @@ int	single_command_execution(t_all *all, size_t j)
 	int		fd_in;
 	int		fd_out;
 
+	if (check_left_redirect_pipe(all))
+		return (1);
 	fd_in = find_left_redirect_pipe(all, 0);
 	fd_out = find_right_redirect_pipe(all, 0);
 	if (fd_in)

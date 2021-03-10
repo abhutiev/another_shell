@@ -45,9 +45,11 @@ void	free_memory_in_case_of_invalid_request(t_all *all)
 	while (all->requests.separated[i] != NULL)
 	{
 		free(all->requests.separated[i]);
+		all->requests.separated[i] = NULL;
 		i++;
 	}
 	free(all->requests.separated[i]);
 	free(all->requests.line_with_substitutions);
 	free(all->requests.separated);
+	all->requests.separated = NULL;
 }

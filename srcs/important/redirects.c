@@ -3,11 +3,10 @@
 int	check_left_redirect_pipe(t_all *all)
 {
 	int	i;
-	int		current_fd;
-	int 	j;
+	int	current_fd;
+	int	j;
 
 	j = -1;
-	current_fd = 0;
 	while (all->command[++j].name)
 	{
 		i = -1;
@@ -15,19 +14,16 @@ int	check_left_redirect_pipe(t_all *all)
 		{
 			if (all->command[j].files[i].output_flag == TO_LEFT_REDIR)
 			{
-				if (current_fd != 0)
-					close(current_fd);
 				current_fd = open(all->command[j].files[i].name, O_RDONLY);
 				if (current_fd == -1)
 				{
 					change_exitcode_and_errno(all, "1", 0);
 					return (-1);
 				}
+				close(current_fd);
 			}
 		}
 	}
-	if (current_fd)
-		close(current_fd);
 	return (0);
 }
 

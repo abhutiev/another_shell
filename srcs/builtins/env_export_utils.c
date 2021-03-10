@@ -2,8 +2,9 @@
 
 void	add_environment(t_all *all, char *name, char *value)
 {
-	size_t	i;
-	size_t	number_of_envs;
+	size_t			i;
+	size_t			number_of_envs;
+	static size_t	allocated = 100;
 
 	i = 0;
 	number_of_envs = 0;
@@ -13,6 +14,7 @@ void	add_environment(t_all *all, char *name, char *value)
 			delete_environment(all, name);
 		number_of_envs++;
 	}
+	all->env = ft_realloc(all->env, 8 * (allocated++));
 	while (all->env[i].name && (ft_strcmp(all->env[i].name, name) > 0))
 		i++;
 	while (number_of_envs + 1 > i)
