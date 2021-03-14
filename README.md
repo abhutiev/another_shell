@@ -1,6 +1,6 @@
 # another_shell
 
-My shell implementation.
+My shell implementation. I learned UNIX in this project.
 
 Most proud of: parallel opening of pipes, which protects against losses when transmitting through them volumes of information greater than the bandwidth of the channel created by the pipe function.
 
