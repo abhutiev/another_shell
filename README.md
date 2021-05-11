@@ -9,12 +9,19 @@ Implemented with all the features (except multiline) of double and single quotes
 Exit status of commands same as in bash.
 
 Functions implemented as builtins:
+
 ◦ echo with option ’-n’
+
 ◦ cd with only a relative or absolute path
+
 ◦ pwd without any options
+
 ◦ export without any options
+
 ◦ unset without any options
+
 ◦ env without any options and any arguments
+
 ◦ exit without any options
 
 Signals ctrl-C, ctrl-D works like in bash. Signal ctrl-\ make shell "forget" already wrotten.
